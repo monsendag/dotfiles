@@ -15,8 +15,7 @@
   co = checkout
   df = diff
   g = grep -I
-  lg = log -p
-  pp = !"echo 'Pull'; git pull; echo 'Push'; git push"
+  lg = log --graph --date=short --pretty=format:'%Cgreen(%cr) %C(blue)<%an> %Creset%s %C(yellow)%d%Creset'   
   rb = rbranch
   rv = review
   st = status
