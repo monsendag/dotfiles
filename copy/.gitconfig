@@ -1,13 +1,12 @@
 [user]
-  name = Ben Alman
+  name = Dag Einar Monsen
   email = EMAIL
 [github]
-  user = cowboy
-  token = TOKEN
+  user = monsendag
 [core]
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-  excludesfile = /Users/cowboy/.dotfiles/conf/.gitignore_global
+  excludesfile = /Users/dag/.dotfiles/conf/.gitignore
 [apply]
   whitespace = fix
 [alias]
@@ -57,3 +56,5 @@
   insteadOf = "gist:"
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
+[url "git@bitbucket.org:"]
+  insteadOf = "bitbucket:"
