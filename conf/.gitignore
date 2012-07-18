@@ -57,6 +57,9 @@ Thumbs.db
 # Folder config file
 Desktop.ini
 
+# IDE files
+.idea
+
 # Temp files
 *~
 
