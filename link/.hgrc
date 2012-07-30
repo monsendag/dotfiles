@@ -1,0 +1,7 @@
+# --- User interface --- #
+[ui]
+# show changed files and be a bit more verbose if True
+verbose=True
+# username data to appear in comits
+# it usually takes the form: "Joe User <joe.user at host.com>"
+username="Dag Einar Monsen <me@dag.im>"
