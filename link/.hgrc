@@ -1,10 +1,12 @@
-# --- User interface --- #
 [ui]
-username="Dag Einar Monsen <me@dag.im>"
-verbose=False
+username = "Dag Einar Monsen <me@dag.im>"
+ignore.other = "~/.dotfiles/conf/.hgignore"
+verbose = False
+
 
 [extensions]
 bookmarks =
+record = 
 
 [bookmarks]
 track.current = True
