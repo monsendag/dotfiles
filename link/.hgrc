@@ -1,6 +1,6 @@
 [ui]
 username = "Dag Einar Monsen <me@dag.im>"
-ignore.other = "~/.dotfiles/conf/.hgignore"
+ignore.other = ~/.dotfiles/conf/.hgignore
 verbose = False
 
 
