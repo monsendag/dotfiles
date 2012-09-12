@@ -22,6 +22,9 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gcl='git clone'
 
+# Autocomplete for 'g' as well
+complete -o default -o nospace -F _git g
+
 # OSX-specific Git shortcuts
 if [[ "$OSTYPE" =~ ^darwin ]]; then
   alias gdk='git ksdiff'
