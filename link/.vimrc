@@ -1,4 +1,6 @@
+set noexpandtab "don't convert tabs to spaces
 set tabstop=4 " make \t 4 characters wide
+set shiftwidth=4 " make indentation shift single tab
 
 set nocompatible " no need to be 100% vi compatible
 set ruler " show ruler on the botton
@@ -20,5 +22,3 @@ endif
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-
-
