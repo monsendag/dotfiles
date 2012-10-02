@@ -1,59 +1,66 @@
 [user]
-  name = Dag Einar Monsen
-  email = EMAIL
+	name = Dag Einar Monsen
+	email = EMAIL
 [github]
-  user = monsendag
+	user = monsendag
 [core]
-  autocrlf = input
-  whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-  excludesfile = /Users/dag/.dotfiles/conf/.gitignore
+	autocrlf = false
+	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+	excludesfile = ~/.dotfiles/conf/.gitignore
 [apply]
-  whitespace = fix
+	whitespace = fix
 [alias]
-  br = branch
-  ci = commit
-  co = checkout
-  df = diff
-  g = grep -I
-  lg = log --graph --date=short --pretty=format:'%Cgreen(%cr) %C(blue)<%an> %Creset%s %C(yellow)%d% %C(blue)%h'   
-  rb = rbranch
-  rv = review
-  st = status
-  ksdiff = difftool -y -t Kaleidoscope
+	br = branch
+	ci = commit
+	co = checkout
+	df = diff
+	g = grep -I
+	lg = log --graph --date=short --pretty=format:'%Cgreen(%cr) %C(blue)<%an> %Creset%s %C(yellow)%d %C(red)%h'   
+	rb = rbranch
+	rv = review
+	st = status
+	ksdiff = difftool -y -t Kaleidoscope
+	pp = "!\"echo Pull; git pull; echo Push; git push\""
 [color]
-  ui = auto
+	ui = auto
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 [merge]
-  log = true
+	log = true
 [difftool "Kaleidoscope"]
-  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [rerere]
-  enabled = 1
+	enabled = 1
 [url "git@github.com:"]
-  insteadOf = "gh:"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
 [url "git://github.com/"]
-  insteadOf = "github:"
+	insteadOf = "github:"
 [url "git@gist.github.com:"]
-  insteadOf = "gst:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
-  insteadOf = "gist:"
+	insteadOf = "gist:"
 [url "git@heroku.com:"]
-  insteadOf = "heroku:"
+	insteadOf = "heroku:"
 [url "git@bitbucket.org:"]
-  insteadOf = "bitbucket:"
+	insteadOf = "bitbucket:"
+[difftool "kdiff3"]
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "kdiff3"]
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
