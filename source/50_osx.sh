@@ -2,8 +2,9 @@
 [[ "$OSTYPE" =~ ^darwin ]] || return 1
 
 # APPLE, Y U PUT /usr/bin B4 /usr/local/bin?!
-PATH=/usr/local/bin:$PATH
-export PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/share/npm/bin # append node path
+export NODE_PATH=/usr/local/lib/node
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
