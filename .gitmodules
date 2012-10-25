@@ -10,3 +10,6 @@
 [submodule "libs/git-extras"]
 	path = libs/git-extras
 	url = git://github.com/visionmedia/git-extras.git
+[submodule "link/.vim/bundle/command-t"]
+	path = link/.vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
