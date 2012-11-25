@@ -1,6 +1,11 @@
-set noexpandtab "don't convert tabs to spaces
-set tabstop=4 " make \t 4 characters wide
-set shiftwidth=4 " make indentation shift single tab
+set cindent
+set smartindent
+set autoindent
+
+set expandtab " convert tabs to 2 spaces"
+set tabstop=2 
+set shiftwidth=2
+set cinkeys=0{,0},:,0#,!,!^F
 
 set nocompatible " no need to be 100% vi compatible
 set ruler " show ruler on the botton
@@ -11,7 +16,7 @@ set nowrap " dont wrap lines
 set showmatch " show matching braces
 set autoindent " enable automatic indentation
 
-colorscheme graywh " choose color scheme
+colorscheme wombat " choose color scheme
 syntax on " enable syntax highlighting
 
 if expand('%:t') =~?'bash-fc-\d\+'
@@ -23,6 +28,5 @@ endif
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
-filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
