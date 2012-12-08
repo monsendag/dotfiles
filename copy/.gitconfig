@@ -6,6 +6,7 @@
 [core]
 	autocrlf = false
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+  excludesfile = ~/.dotfiles/conf/.gitignore
 [alias]
 	br = branch
 	ci = commit
@@ -19,7 +20,6 @@
 	st = status
 	ksdiff = difftool -y -t Kaleidoscope
 	pp = "!\"echo Pull; git pull; echo Push; git push\""
-  excludesfile = ~/.dotfiles/conf/.gitignore
 [apply]
 	whitespace = fix
 [push]
