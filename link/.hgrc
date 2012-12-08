@@ -3,10 +3,23 @@ username = "Dag Einar Monsen <me@dag.im>"
 ignore.other = ~/.dotfiles/conf/.hgignore
 verbose = False
 
-
 [extensions]
 bookmarks =
 record = 
+hgext.extdiff =
 
 [bookmarks]
 track.current = True
+
+[extensions]
+
+[extdiff]
+cmd.ksdiff = /usr/local/bin/ksdiff
+opts.ksdiff = --changeset --wait --filelist
+
+[ui]
+merge = Kaleidoscope
+
+[merge-tools]
+Kaleidoscope.executable = /usr/local/bin/ksdiff
+Kaleidoscope.args = --merge --output $output --base $base -- $local $other
