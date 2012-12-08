@@ -6,16 +6,12 @@
 [core]
 	autocrlf = false
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-	excludesfile = ~/.dotfiles/conf/.gitignore
-[push]
-  default = simple
-[apply]
-	whitespace = fix
 [alias]
 	br = branch
 	ci = commit
 	co = checkout
 	df = diff
+  dt = difftool
 	g = grep -I
 	lg = log --graph --date=short --pretty=format:'%Cgreen(%cr) %C(blue)<%an> %Creset%s %C(yellow)%d %C(red)%h'   
 	rb = rbranch
@@ -23,6 +19,13 @@
 	st = status
 	ksdiff = difftool -y -t Kaleidoscope
 	pp = "!\"echo Pull; git pull; echo Push; git push\""
+  excludesfile = ~/.dotfiles/conf/.gitignore
+[apply]
+	whitespace = fix
+[push]
+	default = simple
+
+#### COLORS 
 [color]
 	ui = auto
 [color "branch"]
@@ -38,31 +41,25 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+
+#### DIFF & MERGETOOLS
+[diff]
+	tool = Kaleidoscope
 [merge]
+	tool = Kaleidoscope
 	log = true
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+# Kaleidoscope
 [difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[rerere]
-	enabled = 1
-[url "git@github.com:"]
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-	insteadOf = "github:"
-[url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-	insteadOf = "gist:"
-[url "git@heroku.com:"]
-	insteadOf = "heroku:"
-[url "git@bitbucket.org:"]
-	insteadOf = "bitbucket:"
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+# Kdiff3
 [difftool "kdiff3"]
 	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
-	path = 
 [mergetool "kdiff3"]
 	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	trustExitCode = true
