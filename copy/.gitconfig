@@ -6,7 +6,7 @@
 [core]
 	autocrlf = false
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-  excludesfile = ~/.dotfiles/conf/.gitignore
+	excludesfile = ~/.dotfiles/conf/.gitignore
 [alias]
 	br = branch
 	ci = commit
@@ -24,6 +24,9 @@
 	whitespace = fix
 [push]
 	default = simple
+# reuse recorded resolution when resolving conflicts
+[rerere]
+	enabled = 1
 
 #### COLORS 
 [color]
