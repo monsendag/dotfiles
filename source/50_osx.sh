@@ -10,6 +10,9 @@ export NODE_PATH=/usr/local/lib/node
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
 
+# Use github wrapper for git
+alias git='hub'
+
 # Make 'less' more.
 eval "$(lesspipe.sh)"
 
