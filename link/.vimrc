@@ -5,7 +5,7 @@ set autoindent
 set expandtab " convert tabs to 2 spaces"
 set tabstop=2 
 set shiftwidth=2
-set cinkeys=0{,0},:,0#,!,!^F
+set cinkeys=0{,0},:,0#,!^F
 
 set nocompatible " no need to be 100% vi compatible
 set ruler " show ruler on the botton
