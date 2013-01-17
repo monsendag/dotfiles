@@ -3,6 +3,9 @@
 # dirs  755 drwxr-xr-x (777 minus 022)
 umask 022
 
+# human readable size
+alias ls="ls -h"
+
 # Always use color output for `ls`
 if [[ "$OSTYPE" =~ ^darwin ]]; then
   alias ls="command ls -G"
