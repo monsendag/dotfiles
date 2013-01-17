@@ -59,6 +59,10 @@ Desktop.ini
 
 # IDE files
 .idea
+*.sublime-project
+*.sublime-workspace
+atlassian-ide-plugin.xml
+
 
 # Temp files
 *~
