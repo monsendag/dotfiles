@@ -21,6 +21,7 @@ alias gcb='gc -b'
 alias gra='git remote add'
 alias grr='git remote rm'
 alias gcl='git clone'
+alias gr='cd $(git root)'
 
 # Autocomplete for 'g' as well
 complete -o default -o nospace -F _git g
