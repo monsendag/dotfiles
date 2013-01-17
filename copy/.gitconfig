@@ -1,8 +1,6 @@
 [user]
 	name = Dag Einar Monsen
 	email = EMAIL
-[github]
-	user = monsendag
 [core]
 	autocrlf = false
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
