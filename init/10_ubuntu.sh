@@ -1,17 +1,12 @@
 # Ubuntu-only stuff. Abort if not Ubuntu.
 [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] || return 1
 
-# Update APT.
-e_header "Updating APT"
-sudo apt-get -qq update
-sudo apt-get -qq upgrade
-
 # Install APT packages.
 packages=(
   build-essential libssl-dev
   git-core
-  tree sl id3tool
-  nmap telnet
+  tree sl 
+  telnet
   htop
 )
 
