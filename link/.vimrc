@@ -16,6 +16,9 @@ set nowrap " dont wrap lines
 set showmatch " show matching braces
 set autoindent " enable automatic indentation
 
+set exrc " enable per-directory .vimrc files
+set secure " disable unsafe commands in local .vimrc files
+
 colorscheme wombat " choose color scheme
 syntax on " enable syntax highlighting
 
