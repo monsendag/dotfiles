@@ -15,6 +15,9 @@ alias c="tr -d '\n' | pbcopy"
 # Use github wrapper for git
 alias git='hub'
 
+# Add alias for brackets
+alias brac='open -a Brackets'
+
 # Make 'less' more.
 eval "$(lesspipe.sh)"
 
