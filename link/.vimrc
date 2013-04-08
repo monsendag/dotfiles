@@ -19,6 +19,12 @@ set autoindent " enable automatic indentation
 set exrc " enable per-directory .vimrc files
 set secure " disable unsafe commands in local .vimrc files
 
+" map gr to rename local variable
+nnoremap gr gd[{V%:s/<C-R>///gc<left><left><left> 
+
+" map gR to rename global variable 
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
 colorscheme wombat " choose color scheme
 syntax on " enable syntax highlighting
 
