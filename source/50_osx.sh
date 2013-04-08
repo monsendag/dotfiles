@@ -2,6 +2,7 @@
 [[ "$OSTYPE" =~ ^darwin ]] || return 1
 
 # APPLE, Y U PUT /usr/bin B4 /usr/local/bin?!
+export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$PATH:/usr/local/share/npm/bin # npm modules 
