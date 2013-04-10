@@ -17,6 +17,7 @@ alias git='hub'
 
 # Add alias for brackets
 alias brac='open -a Brackets'
+alias mou='open -a Mou'
 
 # Make 'less' more.
 eval "$(lesspipe.sh)"
