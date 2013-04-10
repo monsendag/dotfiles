@@ -18,6 +18,7 @@
 	st = status
 	ksdiff = difftool -y -t Kaleidoscope
 	pp = "!\"echo Pull; git pull; echo Push; git push\""
+  root = !pwd
 [apply]
 	whitespace = fix
 [push]
