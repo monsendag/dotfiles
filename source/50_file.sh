@@ -3,9 +3,6 @@
 # dirs  755 drwxr-xr-x (777 minus 022)
 umask 022
 
-# human readable size
-alias ls="ls -h"
-
 # Always use color output for `ls`
 if [[ "$OSTYPE" =~ ^darwin ]]; then
   alias ls="command ls -G"
@@ -20,7 +17,7 @@ if [[ "$(type -P tree)" ]]; then
   alias la='tree --dirsfirst -aLpughDFiC 1'
   alias lsd='ll -d'
 else
-  alias ll='ls -l'
+  alias ll='ls -lh'
   alias la='ll -a'
   alias lsd='CLICOLOR_FORCE=1 ll | grep --color=never "^d"'
 fi
