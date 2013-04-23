@@ -18,6 +18,11 @@ alias git='hub'
 # Add alias for brackets
 alias brac='open -a Brackets'
 alias mou='open -a Mou'
+# Change working directory to the top-most Finder window location
+function cdf() { # short for `cdfinder`
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+}
+
 
 # Make 'less' more.
 eval "$(lesspipe.sh)"
