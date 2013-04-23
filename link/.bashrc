@@ -2,13 +2,13 @@
 PATH=~/.dotfiles/bin:$PATH
 export PATH
 
-# Source all files in ~/.dotfiles/source/
+# Source all files in ~/.dotfiles/bashrc/
 function src() {
   local file
   if [[ "$1" ]]; then
-    source "$HOME/.dotfiles/source/$1.sh"
+    source "$HOME/.dotfiles/bashrc/$1.sh"
   else
-    for file in ~/.dotfiles/source/*; do
+    for file in ~/.dotfiles/bashrc/*; do
       source "$file"
     done
   fi
