@@ -1,5 +1,4 @@
 # APPLE, Y U PUT /usr/bin B4 /usr/local/bin?!
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:/usr/local/share/npm/bin" # npm modules 
