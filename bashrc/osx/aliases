@@ -1,0 +1,17 @@
+alias ls="command ls -G"
+
+# Trim new lines and copy to clipboard
+alias c="tr -d '\n' | pbcopy"
+
+alias git='hub'               # Wrap git in hub
+alias brac='open -a Brackets' # Brackets
+alias mou='open -a Mou'       # Mou
+
+# Change working directory to the top-most Finder window location
+function cdf() { # short for `cdfinder`
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+}
+
+# Make 'less' more.
+eval "$(lesspipe.sh)"
+
