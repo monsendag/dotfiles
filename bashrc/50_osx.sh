@@ -3,11 +3,14 @@
 
 # APPLE, Y U PUT /usr/bin B4 /usr/local/bin?!
 export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=$PATH:/usr/local/share/npm/bin # npm modules 
-export PATH=$PATH:/usr/local/share/python # pip packages 
-export NODE_PATH=/usr/local/lib/node
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$PATH:/usr/local/share/npm/bin" # npm modules 
+export PATH="$PATH:/usr/local/share/python" # pip packages 
+export NODE_PATH="/usr/local/lib/node"
+
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
