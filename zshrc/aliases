@@ -1,0 +1,44 @@
+# -----------------------------------------------
+# Shell Aliases
+# -----------------------------------------------
+
+# ls
+alias -g ll='ls -lh'
+alias -g la='ll -a'
+
+## Command Aliases
+alias x=exit
+alias c=clear
+alias s=screen
+alias r='screen -R'
+alias vi='vim'
+#alias ls='ls --color=auto -F'
+#alias l='ls -lAF --color=auto'
+alias sls='screen -ls'
+alias zrc='vim /etc/zshrc'
+alias cdw='cd ~/Sites/web'
+alias e='smartextract'
+alias o='open'
+
+## Pipe Aliases (Global)
+alias -g L='|less'
+alias -g G='|grep'
+alias -g T='|tail'
+alias -g H='|head'
+alias -g W='|wc -l'
+alias -g S='|sort'
+
+## Shell Aliases
+
+# UPenn
+alias srvr='ssh user@server.example.com'
+
+## Special Root Aliases
+[ $UID = 0 ] && \
+	alias m='make' && \
+	alias mi='make install' && \
+	alias rm='rm -i' && \
+	alias mv='mv -i' && \
+	alias cp='cp -i'
+
+
