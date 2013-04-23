@@ -1,0 +1,20 @@
+# Source all files in folder given 
+# Recurse into osx and linux dirs
+function src() {
+  local file
+  if [ -d "$1" ]; then
+    for file in $1/*; do
+       [ -f $file ] && source "$file"
+    done
+
+    # OSX-only 
+    if [[ "$(uname)" == "Darwin" ]]; then
+      src "$1/osx"
+    fi
+
+    # Linux only
+    if [[ "$(uname)" == "Linux" ]]; then
+      src "$1/linux"
+    fi
+  fi
+}
