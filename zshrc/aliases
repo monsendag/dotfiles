@@ -2,10 +2,6 @@
 # Shell Aliases
 # -----------------------------------------------
 
-# ls
-alias -g ll='ls -lh'
-alias -g la='ll -a'
-
 ## Command Aliases
 alias x=exit
 alias c=clear

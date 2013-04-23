@@ -1,0 +1,5 @@
+# ls
+alias -g ll='ls -lh'
+alias -g la='ll -a'
+
+
