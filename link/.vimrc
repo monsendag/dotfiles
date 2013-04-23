@@ -15,9 +15,17 @@ set showcmd " show some useful info in the ruler
 set nowrap " dont wrap lines
 set showmatch " show matching braces
 set autoindent " enable automatic indentation
+set incsearch " show matches while searching
+set hlsearch " highlight matches while searching
 
 set exrc " enable per-directory .vimrc files
 set secure " disable unsafe commands in local .vimrc files
+
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
 
 " map gr to rename local variable
 nnoremap gr gd[{V%:s/<C-R>///gc<left><left><left> 
