@@ -1,12 +1,10 @@
 # Source all files in folder given 
 # Recurse into osx and linux dirs
 function src() {
-  local file
   if [ -d "$1" ]; then
     for file in $1/*; do
        [ -f $file ] && source "$file"
     done
-
     # OSX-only 
     if [[ "$(uname)" == "Darwin" ]]; then
       src "$1/osx"
@@ -18,3 +16,5 @@ function src() {
     fi
   fi
 }
+
+src $1;
