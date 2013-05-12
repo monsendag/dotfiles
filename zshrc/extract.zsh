@@ -2,7 +2,7 @@
 #  User-defined Functions
 # -----------------------------------------------
 
-# Usage: smartextract <file>
+# Usage: extract <file>
 # Description: extracts archived files / mounts disk images
 # Note: .dmg/hdiutil is Mac OS X-specific.
 extract () {
@@ -24,4 +24,3 @@ extract () {
         echo "'$1' is not a valid file"
     fi
 }
-

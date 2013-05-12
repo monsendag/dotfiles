@@ -5,7 +5,6 @@ alias s=screen
 alias r='screen -R'
 alias vi='vim'
 alias ls='ls --color=auto -F'
-alias l='ls -lAF --color=auto'
 alias sls='screen -ls'
 alias o='open'
 
