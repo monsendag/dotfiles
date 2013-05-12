@@ -1,9 +1,0 @@
-[submodule "link/.vim/bundle/command-t"]
-	path = link/.vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
-[submodule "link/.vim/bundle/NERDtree"]
-	path = link/.vim/bundle/NERDtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "link/.vim/bundle/jedi"]
-	path = link/.vim/bundle/jedi
-	url = https://github.com/davidhalter/jedi-vim
