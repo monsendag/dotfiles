@@ -21,7 +21,7 @@ setopt auto_pushd
 setopt extended_glob
 setopt zle
 setopt complete_aliases
-setopt auto_cd
+setopt autocd
 setopt noxtrace #  ?
 setopt localoptions 
 setopt extendedglob
@@ -29,6 +29,15 @@ setopt prompt_subst # enable prompt substitution
 
 autoload -U vcs_info
 autoload -U add-zsh-hook
+autoload -U compinit
+compinit
+
+for keycode in '[' '0'; do
+  bindkey "^[${keycode}A" history-substring-search-up
+  bindkey "^[${keycode}B" history-substring-search-down
+done
+unset keycode
+
 
 zstyle ':vcs_info:*' enable git svn hg
 zstyle ':vcs_info:*' stagedstr '%F{yellow}●'
