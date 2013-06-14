@@ -3,6 +3,12 @@
 export CLICOLOR=1
 export LSCOLORS=CxFxExDxBxegedabagacad
 
+autoload -U compinit
+compinit
+
+# vi mode
+bindkey -v
+
 # git:
 # %b => current branch
 # %a => current action (rebase/merge)
