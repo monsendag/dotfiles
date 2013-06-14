@@ -1,3 +1,6 @@
+# complete aliases
+setopt no_complete_aliases
+
 ## Command Aliases
 alias x=exit
 alias c=clear
