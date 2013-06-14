@@ -1,0 +1,7 @@
+alias ls="command ls -G"
+alias ll="ls -lh"
+alias la="ll -a"
+
+# Make 'less' more.
+eval "$(lesspipe.sh)"
+
