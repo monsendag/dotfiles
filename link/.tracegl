@@ -1,0 +1,19 @@
+{
+	"theme" : "dark", // other theme: light
+	"ui":2000, // UI port
+	"tgt":2080, // browser JS port
+	"do":[], // only trace files matching
+	"no":[], // ignore files matching ":match" for string or "/match" for regexp
+	"editors" : { // editor paths per platform, modify these to set up your editor
+		"darwin": {
+      "PHPStorm":{
+        "bin":"pstorm",
+        "args":["$file:$line"]
+      }
+		},
+		"win32":{},
+		"sunos":{},
+		"linux":{},
+		"freebsd":{}
+	}
+}
