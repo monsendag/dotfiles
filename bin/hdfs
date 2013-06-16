@@ -1,0 +1,19 @@
+#!/bin/bash
+# starts an interactive shell to the hadoop file system.
+# Written by David M. Thompson, 2009
+   
+CMD="hadoop fs -"
+echo
+while [ 1 ]
+do
+  echo -n "hdfs> "
+  read ANSWER
+
+  if [ "$ANSWER" == 'exit' ]
+    then  
+  break
+  fi
+  $CMD$ANSWER
+
+done
+echo "goodbye."
