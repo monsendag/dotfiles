@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh -f
+du -sh $* | gsort -h
