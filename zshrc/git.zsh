@@ -27,8 +27,9 @@ compdef _git gca!=git-commit
 alias gco='git checkout'
 compdef _git gco=git-checkout
 alias gcm='git checkout master'
-alias gr='git remote'
-compdef _git gr=git-remote
+#alias gr='git remote'
+#compdef _git gr=git-remote
+alias gr='cd $(git root)'
 alias grv='git remote -v'
 compdef _git grv=git-remote
 alias grmv='git remote rename'
@@ -110,3 +111,4 @@ function _git_log_prettily(){
 }
 alias glp="_git_log_prettily"
 compdef _git glp=git-log
+
