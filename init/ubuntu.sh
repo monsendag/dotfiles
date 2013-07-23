@@ -3,10 +3,8 @@
 
 # Install APT packages.
 packages=(
-  build-essential
+  zsh
   git-core
-  tree sl 
-  telnet
   htop
 )
 
