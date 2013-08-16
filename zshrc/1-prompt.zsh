@@ -55,7 +55,11 @@ zstyle ':vcs_info:*' check-for-changes true
 current_path=" %F{green}%~%b "
 left_section="$current_path"
 # right section
-user_host="%b%F{magenta}%n%F{white}@%b%F{cyan}%m"
+# use $SERVERNAME for hostname if found
+# used for overriding servername in prompt on AWS
+[[ -n $SERVERNAME ]] && server=$SERVERNAME || server=$(hostname -s)
+
+user_host="%b%F{magenta}%n%F{white}@%b%F{cyan}$server"
 
 # line two: red on error-->
 line2="%(?/%F{blue}/%F{red})%B--%b%F{white}%(!.#.❯) "
