@@ -34,7 +34,11 @@ setopt PROMPT_SUBST
 
 # only show username if not default
 [ $USER != $DEFAULT_USERNAME ] && local username='%n%f@'
+user_host="%b%F{magenta}%n%F{white}@%b%F{cyan}%m"
 
+# use $HOSTNAME for hostname if found
+# used for overriding servername in prompt on AWS
+[[ -n $CUSTOM_HOST ]] && host=$CUSTOM_HOST || host=$(hostname -s)
 
 # fastest possible way to check if repo is dirty
 git_dirty() {
@@ -59,7 +63,7 @@ preexec() {
 precmd() {
 	vcs_info
 	# add `%*` to display the time
-	print -P '%F{yellow}$username%F{red}%m %F{green}%~%F{8}$vcs_info_msg_0_`git_dirty` %f %F{yellow}`cmd_exec_time`%f'
+	print -P '%F{yellow}$username%F{red}$host %F{green}%~%F{8}$vcs_info_msg_0_`git_dirty` %f %F{yellow}`cmd_exec_time`%f'
 	# reset value since `preexec` isn't always triggered
 	unset cmd_timestamp
 }
