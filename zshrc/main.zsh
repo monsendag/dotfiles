@@ -5,3 +5,8 @@ source $HOME/.dotfiles/zshrc/pure.zsh
 
 alias gr='cd $(git root)'
 export EDITOR=vim
+
+# allow to define independent environment variables in ~/.environment
+if [ -f "$HOME/.environment" ]; then
+	source "$HOME/.environment"
+fi
