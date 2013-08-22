@@ -36,9 +36,15 @@ setopt PROMPT_SUBST
 [ $USER != $DEFAULT_USERNAME ] && local username='%n%f@'
 user_host="%b%F{magenta}%n%F{white}@%b%F{cyan}%m"
 
-# use $HOSTNAME for hostname if found
-# used for overriding servername in prompt on AWS
-[[ -n $CUSTOM_HOST ]] && host=$CUSTOM_HOST || host=$(hostname -s)
+# only show host if we're on SSH
+if [[ -z "$SSH_CLIENT" ]]; then
+        host=""
+else
+	# allow overriding hostname with $CUSTOM_HOST
+	# used especially on AWS
+	[[ -n $CUSTOM_HOST ]] && host="$CUSTOM_HOST" || host=$(hostname -s)
+fi
+
 
 # fastest possible way to check if repo is dirty
 git_dirty() {
