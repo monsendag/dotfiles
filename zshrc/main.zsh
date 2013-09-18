@@ -11,3 +11,4 @@ source $HOME/.dotfiles/zshrc/pure.zsh
 
 alias gr='cd $(git root)'
 export EDITOR=vim
+alias subs='filebot -get-subtitles'
