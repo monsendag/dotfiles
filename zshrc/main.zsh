@@ -14,6 +14,7 @@ export EDITOR=vim
 
 alias ls='ls -Gh'
 alias subs='filebot -get-subtitles'
+alias mou='open -a Mou'
 alias subl='Open -a "Sublime Text 2"'
 
 # ZMV
