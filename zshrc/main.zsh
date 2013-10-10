@@ -14,3 +14,4 @@ export EDITOR=vim
 
 alias ls='ls -Gh'
 alias subs='filebot -get-subtitles'
+alias subl='Open -a "Sublime Text 2"'
