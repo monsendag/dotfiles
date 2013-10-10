@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+PIP_REQUIRE_VIRTUALENV="" pip "$@"
+
