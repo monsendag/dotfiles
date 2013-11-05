@@ -1,0 +1,16 @@
+#!/bin/bash 
+# Take control of client by starting a synergy server,
+# then ssh to client and connecting the synergy server from it.
+
+client=$1
+
+xx() {
+  killall synergys
+  ssh $client killall synergyc
+}
+trap 'xx' SIGINT
+
+synergys -c $HOME/.synergyrc &
+ssh $client synergyc $(hostname) &
+
+sleep 3600
