@@ -1,0 +1,17 @@
+#!/bin/bash 
+# Take control of client by starting a synergy server,
+# then ssh to client and connecting the synergy server from it.
+
+client=$1
+
+
+xx() {
+  sudo networksetup -setsocksfirewallproxystate "Ethernet" off
+}
+trap 'xx' SIGINT
+
+sudo networksetup -setsocksfirewallproxy "Ethernet" localhost 8888
+ssh -D 8888 $client
+
+sleep 36000
+
