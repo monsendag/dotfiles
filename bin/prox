@@ -1,9 +1,9 @@
 #!/bin/bash 
-# Take control of client by starting a synergy server,
-# then ssh to client and connecting the synergy server from it.
+# Create SSH socks tunnel to target host
+# Then configure network proxy settings to use the tunnel
+# Create trap to reset network settings when done.
 
 client=$1
-
 
 xx() {
   sudo networksetup -setsocksfirewallproxystate "Ethernet" off
