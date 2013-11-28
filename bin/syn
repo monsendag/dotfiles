@@ -13,4 +13,4 @@ trap 'xx' SIGINT
 synergys -c $HOME/.synergyrc &
 ssh $client synergyc $(hostname) &
 
-sleep 3600
+sleep 36000
