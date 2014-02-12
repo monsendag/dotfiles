@@ -41,6 +41,5 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-JIRA_URL="https://issues.intelligent.as" # needed by jira plugin
-plugins=(vi-mode gitfast history-substring-search colored-man brew bower composer jira)
+plugins=(vi-mode gitfast history-substring-search colored-man brew bower custom-aliases)
 source $ZSH/oh-my-zsh.sh
