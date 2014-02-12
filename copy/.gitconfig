@@ -1,5 +1,5 @@
 [user]
-	name = Dag Einar Monsen
+	name = NAME
 	email = EMAIL
 [core]
 	autocrlf = false
@@ -9,6 +9,7 @@
 	br = branch
 	ci = commit
 	co = checkout
+  cl = clone
 	df = diff
   dt = difftool
 	g = grep -I
@@ -18,6 +19,8 @@
 	st = status
 	ksdiff = difftool -y -t Kaleidoscope
 	pp = "!\"echo Pull; git pull; echo Push; git push\""
+  ps = push
+  pl = pull
   root = !pwd
 [apply]
 	whitespace = fix
@@ -60,7 +63,6 @@
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 # Kdiff3
 [difftool "kdiff3"]
-	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
+	cmd = kdiff3 \"$LOCAL\" \"$REMOTE\"
 [mergetool "kdiff3"]
-	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
+	cmd = kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
