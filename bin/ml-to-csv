@@ -1,0 +1,2 @@
+#!/usr/bin/env sh 
+cat $1 |sed -e s/::/,/g| cut -d, -f1,2,3 > $2
