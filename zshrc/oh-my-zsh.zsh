@@ -41,5 +41,5 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(vi-mode gitfast history-substring-search colored-man brew bower custom-aliases)
+plugins=(vi-mode gitfast history-substring-search colored-man brew bower custom-aliases mvn)
 source $ZSH/oh-my-zsh.sh
