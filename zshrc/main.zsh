@@ -9,6 +9,11 @@ source $HOME/.dotfiles/zshrc/oh-my-zsh.zsh
 # load pure theme
 source $HOME/.dotfiles/zshrc/pure.zsh
 
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+export LC_ALL=no_NO.UTF-8;
+export LANG=no_NO.UTF-8;
+
 alias gr='cd $(git root)'
 export EDITOR=vim
 
