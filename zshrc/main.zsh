@@ -2,6 +2,9 @@
 # allow to define independent environment variables in ~/.environment
 [ -f "$HOME/.environment" ] source "$HOME/.environment"; 
 
+# move linux specific stuff to separate file
+[ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
+
 # load oh-my-zsh
 source $HOME/.dotfiles/zshrc/oh-my-zsh.zsh
 # load pure theme
