@@ -1,8 +1,6 @@
 
 # allow to define independent environment variables in ~/.environment
-if [ -f "$HOME/.environment" ]; then
-	source "$HOME/.environment"
-fi
+[ -f "$HOME/.environment" ] source "$HOME/.environment"; 
 
 # load oh-my-zsh
 source $HOME/.dotfiles/zshrc/oh-my-zsh.zsh
