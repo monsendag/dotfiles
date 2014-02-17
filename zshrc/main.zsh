@@ -1,28 +1,21 @@
+ZSHRC="$HOME/.dotfiles/zshrc";
 
-# allow to define independent environment variables in ~/.environment
-[ -f "$HOME/.environment" ] source "$HOME/.environment"; 
-
-# move linux specific stuff to separate file
+# OS specific code
 [ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
+[ `uname` '==' "Darwin" ] && source "$ZSHRC/mac.zsh";
 
-# load oh-my-zsh
-source $HOME/.dotfiles/zshrc/oh-my-zsh.zsh
-# load pure theme
-source $HOME/.dotfiles/zshrc/pure.zsh
+# independent environment variables 
+[ -f "$HOME/.environment" ] && source "$HOME/.environment"; 
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-
-export LC_ALL=no_NO.UTF-8;
-export LANG=no_NO.UTF-8;
+# oh-my-zsh
+source $ZSHRC/oh-my-zsh.zsh
+# pure theme
+source $ZSHRC/pure.zsh
 
 alias gr='cd $(git root)'
 export EDITOR=vim
 
-alias ls='ls -Gh'
 alias subs='filebot -get-subtitles'
-alias mou='open -a Mou'
-alias subl='Open -a "Sublime Text 2"'
-alias br='Open -a "Brackets"'
 
 # ZMV
 autoload zmv
