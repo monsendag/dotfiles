@@ -15,6 +15,7 @@ source $ZSHRC/pure.zsh
 # set ls colors
 eval `dircolors $HOME/.dircolors`
 
+alias ls='ls -h'
 alias gr='cd $(git root)'
 export EDITOR=vim
 
