@@ -15,5 +15,5 @@ section: aliases
   DAG-MBP:
     dag-mbp.local
   DAG-SERVER:
-    dag-server.local
+    goat.dag.im
 end
