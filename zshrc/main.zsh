@@ -21,6 +21,11 @@ export EDITOR=vim
 
 alias subs='filebot -get-subtitles'
 
+# set virtualenvwrapper working directory
+export WORKON_HOME=$HOME/.virtualenv
+
+# make autoenv run .env files
+
 # ZMV
 autoload zmv
 alias zmz='noglob zmv'
