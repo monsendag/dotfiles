@@ -29,5 +29,3 @@ autoload zmv
 alias zmz='noglob zmv'
 alias zcp='noglob zmv -C'
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
