@@ -9,6 +9,8 @@ eval `dircolors $HOME/.dircolors`
 alias ls='ls -h --color=auto'
 alias gr='cd $(git root)'
 alias less='less -S' # enable horizontal scrolling in less
+alias s='ssh'
+
 export EDITOR=vim
 
 alias subs='filebot -get-subtitles'
