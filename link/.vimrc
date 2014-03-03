@@ -7,6 +7,7 @@ set tabstop=2
 set shiftwidth=2
 set cinkeys=0{,0},:,0#,!^F
 
+set mouse=nicr " enable mouse scrolling
 set nocompatible " no need to be 100% vi compatible
 set ruler " show ruler on the botton
 set number " show line number
