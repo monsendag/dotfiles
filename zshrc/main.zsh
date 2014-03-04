@@ -33,3 +33,5 @@ source $ZSHRC/pure.zsh
 [ `uname` '==' "Darwin" ] && source "$ZSHRC/mac.zsh";
 
 
+# open screen if we're on ssh
+[[ -z "$SSH_CLIENT" ]] || screen -DR
