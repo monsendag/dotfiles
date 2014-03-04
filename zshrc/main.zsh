@@ -34,4 +34,4 @@ source $ZSHRC/pure.zsh
 
 
 # open screen if we're on ssh
-[[ -z "$SSH_CLIENT" ]] || screen -DR
+[[ -z "$SSH_CLIENT" && ! -z "$STY" ]]  || screen -DR
