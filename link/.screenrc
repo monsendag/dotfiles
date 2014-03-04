@@ -1,6 +1,9 @@
 # Scrollback memory
 defscrollback 10000
 
+# allow multiple instances of screen
+multiuser on
+
 # Enable UTF-8
 defutf8 on
 
