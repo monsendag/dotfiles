@@ -32,6 +32,3 @@ source $ZSHRC/pure.zsh
 [ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
 [ `uname` '==' "Darwin" ] && source "$ZSHRC/mac.zsh";
 
-
-# open screen if we're on ssh
-[[ -z "$SSH_CLIENT" && ! -z "$STY" ]]  || screen -DR
