@@ -1,3 +1,9 @@
 [submodule "vendor/oh-my-zsh"]
 	path = vendor/oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
+[submodule "link/.vim/bundle/vim-sleuth"]
+	path = link/.vim/bundle/vim-sleuth
+	url = git://github.com/tpope/vim-sleuth.git
+[submodule "link/.vim/bundle/vim-airline"]
+	path = link/.vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline
