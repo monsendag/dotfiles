@@ -10,7 +10,7 @@ xx() {
 }
 trap 'xx' SIGINT
 
-synergys -c $HOME/.synergyrc &
+synergys --no-daemon -c $HOME/.synergyrc
 ssh $client synergyc $(hostname) &
 
 # wait for quit command, then close connection from the client as well
