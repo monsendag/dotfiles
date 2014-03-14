@@ -26,9 +26,6 @@ export EDITOR=vim
 # set virtualenvwrapper working directory
 export WORKON_HOME=$HOME/.virtualenvs
 
-# initialize autoenv
-autoenv_init
-
 # ZMV
 autoload zmv
 alias zmz='noglob zmv'

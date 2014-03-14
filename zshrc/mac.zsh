@@ -13,3 +13,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # load autoenv
 source /usr/local/opt/autoenv/activate.sh
+
+# initialize autoenv
+autoenv_init
+
+
