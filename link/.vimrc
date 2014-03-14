@@ -5,7 +5,7 @@ filetype plugin indent on
 
 colorscheme wombat 
 
-
+set noswapfile " disable swap file
 set exrc " enable per-directory .vimrc files
 set number " show line number
 set numberwidth=4 " line number width
