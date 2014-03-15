@@ -3,15 +3,15 @@
 # then ssh to client and connect to the synergy server from it.
 
 client=$1
+self=`hostname`
 
 xx() {
   killall synergys
-  ssh $client killall synergyc
 }
 trap 'xx' SIGINT
 
-synergys --no-daemon -c $HOME/.synergyrc
-ssh $client synergyc $(hostname) &
+synergys -c $HOME/.dotfiles/conf/.synergyrc
+ssh -vvv $client synergyc --no-daemon $self 
 
 # wait for quit command, then close connection from the client as well
 sleep 36000
