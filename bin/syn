@@ -2,16 +2,23 @@
 # Take control of client by starting a synergy server,
 # then ssh to client and connect to the synergy server from it.
 
-client=$1
 self=`hostname`
+client=$1
 
-xx() {
+echo $self
+echo $client
+
+killsynergy() {
+  echo "Quitting synergy.."
+  ssh $client killall synergyc
   killall synergys
+  echo "Done"
 }
-trap 'xx' SIGINT
 
 synergys -c $HOME/.dotfiles/conf/.synergyrc
-ssh -vvv $client synergyc --no-daemon $self 
+ssh -v $client synergyc $self 
 
-# wait for quit command, then close connection from the client as well
-sleep 36000
+trap "killsynergy" SIGINT
+
+# wait for kill command
+sleep 999999
