@@ -7,6 +7,7 @@ alias mou='open -a Mou'
 alias subl='Open -a "Sublime Text 2"'
 alias br='Open -a "Brackets"'
 alias v='qlmanage 2>/dev/null -p'
+alias javarepl='java -jar /usr/local/lib/javarepl.jar'
 
 # load virtualenvwrapper
 source /usr/local/bin/virtualenvwrapper.sh
