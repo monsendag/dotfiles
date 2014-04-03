@@ -21,9 +21,6 @@ function Inc(...)
   return result
 endfunction
 
-
-endif
-
 " Use :help 'option' to see the documentation for the given option.
 
 set autoindent
