@@ -3,6 +3,7 @@
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # mac specific aliases
+alias o='open'
 alias mou='open -a Mou'
 alias subl='Open -a "Sublime Text 2"'
 alias br='Open -a "Brackets"'
