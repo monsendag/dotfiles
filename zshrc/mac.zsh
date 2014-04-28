@@ -1,4 +1,6 @@
 
+. `brew --prefix`/etc/profile.d/z.sh;
+
 # JAVA_HOME
 export JAVA_HOME=$(/usr/libexec/java_home)
 
