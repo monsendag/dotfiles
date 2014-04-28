@@ -4,6 +4,6 @@
 [submodule "link/.vim/bundle/vim-sleuth"]
 	path = link/.vim/bundle/vim-sleuth
 	url = git://github.com/tpope/vim-sleuth.git
-[submodule "link/.vim/bundle/vim-airline"]
-	path = link/.vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
+[submodule "vendor/powerline"]
+	path = vendor/powerline
+	url = https://github.com/Lokaltog/powerline.git

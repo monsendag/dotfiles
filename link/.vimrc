@@ -1,5 +1,11 @@
 execute pathogen#infect()
 
+python import os, sys
+python sys.path.append(os.environ['HOME']+"/.dotfiles/vendor/powerline")
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 syntax on
 filetype plugin indent on
 
@@ -54,9 +60,7 @@ if !&sidescrolloff
 endif
 set display+=lastline
 
-if &encoding ==# 'latin1' && has('gui_running')
-  set encoding=utf-8
-endif
+set encoding=utf-8
 
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
