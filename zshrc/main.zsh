@@ -1,6 +1,8 @@
 
 ZSHRC="$HOME/.dotfiles/zshrc";
 
+. `brew --prefix`/etc/profile.d/z.sh;
+
 alias gr='cd $(git root)'
 alias less='less -S' # enable horizontal scrolling in less
 alias s='ssh'
