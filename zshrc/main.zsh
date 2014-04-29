@@ -5,6 +5,7 @@ alias gr='cd $(git root)'
 alias less='less -S' # enable horizontal scrolling in less
 alias s='ssh'
 alias subs='filebot -get-subtitles'
+alias ta='tmux a'
 
 # oh-my-zsh
 source $ZSHRC/oh-my-zsh.zsh
@@ -21,7 +22,6 @@ source $ZSHRC/pure.zsh
 eval `dircolors $HOME/.dotfiles/conf/dircolors`
 
 export EDITOR=vim
-
 
 # set virtualenvwrapper working directory
 export WORKON_HOME=$HOME/.virtualenvs
