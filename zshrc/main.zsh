@@ -1,33 +1,34 @@
-
 ZSHRC="$HOME/.dotfiles/zshrc";
-
-alias gr='cd $(git root)'
-alias less='less -S' # enable horizontal scrolling in less
-alias s='ssh'
-alias subs='filebot -get-subtitles'
-alias ta='tmux a'
 
 # oh-my-zsh
 source $ZSHRC/oh-my-zsh.zsh
 # pure theme
 source $ZSHRC/pure.zsh
 
+# set aliases after imports, to ensure they arent overridden
+alias gr='cd $(git root)'
+alias less='less -S' # enable horizontal scrolling in less
+alias s='ssh'
+alias subs='filebot -get-subtitles'
+alias ta='tmux a'
+
 # OS specific code
 [ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
 [ `uname` '==' "Darwin" ] && source "$ZSHRC/mac.zsh";
 
-# independent environment variables 
+# repo independent settings
 [ -f "$HOME/.environment" ] && source "$HOME/.environment"; 
+
 # set ls colors
 eval `dircolors $HOME/.dotfiles/conf/dircolors`
+
 
 export EDITOR=vim
 
 # set virtualenvwrapper working directory
 export WORKON_HOME=$HOME/.virtualenvs
 
-# ZMV
+# enable ZMV
 autoload zmv
 alias zmz='noglob zmv'
 alias zcp='noglob zmv -C'
-
