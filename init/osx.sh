@@ -7,12 +7,6 @@ if [[ ! "$(type -P brew)" ]]; then
   /usr/bin/env ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)";
 fi
 
-# Update Homebrew.
-if [[ "$(type -P brew)" ]]; then
-  e_header "Updating Homebrew"
-  brew update
-fi
-
 # Install Homebrew recipes.
 if [[ "$(type -P brew)" ]]; then
   recipes=(git lesspipe git-extras)
