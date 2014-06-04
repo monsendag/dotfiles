@@ -2,6 +2,7 @@ ZSHRC="$HOME/.dotfiles/zshrc";
 
 source $ZSHRC/oh-my-zsh.zsh
 source $ZSHRC/prompt.zsh
+source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # set aliases after imports, to ensure they arent overridden
 alias cr='cd $(git root)'
