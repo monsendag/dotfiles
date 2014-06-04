@@ -3,14 +3,18 @@ set nocompatible        " be iMproved
 filetype off            " required for vundle
 
 " enable vundle package manager
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin('$HOME/.vundle')
+set runtimepath+=~/.vim/bundle/neobundle.vim/
 
-" let Vundle manage Vundle
-Bundle 'gmarik/Vundle.vim'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+call neobundle#begin(expand('~/.neobundle'))
 
-call vundle#end()            
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+NeoBundle 'wincent/Command-T'
+
+call neobundle#end()            
+
+NeoBundleCheck " check for uninstalled plugins
 
 filetype plugin indent on " load indent file for specific filetypes
 syntax on " enable syntax highlighting
