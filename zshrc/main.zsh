@@ -10,6 +10,7 @@ alias less='less -S' # enable horizontal scrolling in less
 alias s='ssh'
 alias subs='filebot -get-subtitles'
 alias ta='tmux a'
+alias c='z'
 
 # OS specific code
 [ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
