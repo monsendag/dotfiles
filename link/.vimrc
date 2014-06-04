@@ -1,20 +1,26 @@
 set encoding=utf-8      " use UTF-8 encoding
 set nocompatible        " be iMproved
-filetype off            " required for vundle
 
-" enable vundle package manager
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+" powerline is installed separately to work with other apps
+set rtp+=$HOME/.dotfiles/vendor/powerline/powerline/bindings/vim
+
+" enable neoBundle package manager
+set rtp+=~/.vim/bundle/neobundle.vim
 
 call neobundle#begin(expand('~/.neobundle'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 NeoBundle 'wincent/Command-T'
 
 call neobundle#end()            
 
 NeoBundleCheck " check for uninstalled plugins
+
+set laststatus=2 " Always show statusline
+
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set timeoutlen=1000 ttimeoutlen=0 " ensure we don't need to double click esc
 
 filetype plugin indent on " load indent file for specific filetypes
 syntax on " enable syntax highlighting
