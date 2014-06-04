@@ -1,9 +1,7 @@
 ZSHRC="$HOME/.dotfiles/zshrc";
 
-# oh-my-zsh
 source $ZSHRC/oh-my-zsh.zsh
-# pure theme
-source $ZSHRC/pure.zsh
+source $ZSHRC/prompt.zsh
 
 # set aliases after imports, to ensure they arent overridden
 alias gr='cd $(git root)'
