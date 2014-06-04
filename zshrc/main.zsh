@@ -4,7 +4,7 @@ source $ZSHRC/oh-my-zsh.zsh
 source $ZSHRC/prompt.zsh
 
 # set aliases after imports, to ensure they arent overridden
-alias gr='cd $(git root)'
+alias cr='cd $(git root)'
 alias less='less -S' # enable horizontal scrolling in less
 alias s='ssh'
 alias subs='filebot -get-subtitles'
