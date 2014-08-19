@@ -25,6 +25,7 @@
 [apply]
 	whitespace = fix
 [push]
+	default = simple
 # reuse recorded resolution when resolving conflicts
 [rerere]
 	enabled = 1
