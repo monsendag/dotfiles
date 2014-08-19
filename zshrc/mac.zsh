@@ -13,12 +13,13 @@ alias javarepl='java -jar /usr/local/lib/javarepl.jar'
 alias trs='trash'	
 
 # load virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
+[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh;
 
 # load autoenv
-source /usr/local/opt/autoenv/activate.sh
+[ -f /usr/local/opt/autoenv/activate.sh ] && source /usr/local/opt/autoenv/activate.sh;
+
 
 # initialize autoenv
-autoenv_init
+# autoenv_init
 
 
