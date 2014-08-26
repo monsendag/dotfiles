@@ -169,47 +169,18 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 4</string>
-	<key>NSFontPanelPreviewHeight</key>
-	<real>79</real>
 	<key>NSNavLastRootDirectory</key>
-	<string>/Volumes/STORAGE/Cloud/Dropbox/Apps/Iterm2</string>
+	<string>~/.dotfiles/conf</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
-	<key>NSTableView Columns KeyBingingTable</key>
-	<array>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
-		hAErATCG
-		</data>
-		<string>198</string>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
-		hAErATGG
-		</data>
-		<string>302</string>
-	</array>
-	<key>NSTableView Hidden Columns KeyBingingTable</key>
-	<array/>
-	<key>NSTableView Sort Ordering KeyBingingTable</key>
-	<array/>
-	<key>NSWindow Frame NSColorPanel</key>
-	<string>797 1412 201 309 -348 800 1920 1178 </string>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>570 304 445 270 0 0 1280 778 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>352 267 924 485 0 0 1280 778 </string>
+	<string>400 157 924 485 0 0 2048 1258 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1276 778 0 0 1280 778 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 24 634 754 0 0 1280 778 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>640 23 634 754 0 0 1280 778 </string>
+	<string>1024 22 1018 1236 0 0 2048 1258 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -387,9 +358,9 @@
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
-			<false/>
+			<true/>
 			<key>Blur Radius</key>
-			<real>2.1364204883575439</real>
+			<real>2.1109352111816406</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -766,11 +737,11 @@
 			<key>Name</key>
 			<string>Dag</string>
 			<key>Non Ascii Font</key>
-			<string>LiterationMonoPowerline-Bold 14</string>
+			<string>Menlo-Regular 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>DejaVuSansMonoForPowerline 13</string>
+			<string>Menlo-Regular 11</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -922,7 +893,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.14133228361606598</real>
+			<real>0.27161842584609985</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -1677,8 +1648,6 @@
 			<string>/Users/dag</string>
 		</dict>
 	</array>
-	<key>NoSyncNeverRemindPrefsChangesCopy</key>
-	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1725,7 +1694,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Volumes/STORAGE/Cloud/Dropbox/Apps/Iterm2</string>
+	<string>/Users/dagm/.dotfiles/conf</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -1743,7 +1712,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-06-30T17:00:40Z</date>
+	<date>2014-08-24T10:30:38Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1789,6 +1758,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140518</string>
+	<string>2.0</string>
 </dict>
 </plist>
