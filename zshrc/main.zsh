@@ -11,6 +11,8 @@ alias s='ssh'
 alias subs='filebot -get-subtitles'
 alias ta='tmux a'
 alias c='z'
+alias d='docker'
+alias ls='ls --color'
 
 # OS specific code
 [ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
