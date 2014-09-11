@@ -4,7 +4,7 @@
 Run this command in a UNIX shell.
 
 ```
-bash -c "$(curl -fsSL https://raw.github.com/monsendag/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
+curl -fsSL df.dag.im | bash
 ```
 
 ## What does the dotfiles command do?
