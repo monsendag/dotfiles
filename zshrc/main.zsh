@@ -13,6 +13,8 @@ alias ta='tmux a'
 alias c='z'
 alias d='docker'
 alias ls='ls --color'
+alias rm='rm -v'
+
 # load custom functions
 fpath=( $ZSHRC/functions "${fpath[@]}" )
 autoload -Uz ckd
