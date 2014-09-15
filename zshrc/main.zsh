@@ -12,7 +12,7 @@ alias subs='filebot -get-subtitles'
 alias ta='tmux a'
 alias c='z'
 alias d='docker'
-alias ls='ls --color'
+alias ls='gls --color'
 alias rm='rm -v'
 
 # load custom functions
