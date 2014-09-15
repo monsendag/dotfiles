@@ -13,6 +13,9 @@ alias ta='tmux a'
 alias c='z'
 alias d='docker'
 alias ls='ls --color'
+# load custom functions
+fpath=( $ZSHRC/functions "${fpath[@]}" )
+autoload -Uz ckd
 
 # OS specific code
 [ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
