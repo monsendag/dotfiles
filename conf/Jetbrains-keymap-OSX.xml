@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keymap version="1" name="Dag OSX" parent="Mac OS X">
+  <action id="CloseEditor">
+    <keyboard-shortcut first-keystroke="meta W" />
+  </action>
+  <action id="CommentByBlockComment">
+    <keyboard-shortcut first-keystroke="shift control SLASH" />
+    <keyboard-shortcut first-keystroke="shift control DIVIDE" />
+    <keyboard-shortcut first-keystroke="shift meta SLASH" />
+    <keyboard-shortcut first-keystroke="shift meta DIVIDE" />
+    <keyboard-shortcut first-keystroke="meta alt C" />
+  </action>
+  <action id="CommentByLineComment">
+    <keyboard-shortcut first-keystroke="meta SLASH" />
+    <keyboard-shortcut first-keystroke="meta DIVIDE" />
+    <keyboard-shortcut first-keystroke="shift meta C" />
+  </action>
+  <action id="Console.History.Next" />
+  <action id="Console.History.Previous" />
+  <action id="Console.Jdbc.Execute" />
+  <action id="Console.Jpa.Execute" />
+  <action id="Console.Jpa.GenerateSql" />
+  <action id="Console.SplitLine" />
+  <action id="Console.TableResult.Reload" />
+  <action id="CopyPaths" />
+  <action id="Debug">
+    <keyboard-shortcut first-keystroke="shift F9" />
+    <keyboard-shortcut first-keystroke="shift meta ENTER" />
+  </action>
+  <action id="EditorChooseLookupItemCompleteStatement" />
+  <action id="EditorCompleteStatement" />
+  <action id="EditorDeleteLine">
+    <keyboard-shortcut first-keystroke="meta Y" />
+    <keyboard-shortcut first-keystroke="shift meta D" />
+  </action>
+  <action id="EditorScrollDown" />
+  <action id="EditorScrollUp" />
+  <action id="EditorSelectWord" />
+  <action id="EditorSplitLine" />
+  <action id="EditorStartNewLineBefore" />
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="alt F7" />
+    <keyboard-shortcut first-keystroke="shift meta F" />
+  </action>
+  <action id="GotoClass">
+    <keyboard-shortcut first-keystroke="meta N" />
+    <keyboard-shortcut first-keystroke="meta O" />
+  </action>
+  <action id="GotoFile">
+    <keyboard-shortcut first-keystroke="shift meta N" />
+    <keyboard-shortcut first-keystroke="meta alt O" />
+  </action>
+  <action id="GotoSymbol">
+    <keyboard-shortcut first-keystroke="shift meta alt N" />
+    <keyboard-shortcut first-keystroke="shift meta O" />
+  </action>
+  <action id="Groovy.Shell.Execute" />
+  <action id="IntroduceConstant" />
+  <action id="MethodHierarchy.OverrideMethodAction" />
+  <action id="MoveLineDown">
+    <keyboard-shortcut first-keystroke="shift alt DOWN" />
+    <keyboard-shortcut first-keystroke="meta DOWN" />
+  </action>
+  <action id="MoveLineUp">
+    <keyboard-shortcut first-keystroke="shift alt UP" />
+    <keyboard-shortcut first-keystroke="meta UP" />
+  </action>
+  <action id="OptimizeImports" />
+  <action id="OverrideMethods" />
+  <action id="Refactorings.QuickListPopupAction">
+    <keyboard-shortcut first-keystroke="shift meta alt T" />
+    <keyboard-shortcut first-keystroke="shift meta R" />
+  </action>
+  <action id="RenameElement">
+    <keyboard-shortcut first-keystroke="meta R" />
+  </action>
+  <action id="Replace" />
+  <action id="Run">
+    <keyboard-shortcut first-keystroke="shift F10" />
+    <keyboard-shortcut first-keystroke="meta ENTER" />
+  </action>
+  <action id="RunClass">
+    <keyboard-shortcut first-keystroke="shift control F10" />
+    <keyboard-shortcut first-keystroke="meta alt ENTER" />
+  </action>
+  <action id="Scala.RunConsole" />
+  <action id="ScalaConsole.Execute" />
+  <action id="SwitchApply">
+    <keyboard-shortcut first-keystroke="control alt ENTER" />
+  </action>
+  <action id="SwitchDown">
+    <keyboard-shortcut first-keystroke="control alt DOWN" />
+  </action>
+  <action id="SwitchLeft">
+    <keyboard-shortcut first-keystroke="control alt LEFT" />
+  </action>
+  <action id="SwitchRight">
+    <keyboard-shortcut first-keystroke="control alt RIGHT" />
+  </action>
+  <action id="SwitchUp">
+    <keyboard-shortcut first-keystroke="control alt UP" />
+  </action>
+  <action id="ViewSource" />
+</keymap>
+
