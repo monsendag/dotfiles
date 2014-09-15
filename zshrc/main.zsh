@@ -24,6 +24,9 @@ alias ls='ls --color'
 # set ls colors
 eval `dircolors $HOME/.dotfiles/conf/dircolors`
 
+# ignore underscore-prefixed completions
+# see http://unix.stackexchange.com/a/116205/66370
+zstyle ':completion:*:*:-command-:*:*' ignored-patterns '_*'
 
 export EDITOR=vim
 
