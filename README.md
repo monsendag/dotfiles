@@ -20,7 +20,6 @@ Note:
 * The `backups` folder only gets created when necessary. Any files in `~/` that would have been overwritten by `copy` or `link` get backed up there.
 * Files in `bin` are executable shell scripts. The folder is prepended to PATH).
 * Files in `zshrc` gets sourced when starting a new zsh shell.
-* Files in `bash` get sourced when starting a new bash shell.
 * Files in `conf` just sit there. If a config file doesn't _need_ to go in `~/`, put it in there.
 * Files in `caches` are cached files, only used by some scripts. This folder will only be created if necessary.
 
