@@ -14,6 +14,7 @@ alias c='z'
 alias d='docker'
 alias ls='gls --color'
 alias rm='rm -v'
+alias gr='git remote -v'
 
 # load custom functions
 fpath=( $ZSHRC/functions "${fpath[@]}" )
