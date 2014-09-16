@@ -1,5 +1,9 @@
 ZSHRC="$HOME/.dotfiles/zshrc";
 
+HISTSIZE=50000 # session history size
+SAVEHIST=100000 # saved history size
+
+
 # oh-my-zsh configuration
 source $ZSHRC/oh-my-zsh.zsh
 
