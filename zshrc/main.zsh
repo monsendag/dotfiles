@@ -1,22 +1,24 @@
 ZSHRC="$HOME/.dotfiles/zshrc";
 
+# oh-my-zsh configuration
 source $ZSHRC/oh-my-zsh.zsh
 
-# load custom functions
-# custom prompt
+# custom prompt 
 source $ZSHRC/prompt.zsh
 
 # custom aliases
 source $ZSHRC/aliases.zsh
 
+# load custom zsh functions
 fpath=( $ZSHRC/functions "${fpath[@]}" )
 autoload -Uz ckd
 
-# OS specific code
+
+# load OS specific code
 [ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
 [ `uname` '==' "Darwin" ] && source "$ZSHRC/mac.zsh";
 
-# repo independent settings
+# load repo independent settings
 [ -f "$HOME/.environment" ] && source "$HOME/.environment"; 
 
 export EDITOR=vim
