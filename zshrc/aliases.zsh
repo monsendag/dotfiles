@@ -43,3 +43,7 @@ alias -g NUL="> /dev/null 2>&1"
 
 alias p='ps -f'
 
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
