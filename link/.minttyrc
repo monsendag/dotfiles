@@ -1,0 +1,10 @@
+BoldAsFont=no
+Columns=170
+Rows=50
+ScrollbackLines=20000
+FontHeight=11
+Locale=nb_NO
+Charset=UTF-8
+Font=Consolas
+Transparency=low
+CursorType=block
