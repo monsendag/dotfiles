@@ -3,6 +3,8 @@ ZSHRC="$HOME/.dotfiles/zshrc";
 HISTSIZE=50000 # session history size
 SAVEHIST=100000 # saved history size
 
+# must come before oh-my-zsh
+fpath=('/usr/local/share/zsh/site-functions' $fpath)
 
 # oh-my-zsh configuration
 source $ZSHRC/oh-my-zsh.zsh
@@ -12,6 +14,7 @@ source $ZSHRC/prompt.zsh
 
 # custom aliases
 source $ZSHRC/aliases.zsh
+
 
 # load custom zsh functions
 fpath=( $ZSHRC/functions "${fpath[@]}" )
