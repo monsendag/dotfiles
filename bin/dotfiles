@@ -145,6 +145,17 @@ if [[ ! "$(type -P git)" ]]; then
     # Git is fairly easy.
     e_header "Installing Git"
     sudo apt-get -qq install git-core
+  elif [[ "$OSTYPE" =~ ^cygwin ]]; then
+    # We need cygwin.exe for the installation to work
+    if [[ ! "$(type -P cygwin.exe)" ]]; then
+      e_error "Need cygwin.exe in $PATH. Aborting"
+      exit 1
+    fi
+    # If we have cygwin.exe, install needed packages
+    if [[ "$(type -P cygwin.exe)" ]]; then
+      e_header "Installing git, openssh"
+      cygwin.exe -q -P git,openssh
+    fi
   fi
 fi
 
