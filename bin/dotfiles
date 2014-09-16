@@ -207,4 +207,6 @@ fi
 # All done!
 e_header "All done!"
 
-source ~/.zshrc
+# reload .zshrc
+exec zsh
+
