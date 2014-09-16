@@ -4,19 +4,11 @@ source $ZSHRC/oh-my-zsh.zsh
 source $ZSHRC/prompt.zsh
 source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# set aliases after imports, to ensure they arent overridden
-alias cr='cd $(git root)'
-alias less='less -S' # enable horizontal scrolling in less
-alias s='ssh'
-alias subs='filebot -get-subtitles'
-alias ta='tmux a'
-alias c='z'
-alias d='docker'
-alias ls='gls --color'
-alias rm='rm -v'
-alias gr='git remote -v'
-
 # load custom functions
+
+# custom aliases
+source $ZSHRC/aliases.zsh
+
 fpath=( $ZSHRC/functions "${fpath[@]}" )
 autoload -Uz ckd
 
