@@ -142,7 +142,7 @@ setup() {
 	[[ "$SSH_CONNECTION" != '' || -f /.dockerenv ]] && userhost="%F{143}%n%F{242}@%F{136}$host"
 
 	# prompt turns red if the previous command didn't exit with 0
-	PROMPT='%(?.%F{magenta}.%F{red})❯%f '
+	PROMPT='%(?.%F{magenta}.%F{red})->%f '
 }
 
 setup "$@"
