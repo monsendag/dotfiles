@@ -1,7 +1,7 @@
 
 ## Installation
 
-Run this command in a UNIX shell.
+Run this command in a UNIX shell (works in OS X, Linux and Cygwin).
 
 ```
 curl -fsSL df.dag.im | bash
@@ -9,7 +9,7 @@ curl -fsSL df.dag.im | bash
 
 ## What does the dotfiles command do?
 
-1. Git is installed if necessary, via APT or Homebrew (which is installed if necessary).
+1. Git is installed if necessary, via APT, Homebrew or Cygwin.exe (APT or Homebrew is installed if necessary).
 2. This repo is cloned into the `~/.dotfiles` directory (or updated if it already exists).
 2. Files in `init` are executed (in alphanumeric order).
 3. Files in `copy` are copied into `~/`.
@@ -29,17 +29,22 @@ These things will be installed, but _only_ if they aren't already.
 ### OS X
 * Homebrew
   * git
+  * git-extras
+  * zsh
   * tree
-  * sl
-  * lesspipe
 
 ### Ubuntu
 * APT
   * git-core
-  * build-essential
-  * libssl-dev
+  * zsh
   * tree
-  * sl
+  
+### Cygwin
+* openssh
+* subversion
+* vim
+* curl
+* zsh
 
 ## The ~/ "copy" step
 Any file in the `copy` subdirectory will be copied into `~/`. Any file that _needs_ to be modified with personal information (like [.gitconfig](https://github.com/monsendag/dotfiles/blob/master/copy/.gitconfig) which contains an email address and private key) should be _copied_ into `~/`. Because the file you'll be editing is no longer in `~/.dotfiles`, it's less likely to be accidentally committed into your public dotfiles repo.

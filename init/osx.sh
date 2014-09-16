@@ -9,7 +9,12 @@ fi
 
 # Install Homebrew recipes.
 if [[ "$(type -P brew)" ]]; then
-  recipes=(git lesspipe git-extras)
+  recipes=(
+  git
+  git-extras
+  zsh
+  tree
+  )
 
   list="$(to_install "${recipes[*]}" "$(brew list)")"
   if [[ "$list" ]]; then

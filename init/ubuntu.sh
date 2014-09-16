@@ -3,9 +3,9 @@
 
 # Install APT packages.
 packages=(
-  zsh
   git-core
-  htop
+  zsh
+  tree
 )
 
 
