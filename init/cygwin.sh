@@ -10,5 +10,5 @@ perl -pi -w -e 's/bash --login/zsh -l/g;' /Cygwin.bat
 if [[ "$(type -P cygwin.exe)" ]]; then
   packages="openssh,subversion,vim,curl,zsh"
   e_header "Installing cygwin packages: $packages"
-  cygwin.exe -q -P $packages
+  cygwin.exe --no-admin -q -P $packages
 fi
