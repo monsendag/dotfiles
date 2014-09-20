@@ -16,9 +16,9 @@ packages=(
 )
 
 # install packages
-if (( ${#list[@]} > 0 )); then
-  e_header "Installing APT packages: ${list[*]}"
-  for package in "${list[@]}"; do
+if (( ${#packages[@]} > 0 )); then
+  e_header "Installing APT packages: ${packages[*]}"
+  for package in "${packages[@]}"; do
     apt-cyg install "$package"
   done
 fi
