@@ -149,8 +149,10 @@ if [[ ! "$(type -P git)" ]]; then
 
   # Cygwin
   elif [[ "$OSTYPE" =~ ^cygwin ]]; then
+    # use apt-cyg if available
     if [[ "$(type -P apt-cyg)" ]]; then
       apt-cyg install git
+    # install apt-cyg
     elif [[ "$(type -P cygwin.exe)" ]]; then
       e_header "Installing apt-cyg dependencies: wget, tar, gawk, xz"
       cygwin.exe --no-admin -q -P wget,tar,gawk,xz
@@ -161,7 +163,7 @@ if [[ ! "$(type -P git)" ]]; then
 
       e_header "Installing git"
       apt-cyg install git
-    fi
+    # something is broken
     elif [[ ! "$(type -P cygwin.exe)" ]]; then
       e_error "Need cygwin.exe in $PATH. Aborting"
       exit 1
