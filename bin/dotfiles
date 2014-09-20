@@ -140,23 +140,31 @@ if [[ ! "$(type -P git)" ]]; then
       e_header "Installing Git"
       brew install git
     fi
+
   # Ubuntu.
   elif [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]; then
     # Git is fairly easy.
     e_header "Installing Git"
     sudo apt-get -qq install git-core
+
+  # Cygwin
   elif [[ "$OSTYPE" =~ ^cygwin ]]; then
-    # We need cygwin.exe for the installation to work
-    if [[ ! "$(type -P cygwin.exe)" ]]; then
-      e_error "Need cygwin.exe in $PATH. Aborting"
-      exit 1
-    fi
-    # If we have cygwin.exe, install needed packages
-    if [[ "$(type -P cygwin.exe)" ]]; then
-      e_header "Installing git, upenssh, curl"
-      cygwin.exe -q -P git,openssh,curl
+    if [[ "$(type -P apt-cyg)" ]]; then
+      apt-cyg install git
+    elif [[ "$(type -P cygwin.exe)" ]]; then
+      e_header "Installing apt-cyg dependencies: wget, tar, gawk, xz"
+      cygwin.exe --no-admin -q -P wget,tar,gawk,xz
+
+      e_header "Installing apt-cyg"
       curl -fsSL -o /usr/bin/apt-cyg https://github.com/transcode-open/apt-cyg/raw/master/apt-cyg
       chmod +x /usr/bin/apt-cyg
+
+      e_header "Installing git"
+      apt-cyg install git
+    fi
+    elif [[ ! "$(type -P cygwin.exe)" ]]; then
+      e_error "Need cygwin.exe in $PATH. Aborting"
+      exit 1
     fi
   fi
 fi
