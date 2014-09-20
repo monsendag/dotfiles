@@ -5,10 +5,21 @@
 # replace bash with zsh
 perl -pi -w -e 's/bash --login/zsh -l/g;' /Cygwin.bat
 
+# Install APT packages.
+packages=(
+  zsh
+  tree
+  curl
+  vim
+  subversion
+  openssh
+)
 
-# Install Cygwin packages.
-if [[ "$(type -P cygwin.exe)" ]]; then
-  packages="openssh,subversion,vim,curl,zsh"
-  e_header "Installing cygwin packages: $packages"
-  cygwin.exe --no-admin -q -P $packages
+# install packages
+if (( ${#list[@]} > 0 )); then
+  e_header "Installing APT packages: ${list[*]}"
+  for package in "${list[@]}"; do
+    apt-cyg install "$package"
+  done
 fi
+
