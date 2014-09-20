@@ -153,8 +153,10 @@ if [[ ! "$(type -P git)" ]]; then
     fi
     # If we have cygwin.exe, install needed packages
     if [[ "$(type -P cygwin.exe)" ]]; then
-      e_header "Installing git, openssh"
-      cygwin.exe -q -P git,openssh
+      e_header "Installing git, upenssh, curl"
+      cygwin.exe -q -P git,openssh,curl
+      curl -fsSL -o /usr/bin/apt-cyg https://github.com/transcode-open/apt-cyg/raw/master/apt-cyg
+      chmod +x /usr/bin/apt-cyg
     fi
   fi
 fi
