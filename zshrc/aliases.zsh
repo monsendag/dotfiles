@@ -5,6 +5,8 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
+alias o='open'
+
 # simple hack to reset ls command 
 unalias ls
 alias ls="$(which ls) --color"
