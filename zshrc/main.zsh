@@ -24,6 +24,7 @@ autoload -Uz ckd
 # load OS specific code
 [ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
 [ `uname` '==' "Darwin" ] && source "$ZSHRC/mac.zsh";
+[ $OSTYPE '==' "cygwin" ] && source "$ZSHRC/cygwin.zsh";
 
 # load repo independent settings
 [ -f "$HOME/.environment" ] && source "$HOME/.environment"; 
