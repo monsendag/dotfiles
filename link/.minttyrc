@@ -12,3 +12,4 @@ CursorColour=196,0,196
 FontSmoothing=default
 AllowBlinking=yes
 ForegroundColour=185,185,185
+ConfirmExit=no
