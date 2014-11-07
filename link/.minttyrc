@@ -1,6 +1,6 @@
 BoldAsFont=no
-Columns=170
-Rows=50
+Columns=166
+Rows=39
 ScrollbackLines=20000
 FontHeight=10
 Locale=nb_NO
@@ -12,3 +12,4 @@ CursorColour=196,0,196
 FontSmoothing=default
 AllowBlinking=yes
 ForegroundColour=185,185,185
+ConfirmExit=no

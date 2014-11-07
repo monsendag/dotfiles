@@ -18,6 +18,7 @@ alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
 alias ldot='ls -ld .*'
 
 alias cr='cd $(git root)'
+alias sr='cd $(svn info | grep "Working Copy Root Path:" | sed "s/.*://")'
 alias less='less -S' # enable horizontal scrolling in less
 alias s='ssh'
 alias subs='filebot -get-subtitles'
