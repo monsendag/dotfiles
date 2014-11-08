@@ -122,7 +122,7 @@ setup() {
 	zstyle ':vcs_info:git*' actionformats ' %b|%a'
 
 	# set ls colors
-	eval `dircolors $HOME/.dotfiles/conf/dircolors`
+	eval `dircolors $HOME/.dotfiles/conf/dircolors.conf`
 
 	# include zsh-syntax-highlighting
 	source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
