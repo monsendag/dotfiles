@@ -4,7 +4,7 @@
 [core]
 	autocrlf = false
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-	excludesfile = ~/.dotfiles/conf/.gitignore
+	excludesfile = ~/.dotfiles/conf/gitignore.conf
 [alias]
 	br = branch
 	ci = commit

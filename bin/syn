@@ -5,8 +5,8 @@
 self=`hostname`
 client=$1
 
-echo $self
-echo $client
+echo "starting synergy server on: $self"
+echo "connecting synergy server from: $client"
 
 killsynergy() {
   echo "Quitting synergy.."
@@ -15,8 +15,8 @@ killsynergy() {
   echo "Done"
 }
 
-synergys -c $HOME/.dotfiles/conf/.synergyrc
-ssh -v $client synergyc $self 
+synergys -c $HOME/.dotfiles/conf/synergy.conf
+ssh $client synergyc $self 
 
 trap "killsynergy" SIGINT
 
