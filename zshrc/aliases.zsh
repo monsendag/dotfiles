@@ -48,5 +48,5 @@ alias p='ps -f'
 
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+alias fd='noglob find . -type d -iname'
+alias ff='noglob find . -type f -iname'
