@@ -50,3 +50,6 @@ alias dud='du -d 1 -h'
 alias duf='du -sh *'
 alias fd='noglob find . -type d -iname'
 alias ff='noglob find . -type f -iname'
+
+alias zmv='noglob zmv'
+alias zcp='noglob zmv -C'
