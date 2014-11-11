@@ -13,6 +13,8 @@ set nocompatible        " be iMproved
 
 " NeoBundle 'wincent/Command-T'
 
+" NeoBundle 'editorconfig/editorconfig-vim'
+
 " call neobundle#end()            
 
 " NeoBundleCheck " check for uninstalled plugins
