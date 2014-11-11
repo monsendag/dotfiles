@@ -76,7 +76,7 @@ precmd() {
 	vcs_info
 
 	# replace $HOME with ~ (%~ also replaces with other vars like ~WORKON_HOME
-	local currentpath="%F{green}$(collapse_pwd)"
+        local currentpath="%F{33}$(collapse_pwd)"
 	 
 	local gitinfo="%F{242}$vcs_info_msg_0_$(git_dirty)"
 	local exectime="%F{yellow}$(cmd_exec_time)"
