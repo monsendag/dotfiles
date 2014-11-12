@@ -76,7 +76,7 @@ precmd() {
 	vcs_info
 
 	# replace $HOME with ~ (%~ also replaces with other vars like ~WORKON_HOME
-	local currentpath="%F{green}$(collapse_pwd)"
+	local currentpath="%F{33}$(collapse_pwd)"
 	 
 	local gitinfo="%F{242}$vcs_info_msg_0_$(git_dirty)"
 	local exectime="%F{yellow}$(cmd_exec_time)"
@@ -122,10 +122,18 @@ setup() {
 	zstyle ':vcs_info:git*' actionformats ' %b|%a'
 
 	# set ls colors
-	eval `dircolors $HOME/.dotfiles/conf/dircolors`
+	eval `dircolors $HOME/.dotfiles/conf/dircolors.conf`
+
 
 	# include zsh-syntax-highlighting
 	source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+	ZSH_HIGHLIGHT_HIGHLIGHTERS=(pattern main brackets)
+	ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
+	ZSH_HIGHLIGHT_STYLES[path]='fg=33'
+	ZSH_HIGHLIGHT_STYLES[alias]='fg=199'
+	ZSH_HIGHLIGHT_STYLES[function]='fg=184'
+	ZSH_HIGHLIGHT_PATTERNS+=('sudo *' 'bg=1')
 
 	# ignore underscore-prefixed completions
 	# see http://unix.stackexchange.com/a/116205/66370

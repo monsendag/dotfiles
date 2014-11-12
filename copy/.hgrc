@@ -1,6 +1,6 @@
 [ui]
-username = "Dag Einar Monsen <me@dag.im>"
-ignore.other = ~/.dotfiles/conf/.hgignore
+username = "NAME <EMAIL>"
+ignore.other = ~/.dotfiles/conf/hgignore.conf
 verbose = False
 
 [extensions]

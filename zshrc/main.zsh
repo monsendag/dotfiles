@@ -15,6 +15,8 @@ source $ZSHRC/prompt.zsh
 # custom aliases
 source $ZSHRC/aliases.zsh
 
+# load functions 
+autoload zmv de ckd
 
 # load custom zsh functions
 fpath=( $ZSHRC/functions "${fpath[@]}" )
@@ -34,7 +36,3 @@ export EDITOR=vim
 # set virtualenvwrapper working directory
 export WORKON_HOME=$HOME/.virtualenvs
 
-# enable ZMV
-autoload zmv
-alias zmz='noglob zmv'
-alias zcp='noglob zmv -C'
