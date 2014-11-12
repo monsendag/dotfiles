@@ -50,3 +50,8 @@ alias dud='du -d 1 -h'
 alias duf='du -sh *'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
+
+
+# git aliases
+alias gci='git commit'
+alias gdf='git diff'
