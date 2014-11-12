@@ -13,3 +13,4 @@ FontSmoothing=default
 AllowBlinking=yes
 ForegroundColour=185,185,185
 ConfirmExit=no
+Term=xterm-256color
