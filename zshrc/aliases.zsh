@@ -7,6 +7,8 @@ alias .....='cd ../../../../'
 
 alias o='open'
 
+alias jq='jq -C'
+
 # simple hack to reset ls command 
 unalias ls
 alias ls="$(which ls) --color"
