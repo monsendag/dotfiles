@@ -22,6 +22,9 @@ autoload zmv de ckd
 fpath=( $ZSHRC/functions "${fpath[@]}" )
 autoload -Uz ckd
 
+# lesspipe
+eval "$(lesspipe.sh)"
+
 
 # load OS specific code
 [ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
