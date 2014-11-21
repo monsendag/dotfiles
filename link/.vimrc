@@ -1,23 +1,10 @@
 set encoding=utf-8      " use UTF-8 encoding
 set nocompatible        " be iMproved
 
-" powerline is installed separately to work with other apps
-" set rtp+=$HOME/.dotfiles/vendor/powerline/powerline/bindings/vim
-
-" enable neoBundle package manager
-" set rtp+=~/.vim/bundle/neobundle.vim
-
-" call neobundle#begin(expand('~/.neobundle'))
-
-" NeoBundleFetch 'Shougo/neobundle.vim'
-
-" NeoBundle 'wincent/Command-T'
-
-" NeoBundle 'editorconfig/editorconfig-vim'
-
-" call neobundle#end()            
-
-" NeoBundleCheck " check for uninstalled plugins
+call plug#begin()
+  Plug 'tpope/vim-sensible'
+  Plug 'bling/vim-airline'
+call plug#end()
 
 set laststatus=2 " Always show statusline
 
