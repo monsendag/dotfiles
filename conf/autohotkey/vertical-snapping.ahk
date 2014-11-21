@@ -8,6 +8,7 @@
 ResizeWin(dir = 1, size = 0)
 {
     WinGet activeWin, ID, A
+    WinRestore, A
     activeMon := GetMonitorIndexFromWindow(activeWin)
 
     SysGet, MonitorWorkArea, MonitorWorkArea, %activeMon%
