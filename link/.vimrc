@@ -2,8 +2,8 @@ set encoding=utf-8      " use UTF-8 encoding
 set nocompatible        " be iMproved
 
 call plug#begin()
-  Plug 'tpope/vim-sensible'
   Plug 'bling/vim-airline'
+  Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 set laststatus=2 " Always show statusline
