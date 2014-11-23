@@ -124,6 +124,8 @@ setup() {
 	# set ls colors
 	eval `dircolors $HOME/.dotfiles/conf/dircolors.conf`
 
+  # enable vi mode
+  bindkey -v
 
 	# include zsh-syntax-highlighting
 	source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
