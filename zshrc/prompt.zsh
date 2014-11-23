@@ -76,7 +76,7 @@ precmd() {
 	vcs_info
 
 	# replace $HOME with ~ (%~ also replaces with other vars like ~WORKON_HOME
-	local currentpath="%F{33}$(collapse_pwd)"
+	local currentpath="%F{033}$(collapse_pwd)"
 	 
 	local gitinfo="%F{242}$vcs_info_msg_0_$(git_dirty)"
 	local exectime="%F{yellow}$(cmd_exec_time)"
@@ -128,11 +128,13 @@ setup() {
 	# include zsh-syntax-highlighting
 	source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+  # configure colors
+  # list of indices http://i.stack.imgur.com/UQVe5.png
 	ZSH_HIGHLIGHT_HIGHLIGHTERS=(pattern main brackets)
 	ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
-	ZSH_HIGHLIGHT_STYLES[path]='fg=33'
-	ZSH_HIGHLIGHT_STYLES[alias]='fg=199'
-	ZSH_HIGHLIGHT_STYLES[function]='fg=184'
+	ZSH_HIGHLIGHT_STYLES[path]='fg=033'
+	ZSH_HIGHLIGHT_STYLES[alias]='fg=118'
+	ZSH_HIGHLIGHT_STYLES[function]='fg=192'
 	ZSH_HIGHLIGHT_PATTERNS+=('sudo *' 'bg=1')
 
 	# ignore underscore-prefixed completions
