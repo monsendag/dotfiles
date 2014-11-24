@@ -93,8 +93,8 @@ precmd() {
 		# check if there is an upstream configured for this branch
 		command git rev-parse --abbrev-ref @'{u}' &>/dev/null && {
 			local arrows=''
-			(( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows='⇣'
-			(( $(command git rev-list --left-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows+='⇡'
+			(( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows='↓'
+			(( $(command git rev-list --left-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows+='↑'
 			print -Pn "\e7\e[A\e[1G\e[`string_length $preprompt`C%F{151}${arrows}%f\e8"
 		}
 	} &!
