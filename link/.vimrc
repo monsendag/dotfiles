@@ -12,9 +12,10 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 set timeoutlen=1000 ttimeoutlen=0 " ensure we don't need to double click esc
 
 filetype plugin indent on " load indent file for specific filetypes
-syntax on " enable syntax highlighting
 
-colorscheme wombat " set theme 
+syntax enable " enable syntax highlighting
+colorscheme atom-dark-256
+
 
 set cursorline " show line below cursor
 set noswapfile " disable swap file
