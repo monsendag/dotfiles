@@ -7,6 +7,8 @@ alias .....='cd ../../../../'
 
 alias o='open'
 
+alias jq='jq -C'
+
 # simple hack to reset ls command 
 unalias ls
 alias ls="$(which ls) --color"
@@ -43,10 +45,19 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 
-
 alias p='ps -f'
 
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
 alias fd='noglob find . -type d -iname'
 alias ff='noglob find . -type f -iname'
+
+alias fd='noglob find . -type d -iname'
+alias ff='noglob find . -type f -iname'
+
+# git aliases
+alias gci='git commit'
+alias gdf='git diff'
+
+alias zmv='noglob zmv'
+alias zcp='noglob zmv -C'

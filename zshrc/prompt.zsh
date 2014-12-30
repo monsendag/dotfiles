@@ -76,7 +76,7 @@ precmd() {
 	vcs_info
 
 	# replace $HOME with ~ (%~ also replaces with other vars like ~WORKON_HOME
-	local currentpath="%F{green}$(collapse_pwd)"
+	local currentpath="%F{033}$(collapse_pwd)"
 	 
 	local gitinfo="%F{242}$vcs_info_msg_0_$(git_dirty)"
 	local exectime="%F{yellow}$(cmd_exec_time)"
@@ -93,8 +93,8 @@ precmd() {
 		# check if there is an upstream configured for this branch
 		command git rev-parse --abbrev-ref @'{u}' &>/dev/null && {
 			local arrows=''
-			(( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows='⇣'
-			(( $(command git rev-list --left-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows+='⇡'
+			(( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows='↓'
+			(( $(command git rev-list --left-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows+='↑'
 			print -Pn "\e7\e[A\e[1G\e[`string_length $preprompt`C%F{151}${arrows}%f\e8"
 		}
 	} &!
@@ -124,8 +124,20 @@ setup() {
 	# set ls colors
 	eval `dircolors $HOME/.dotfiles/conf/dircolors.conf`
 
+  # enable vi mode
+  bindkey -v
+
 	# include zsh-syntax-highlighting
 	source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+  # configure colors
+  # list of indices http://i.stack.imgur.com/UQVe5.png
+	ZSH_HIGHLIGHT_HIGHLIGHTERS=(pattern main brackets)
+	ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
+	ZSH_HIGHLIGHT_STYLES[path]='fg=033'
+	ZSH_HIGHLIGHT_STYLES[alias]='fg=118'
+	ZSH_HIGHLIGHT_STYLES[function]='fg=192'
+	ZSH_HIGHLIGHT_PATTERNS+=('sudo *' 'bg=1')
 
 	# ignore underscore-prefixed completions
 	# see http://unix.stackexchange.com/a/116205/66370

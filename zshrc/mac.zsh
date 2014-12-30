@@ -12,6 +12,7 @@ alias rstudio='open -a "Rstudio"'
 alias javarepl='java -jar /usr/local/lib/javarepl.jar'
 alias trs='trash'	
 alias b2='boot2docker'
+alias serve='open http://localhost:8080 && static' 
 
 # load virtualenvwrapper
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh;

@@ -1,0 +1,48 @@
+'global':
+  'exception-reporting':
+    'userId': 'd425b600-3126-5c25-3ab9-a8ca0ae9f059'
+  'welcome':
+    'showOnStartup': false
+  'atom-beautify':
+    '_analyticsUserId': '824852c3-cab2-4571-b79a-150f9e541808'
+  'editor':
+    'fontSize': 12
+    'preferredLineLength': 120
+    'useShadowDOM': true
+    'zoomFontWhenCtrlScrolling': true
+    'invisibles': {}
+  'core':
+    'themes': [
+      'seti-ui'
+      'seti-monokai'
+    ]
+    'disabledPackages': [
+      'background-tips'
+      'bookmarks'
+      'deprecation-cop'
+      'incompatible-packages'
+      'language-c'
+      'language-go'
+      'language-java'
+      'language-make'
+      'language-mustache'
+      'language-objective-c'
+      'language-perl'
+      'language-php'
+      'language-ruby'
+      'language-ruby-on-rails'
+      'language-sass'
+      'language-toml'
+      'language-yaml'
+      'markdown-preview'
+      'metrics'
+      'minimap'
+      'open-on-github'
+      'package-generator'
+      'release-notes'
+      'spell-check'
+      'styleguide'
+      'welcome'
+      'whitespace'
+      'wrap-guide'
+    ]
