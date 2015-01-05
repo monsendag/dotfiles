@@ -18,16 +18,14 @@ source $ZSHRC/prompt.zsh
 # custom aliases
 source $ZSHRC/aliases.zsh
 
-# load functions 
-autoload zmv de ckd
-
 # load custom zsh functions
 fpath=( $ZSHRC/functions "${fpath[@]}" )
-autoload -Uz ckd
+
+# load functions 
+autoload zmv ckd
 
 # lesspipe
-eval "$(lesspipe.sh)"
-
+# eval "$(lesspipe.sh)"
 
 # load OS specific code
 [ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
