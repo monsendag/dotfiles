@@ -10,3 +10,4 @@ alias killall='taskkill /F /IM'
 eval `ssh-agent` > /dev/null
 # run ssh-add on first call to ssh
 alias ssh='ssh-add -l || ssh-add && ssh'
+alias scp='ssh-add -l || ssh-add && scp'
