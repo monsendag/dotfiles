@@ -7,6 +7,7 @@ call plug#begin()
   Plug 'kien/ctrlp.vim'
   Plug 'scrooloose/nerdtree'
   Plug 'elzr/vim-json'
+  Plug 'tpope/vim-surround'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -32,6 +33,9 @@ set mouse=nicr " enable mouse scrolling
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+
+" unix line endings
+set ff=unix
 
 filetype plugin indent on
 set wildignore+=*.zip,node_modules,.git,.svn,bower_components
