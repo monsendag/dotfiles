@@ -5,9 +5,10 @@ call plug#begin()
   Plug 'bling/vim-airline'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'kien/ctrlp.vim'
-  Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'elzr/vim-json'
   Plug 'tpope/vim-surround'
+  Plug 'ervandew/supertab'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -34,11 +35,13 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" match tags
+set matchpairs+=<:>
 " unix line endings
 set ff=unix
 
-filetype plugin indent on
-set wildignore+=*.zip,node_modules,.git,.svn,bower_components
+"filetype plugin indent on
+"set wildignore+=*.zip,node_modules,.git,.svn,bower_components
 
 " open nerdtree with Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
