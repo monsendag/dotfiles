@@ -1,5 +1,8 @@
 # cygwin configuration
 
+export PATH="/bin:$PATH";
+export PATH="/usr/sbin:$PATH";
+
 alias pbcopy='cat >/dev/clipboard'
 alias pbpaste='cat /dev/clipboard'
 alias open='cygstart'
