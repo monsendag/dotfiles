@@ -11,7 +11,7 @@ alias v='qlmanage 2>/dev/null -p'
 alias rstudio='open -a "Rstudio"'
 alias javarepl='java -jar /usr/local/lib/javarepl.jar'
 alias trs='trash'	
-alias b2='boot2docker'
+alias dm='docker-machine'
 alias serve='open http://localhost:8080 && static' 
 
 # load virtualenvwrapper
