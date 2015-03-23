@@ -30,6 +30,11 @@ set nowrap " dont wrap lines
 set showmatch " show matching braces
 set mouse=nicr " enable mouse scrolling
 
+" file completion
+" http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
+set wildmode=longest,list,full
+set wildmenu
+
 " indent with two spaces
 set expandtab
 set shiftwidth=2
