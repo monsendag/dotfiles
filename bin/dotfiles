@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo 'Dotfiles'
+# fail on error
+set -e
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
 
@@ -149,25 +150,28 @@ if [[ ! "$(type -P git)" ]]; then
 
   # Cygwin
   elif [[ "$OSTYPE" =~ ^cygwin ]]; then
-    # use apt-cyg if available
-    if [[ "$(type -P apt-cyg)" ]]; then
-      apt-cyg install git
-    # install apt-cyg
-    elif [[ "$(type -P cygwin.exe)" ]]; then
+
+    # install cygwin.exe
+    if [[ ! "$(type -P cygwin.exe)" ]]; then
+      e_header "Installing cygwin setup binary"
+      lynx -source "https://www.cygwin.com/setup-x86_64.exe" > /bin/cygwin.exe
+      chmod +x /bin/cygwin.exe
+
       e_header "Installing apt-cyg dependencies: wget, tar, gawk, xz"
       cygwin.exe --no-admin -q -P wget,tar,gawk,xz
-
-      e_header "Installing apt-cyg"
-      curl -fsSL -o /usr/bin/apt-cyg https://github.com/transcode-open/apt-cyg/raw/master/apt-cyg
-      chmod +x /usr/bin/apt-cyg
-
-      e_header "Installing git"
-      apt-cyg install git
-    # something is broken
-    elif [[ ! "$(type -P cygwin.exe)" ]]; then
-      e_error "Need cygwin.exe in $PATH. Aborting"
-      exit 1
     fi
+
+    # install apt-cyg
+    if [[ ! "$(type -P apt-cyg)" ]]; then
+      e_header "Installing apt-cyg"
+      lynx -source https://raw.githubusercontent.com/jfritz/apt-cyg/master/apt-cyg > /tmp/apt-cyg
+      install /tmp/apt-cyg /bin
+      apt-cyg install git
+    fi
+
+    e_header "Installing git"
+    apt-cyg install git
+
   fi
 fi
 

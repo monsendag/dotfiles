@@ -3,8 +3,6 @@ ZSHRC="$HOME/.dotfiles/zshrc";
 HISTSIZE=50000 # session history size
 SAVEHIST=100000 # saved history size
 
-# load repo independent settings
-[ -f "$HOME/.environment" ] && source "$HOME/.environment"; 
 
 # must come before oh-my-zsh
 fpath=('/usr/local/share/zsh/site-functions' $fpath)
@@ -37,3 +35,5 @@ export EDITOR=vim
 # set virtualenvwrapper working directory
 export WORKON_HOME=$HOME/.virtualenvs
 
+# load repo independent settings (can overwrite previous settings)
+[ -f "$HOME/.environment" ] && source "$HOME/.environment"; 
