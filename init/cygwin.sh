@@ -17,7 +17,7 @@ packages=(
 
 # install packages
 if (( ${#packages[@]} > 0 )); then
-  e_header "Installing APT packages: ${packages[*]}"
+  e_header "Installing apt-cyg packages: ${packages[*]}"
   for package in "${packages[@]}"; do
     apt-cyg install "$package"
   done
