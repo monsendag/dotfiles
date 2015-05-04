@@ -20,7 +20,7 @@ source $ZSHRC/aliases.zsh
 fpath=( $ZSHRC/functions "${fpath[@]}" )
 
 # load functions 
-autoload zmv ckd
+autoload zmv ckd de
 
 # lesspipe
 # eval "$(lesspipe.sh)"
