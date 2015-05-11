@@ -13,6 +13,7 @@ packages=(
   vim
   subversion
   openssh
+  ncurses
 )
 
 # install packages
