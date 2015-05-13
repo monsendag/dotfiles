@@ -3,6 +3,9 @@ ZSHRC="$(cd "$(dirname "$0")" ; pwd -P)"
 HISTSIZE=50000 # session history size
 SAVEHIST=100000 # saved history size
 
+# grep colors (see manpage)
+GREP_COLORS='ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
+
 # must come before oh-my-zsh
 fpath=('/usr/local/share/zsh/site-functions' $fpath)
 
