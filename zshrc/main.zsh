@@ -1,8 +1,7 @@
-ZSHRC="$HOME/.dotfiles/zshrc";
+ZSHRC="$(cd "$(dirname "$0")" ; pwd -P)"
 
 HISTSIZE=50000 # session history size
 SAVEHIST=100000 # saved history size
-
 
 # must come before oh-my-zsh
 fpath=('/usr/local/share/zsh/site-functions' $fpath)
