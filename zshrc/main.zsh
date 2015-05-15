@@ -4,6 +4,7 @@ HISTSIZE=50000 # session history size
 SAVEHIST=100000 # saved history size
 
 # grep colors (see manpage)
+# http://www.gnu.org/software/grep/manual/html_node/Environment-Variables.html
 GREP_COLORS='ms=01;31:mc=01;31:sl=01;01:cx=:fn=35:ln=32:bn=32:se=36'
 
 # must come before oh-my-zsh
