@@ -1,10 +1,12 @@
 [user]
 	name = NAME
 	email = EMAIL
+
 [core]
 	autocrlf = false
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	excludesfile = ~/.dotfiles/conf/gitignore.conf
+
 [alias]
 	br = branch
 	ci = commit
@@ -22,10 +24,13 @@
   ps = push
   pl = pull
   root = !pwd
+
 [apply]
 	whitespace = fix
+
 [push]
 	default = simple
+
 # reuse recorded resolution when resolving conflicts
 [rerere]
 	enabled = 1
@@ -33,15 +38,18 @@
 #### COLORS 
 [color]
 	ui = auto
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow
 	remote = green
+
 [color "diff"]
 	meta = yellow bold
 	frag = magenta bold
 	old = red bold
 	new = green bold
+
 [color "status"]
 	added = yellow
 	changed = green
@@ -49,19 +57,22 @@
 
 #### DIFF & MERGETOOLS
 [diff]
-	tool = Kaleidoscope
+	tool = kaleidoscope
 [merge]
-	tool = Kaleidoscope
+	tool = kaleidoscope
 	log = true
+
 [difftool]
 	prompt = false
 [mergetool]
 	prompt = false
+
 # Kaleidoscope
-[difftool "Kaleidoscope"]
+[difftool "kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[mergetool "Kaleidoscope"]
+[mergetool "kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+
 # Kdiff3
 [difftool "kdiff3"]
 	cmd = kdiff3 \"$LOCAL\" \"$REMOTE\"
