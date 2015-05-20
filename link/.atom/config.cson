@@ -49,9 +49,9 @@
   linter: {}
   "vim-mode":
     useClipboardAsDefaultRegister: true
-".ini.source":
+".source.ssh-config":
   editor:
     preferredLineLength: 120
-".source.ssh-config":
+".ini.source":
   editor:
     preferredLineLength: 120
