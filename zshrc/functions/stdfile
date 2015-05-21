@@ -1,7 +1,7 @@
 # saves stdin to a tempfile and returns the filename
 tempfile=$(mktemp)
-while read input; do
-   echo $input >> $tempfile
+while IFS='' read -r LINE || [ -n "$LINE" ]; do
+   echo $LINE >> $tempfile
 done
 echo $tempfile
 
