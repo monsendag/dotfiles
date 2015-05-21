@@ -1,0 +1,7 @@
+# saves stdin to a tempfile and returns the filename
+tempfile=$(mktemp)
+while read input; do
+   echo $input >> $tempfile
+done
+echo $tempfile
+
