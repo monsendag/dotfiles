@@ -10,6 +10,13 @@ GREP_COLORS='ms=01;31:mc=01;31:sl=01;01:cx=:fn=35:ln=32:bn=32:se=36'
 # must come before oh-my-zsh
 fpath=('/usr/local/share/zsh/site-functions' $fpath)
 
+autoload -Uz compinit compdef
+
+# load functions 
+autoload zmv ckd de stdfile
+
+source $ZSHRC/async.zsh
+
 # oh-my-zsh configuration
 source $ZSHRC/oh-my-zsh.zsh
 
@@ -22,8 +29,6 @@ source $ZSHRC/aliases.zsh
 # load custom zsh functions
 fpath=( $ZSHRC/functions "${fpath[@]}" )
 
-# load functions 
-autoload zmv ckd de stdfile
 
 # lesspipe
 # eval "$(lesspipe.sh)"
@@ -40,3 +45,4 @@ export WORKON_HOME=$HOME/.virtualenvs
 
 # load repo independent settings (can overwrite previous settings)
 [ -f "$HOME/.environment" ] && source "$HOME/.environment"; 
+
