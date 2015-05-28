@@ -9,7 +9,8 @@
     fontSize: 12
     preferredLineLength: 120
     useShadowDOM: true
-    invisibles: {}
+    invisibles:
+      {}
     zoomFontWhenCtrlScrolling: true
     showIndentGuide: true
   core:
@@ -46,12 +47,15 @@
       "seti-ui"
       "one-dark-syntax"
     ]
-  linter: {}
+  linter:
+    {}
   "vim-mode":
     useClipboardAsDefaultRegister: true
-".source.ssh-config":
+  "linter-eslint":
+    {}
+".ini.source":
   editor:
     preferredLineLength: 120
-".ini.source":
+".source.ssh-config":
   editor:
     preferredLineLength: 120
