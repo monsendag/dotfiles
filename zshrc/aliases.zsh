@@ -10,8 +10,8 @@ alias o='open'
 alias jq='jq -C'
 
 # simple hack to reset ls command 
-unalias ls
-alias ls="$(which ls) --color"
+# unalias ls
+alias ls='ls --color'
 
 alias l='ls -lFh --time-style=long-iso'     #size,show type,human readable
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
@@ -54,6 +54,7 @@ alias fd='noglob find . -type d -iname'
 alias ff='noglob find . -type f -iname'
 
 # git aliases
+alias gst='git status'
 alias gci='git commit'
 alias gdf='git diff'
 
