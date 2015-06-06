@@ -7,6 +7,7 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 # mac specific aliases
 alias g='hub'
+alias gu='open -a GitUp'
 alias mou='open -a Mou'
 alias subl='Open -a "Sublime Text 2"'
 alias br='Open -a "Brackets"'
