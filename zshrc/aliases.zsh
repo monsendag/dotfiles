@@ -49,7 +49,7 @@ alias -g NUL="> /dev/null 2>&1"
 alias p='ps -f'
 
 alias dud='du -d 1 -h'
-alias duf='du -sh *'
+alias duf='du -sh * | sort -h'
 alias fd='noglob find . -type d -iname'
 alias ff='noglob find . -type f -iname'
 
