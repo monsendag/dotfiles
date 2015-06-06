@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+subsync $1 < $2 |sponge $2
