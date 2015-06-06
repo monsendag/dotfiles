@@ -53,9 +53,9 @@
     useClipboardAsDefaultRegister: true
   "linter-eslint":
     {}
-".ini.source":
+".source.ssh-config":
   editor:
     preferredLineLength: 120
-".source.ssh-config":
+".ini.source":
   editor:
     preferredLineLength: 120
