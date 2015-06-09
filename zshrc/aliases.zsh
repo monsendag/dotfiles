@@ -6,6 +6,7 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
 alias o='open'
+alias a='atom'
 
 alias jq='jq -C'
 
