@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # do subsync on each file from $2 and onwards 
+# example: syncsub @-0.1 *.srt (will move the sub 100ms ahead for all srt's in the current dir
+
 for f in "${@:2}"
 do
   subsync "$1" < "$f" |sponge "$f"
