@@ -12,6 +12,8 @@ call plug#begin()
   Plug 'elzr/vim-json'
   Plug 'ervandew/supertab'
   Plug 'terryma/vim-expand-region'
+  Plug 'coderifous/textobj-word-column.vim'
+  Plug 'wincent/terminus'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -48,7 +50,7 @@ nnoremap <BS> gg
 
 set showcmd
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set timeoutlen=1000 ttimeoutlen=0 " ensure we don't need to double click esc
+set timeoutlen=10 ttimeoutlen=0 " ensure we don't need to double click esc
 
 filetype plugin indent on " load indent file for specific filetypes
 
