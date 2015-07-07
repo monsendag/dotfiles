@@ -6,16 +6,14 @@
   "atom-beautify":
     _analyticsUserId: "824852c3-cab2-4571-b79a-150f9e541808"
   editor:
-    fontSize: 12
     preferredLineLength: 120
     useShadowDOM: true
-    invisibles:
-      {}
+    invisibles: {}
     zoomFontWhenCtrlScrolling: true
     showIndentGuide: true
+    fontSize: 13
   core:
     disabledPackages: [
-      "background-tips"
       "bookmarks"
       "deprecation-cop"
       "incompatible-packages"
@@ -31,31 +29,28 @@
       "language-ruby-on-rails"
       "language-sass"
       "language-toml"
-      "language-yaml"
-      "markdown-preview"
       "metrics"
-      "open-on-github"
       "package-generator"
-      "release-notes"
       "spell-check"
       "styleguide"
       "welcome"
-      "whitespace"
-      "wrap-guide"
     ]
     themes: [
       "seti-ui"
       "one-dark-syntax"
     ]
-  linter:
-    {}
+  linter: {}
   "vim-mode":
     useClipboardAsDefaultRegister: true
-  "linter-eslint":
-    {}
-".source.ssh-config":
+  "linter-eslint": {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  minimap:
+    absoluteMode: true
+".ini.source":
   editor:
     preferredLineLength: 120
-".ini.source":
+".source.ssh-config":
   editor:
     preferredLineLength: 120
