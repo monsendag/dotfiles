@@ -5,6 +5,7 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
+alias v='vim'
 alias o='open'
 alias a='atom'
 
