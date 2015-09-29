@@ -9,8 +9,6 @@ alias v='vim'
 alias o='open'
 alias a='atom'
 
-alias jq='jq -C'
-
 # simple hack to reset ls command 
 # unalias ls
 alias ls='ls --color'
@@ -30,6 +28,7 @@ alias ta='tmux a'
 alias c='z'
 alias d='docker'
 alias dc='docker-compose'
+alias dm='docker-machine --native-ssh'
 alias rm='rm -v'
 alias gr='git remote -v'
 alias t='tail -f'
