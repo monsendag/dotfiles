@@ -11,14 +11,13 @@
     invisibles: {}
     zoomFontWhenCtrlScrolling: true
     showIndentGuide: true
-    fontSize: 13
+    fontSize: 12
   core:
     disabledPackages: [
       "bookmarks"
       "deprecation-cop"
       "incompatible-packages"
       "language-c"
-      "language-go"
       "language-java"
       "language-make"
       "language-mustache"
@@ -48,6 +47,9 @@
     hideVcsIgnoredFiles: true
   minimap:
     absoluteMode: true
+".cpp.source":
+  editor:
+    preferredLineLength: 120
 ".ini.source":
   editor:
     preferredLineLength: 120
