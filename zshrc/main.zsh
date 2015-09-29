@@ -10,7 +10,10 @@ GREP_COLORS='ms=01;31:mc=01;31:sl=01;01:cx=:fn=35:ln=32:bn=32:se=36'
 # must come before oh-my-zsh
 fpath=('/usr/local/share/zsh/site-functions' $fpath)
 
-autoload -Uz compinit compdef
+autoload -Uz compinit bashcompinit compdef
+
+compinit
+bashcompinit
 
 # load functions 
 autoload zmv ckd de stdfile
