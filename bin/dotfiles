@@ -154,6 +154,16 @@ elif [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]; then
     sudo apt-get -qq install git-core
   fi
 
+# babun
+elif [[ -n "BABUN_HOME" ]]; then
+
+  if [[ ! "$(type -P git)" ]]; then
+    e_header "Installing Git"
+    pact install git
+  fi
+
+fi
+
 # cygwin
 elif [[ "$OSTYPE" =~ ^cygwin ]]; then
 
