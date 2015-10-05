@@ -149,19 +149,22 @@ elif [[ "$(cat /etc/issue 2> /dev/null)" =~ Arch ]]; then
 
 # ubuntu
 elif [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]; then
+
   if [[ ! "$(type -P git)" ]]; then
     e_header "Installing Git"
     sudo apt-get -qq install git-core
   fi
+  
+fi 
 
 # babun
-elif [[ -n "BABUN_HOME" ]]; then
+elif [[ -n "$BABUN_HOME" ]]; then
 
   if [[ ! "$(type -P git)" ]]; then
     e_header "Installing Git"
     pact install git
   fi
-
+  
 fi
 
 # cygwin
