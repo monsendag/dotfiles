@@ -133,7 +133,7 @@ precmd() {
 	vcs_info
 
 	# preform async git dirty check and fetch
-	async_tasks
+	# async_tasks
 
 	# print the preprompt
 	preprompt_render "precmd"
