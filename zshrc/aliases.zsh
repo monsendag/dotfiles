@@ -29,6 +29,11 @@ alias c='z'
 alias d='docker'
 alias dc='docker-compose'
 alias dm='docker-machine --native-ssh'
+
+# https://medium.com/@pixelstack/what-i-learnt-when-i-switched-to-docker-machine-71c4a9d11f4e
+alias dcc='rm -v $(docker ps -a -q -f status=exited)'
+alias dci='docker rmi $(docker images -f "dangling=true" -q)'
+
 alias rm='rm -v'
 alias gr='git remote -v'
 alias t='tail -f'
