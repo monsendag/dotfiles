@@ -1,5 +1,5 @@
 # Cygwin-only stuff. Abort if not Cygwin.
-[[ "$OSTYPE" =~ ^cygwin ]] || return 1
+[[ "$OSTYPE" =~ ^cygwin && -z "$BABUN_HOME" ]] || return 1
 
 
 # replace bash with zsh
