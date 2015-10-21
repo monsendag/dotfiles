@@ -3,6 +3,10 @@ ZSH_THEME=""
 
 DISABLE_UPDATE_PROMPT=true
 
+# don't resolve z symlinks
+# https://github.com/rupa/z
+export _Z_NO_RESOLVE_SYMLINKS=true
+
 plugins=(z gitfast vi-mode history-substring-search brew gnu-utils docker mvn npm)
 source $ZSH/oh-my-zsh.sh
 
