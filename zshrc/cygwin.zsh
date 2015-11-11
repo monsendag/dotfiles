@@ -6,7 +6,7 @@ export PATH="/usr/sbin:$PATH";
 alias pbcopy='cat >/dev/clipboard'
 alias pbpaste='cat /dev/clipboard'
 alias open='cygstart'
-alias -g .,='cygpath -wa .'
+alias -g .,='"$(cygpath -wa .)"'
 alias killall='taskkill /F /IM'
 
 # set up ssh-agent to remember ssh auth through session

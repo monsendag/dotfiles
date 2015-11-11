@@ -13,13 +13,15 @@ alias a='atom'
 # unalias ls
 alias ls='ls --color'
 
+alias vrc='vim ~/.vimrc'
+
 alias l='ls -lFh --time-style=long-iso'     #size,show type,human readable
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
 alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
 alias lt='l -t'   #long list,sorted by date,show type,human readable
 alias ldot='ls -ld .*'
 
-alias cr='cd $(git root)'
+alias cr='cd "$(git root)"'
 alias sr='cd $(svn info | grep "Working Copy Root Path:" | sed "s/.*://")'
 alias less='less -S' # enable horizontal scrolling in less
 alias s='ssh'
