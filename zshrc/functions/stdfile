@@ -1,7 +1,0 @@
-# saves stdin to a tempfile and returns the filename
-tempfile=$(mktemp)
-while IFS='' read -r LINE || [ -n "$LINE" ]; do
-   echo $LINE >> $tempfile
-done
-echo $tempfile
-

@@ -16,7 +16,7 @@ compinit
 bashcompinit
 
 # load functions 
-autoload zmv ckd de stdfile
+autoload zmv ckd de
 
 # source $ZSHRC/async.zsh
 
