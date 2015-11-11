@@ -84,6 +84,8 @@ function link_test() {
   [[ "$1" -ef "$2" ]] && echo "same file"
 }
 function link_do() {
+  # use native symlinks on windows
+  export CYGWIN="winsymlinks:native"
   e_success "Linking ~/$1."
   ln -sf ${2#$HOME/} ~/
 }
