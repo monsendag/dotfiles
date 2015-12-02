@@ -2,11 +2,13 @@ set encoding=utf-8      " use UTF-8 encoding
 set nocompatible        " be iMproved
 set modelines=0
 
+
 call plug#begin()
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-surround'
   Plug 'bling/vim-airline'
+  Plug 'joshdick/airline-onedark.vim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'kien/ctrlp.vim'
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -15,18 +17,21 @@ call plug#begin()
   Plug 'terryma/vim-expand-region'
   Plug 'coderifous/textobj-word-column.vim'
   Plug 'wincent/terminus'
+  Plug 'wellle/targets.vim'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='powerlineish'
+let g:airline_theme='onedark'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_z=''
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
 
 filetype plugin indent on " load indent file for specific filetypes
 
 syntax enable " enable syntax highlighting
-colorscheme atom-dark-256
+colorscheme onedark
 
 " reload vimrc when saved
 autocmd bufwritepost .vimrc source $MYVIMRC
@@ -59,7 +64,6 @@ set visualbell
 set cursorline
 
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set timeoutlen=10 ttimeoutlen=0 " ensure we don't need to double click esc
 
 set laststatus=2 " Always show statusline
 set noswapfile " disable swap file
@@ -109,6 +113,7 @@ vnoremap <tab> %
 
 " disable arrow keys in normal mode
 " force us to learn hjkl
+nnoremap <Space> <nop>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -124,6 +129,15 @@ nnoremap k gk
 au FocusLost * :wa
 
 
+set timeoutlen=1000 ttimeoutlen=-1 " ensure we don't need to double click esc
+set esckeys timeout nottimeout
+
+:autocmd InsertEnter * set timeoutlen=100
+:autocmd InsertLeave * set timeoutlen=1000
+
+" http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+let mapleader = "\<Space>"
 
 "filetype plugin indent on
 "set wildignore+=*.zip,node_modules,.git,.svn,bower_components
@@ -134,14 +148,13 @@ map <C-n> :NERDTreeToggle<CR>
 " close nerdtree when closing all buffers
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "
-" http://stevelosh.com/blog/2010/09/coming-home-to-vim/
-" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
-let mapleader = "\<Space>"
 
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " map , to :
 nnoremap , :
+
+nnoremap <leader>l :NERDTreeToggle<CR>
 
 
 " open a new vertical split and switc to it 
