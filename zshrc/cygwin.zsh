@@ -1,4 +1,7 @@
 # cygwin configuration
+#
+# use native symlinks on windows
+export CYGWIN="winsymlinks:native"
 
 export PATH="/bin:$PATH";
 export PATH="/usr/sbin:$PATH";
