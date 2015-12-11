@@ -18,6 +18,7 @@ call plug#begin()
   Plug 'coderifous/textobj-word-column.vim'
   Plug 'wincent/terminus'
   Plug 'wellle/targets.vim'
+  Plug 'bkad/CamelCaseMotion'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -132,7 +133,7 @@ au FocusLost * :wa
 set timeoutlen=1000 ttimeoutlen=-1 " ensure we don't need to double click esc
 set esckeys timeout nottimeout
 
-:autocmd InsertEnter * set timeoutlen=100
+:autocmd InsertEnter * set timeoutlen=200
 :autocmd InsertLeave * set timeoutlen=1000
 
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
@@ -141,6 +142,7 @@ let mapleader = "\<Space>"
 
 "filetype plugin indent on
 "set wildignore+=*.zip,node_modules,.git,.svn,bower_components
+:imap jj <Esc>
 
 " open nerdtree with Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
