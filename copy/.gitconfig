@@ -3,7 +3,7 @@
 	email = EMAIL
 
 [core]
-	autocrlf = false
+	autocrlf = true
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	excludesfile = ~/.dotfiles/conf/gitignore.conf
 
