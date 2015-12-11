@@ -1,1 +1,58 @@
+" IdeaVIM config
 
+
+set encoding=utf-8      " use UTF-8 encoding
+
+" show the current mode (NORMAL/INSERT)
+set showmode
+
+set laststatus=2 " Always show statusline
+
+
+set gdefault " do substitutions globally by default
+
+" incsearch, showmatch and hlsearch work together to highlight search results (as you type).
+" It’s really quite handy, as long as you have the next line as well
+set incsearch  " 
+set showmatch
+set hlsearch
+
+
+" use tab to match bracket pair instead of %
+nnoremap <tab> %
+vnoremap <tab> %
+
+" disable arrow keys in normal mode
+" force us to learn hjkl
+nnoremap <Space> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+
+set timeoutlen=1000 ttimeoutlen=-1 " ensure we don't need to double click esc
+set esckeys timeout nottimeout
+
+:autocmd InsertEnter * set timeoutlen=200
+:autocmd InsertLeave * set timeoutlen=1000
+
+" http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+let mapleader = "\<Space>"
+
+:imap jj <Esc>
+
+" open a new vertical split and switc to it 
+nnoremap <leader>w <C-w>v<C-w>l
+
+"Type <Space>w to save file
+nnoremap <Leader>w :w<CR> 
+
+set relativenumber
