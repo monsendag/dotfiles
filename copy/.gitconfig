@@ -58,9 +58,9 @@
 
 #### DIFF & MERGETOOLS
 [diff]
-	tool = kaleidoscope
+	tool = idea
 [merge]
-	tool = kaleidoscope
+	tool = idea
 	log = true
 
 [difftool]
@@ -79,6 +79,12 @@
 	cmd = kdiff3 \"$LOCAL\" \"$REMOTE\"
 [mergetool "kdiff3"]
 	cmd = kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+
+# Intellij IDEA
+[difftool "idea"]
+  cmd = idea diff "$LOCAL" "$REMOTE"
+[mergetool "idea"]
+  cmd = idea merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 
 # json-diff
 # https://www.npmjs.com/package/json-diff
