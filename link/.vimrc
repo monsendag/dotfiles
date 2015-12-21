@@ -4,6 +4,7 @@ set modelines=0
 
 
 call plug#begin()
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-surround'
@@ -28,6 +29,8 @@ let g:airline_right_sep=''
 let g:airline_section_z=''
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 filetype plugin indent on " load indent file for specific filetypes
 
