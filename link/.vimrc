@@ -12,6 +12,7 @@ call plug#begin()
   Plug 'editorconfig/editorconfig-vim'
   Plug 'kien/ctrlp.vim'
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'scrooloose/nerdcommenter'
   Plug 'elzr/vim-json'
   Plug 'ervandew/supertab'
   Plug 'terryma/vim-expand-region'
@@ -44,7 +45,7 @@ set hidden
 
 " file completion
 " http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
-" try :color <tab> 
+ "try :color <tab>
 set wildmode=longest,list,full
 set wildmenu
 
@@ -64,7 +65,7 @@ set ruler " show ruler
 set ttyfast " fast terminal mode (sends more characters)
 set relativenumber " show relative numbers in margin (useful for navigating with j/k)
 
-
+" Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
 let &runtimepath.=','.vimDir
 
