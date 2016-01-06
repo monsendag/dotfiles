@@ -3,9 +3,21 @@
 	email = EMAIL
 
 [core]
-	autocrlf = true
+  # always checkout as LF, but correct accidental CRLF on input
+  # ref http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#Formatting-and-Whitespace
+	autocrlf = input
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	excludesfile = ~/.dotfiles/conf/gitignore.conf
+
+[apply]
+	whitespace = fix
+
+[push]
+	default = simple
+
+# reuse recorded resolution when resolving conflicts
+[rerere]
+	enabled = 1
 
 [alias]
 	br = branch
@@ -19,24 +31,15 @@
 	rb = rbranch
 	rv = review
 	st = status
-	ksdiff = difftool -y -t kaleidoscope
-	jsondiff = difftool -y -t jsondiff
 	pp = "!\"echo Pull; git pull; echo Push; git push\""
   ps = push
   pl = pull
+  # for use with 'alias cr=$(cd git root)'
   root = !pwd
+	ksdiff = difftool -y -t kaleidoscope
+	jsondiff = difftool -y -t jsondiff
 
-[apply]
-	whitespace = fix
-
-[push]
-	default = simple
-
-# reuse recorded resolution when resolving conflicts
-[rerere]
-	enabled = 1
-
-#### COLORS 
+#############################################################
 [color]
 	ui = auto
 
@@ -56,7 +59,7 @@
 	changed = green
 	untracked = cyan
 
-#### DIFF & MERGETOOLS
+############################################################
 [diff]
 	tool = idea
 [merge]
@@ -86,7 +89,7 @@
 [mergetool "idea"]
   cmd = idea merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 
-# json-diff
+# json-diff 
 # https://www.npmjs.com/package/json-diff
 [difftool "jsondiff"]
 	cmd = json-diff \"$LOCAL\" \"$REMOTE\"
