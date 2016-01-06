@@ -190,8 +190,8 @@ nnoremap <Leader>o :CtrlP<CR>
 " Space+w - save file
 nnoremap <Leader>w :w<CR> 
 
-" Space+rv - reload vimrc
-nmap <Leader>rv :source $MYVIMRC
+" Space+rl - reload vimrc
+nmap <Leader>rv :source $MYVIMRC<CR>
 
 
 " =======================================================================
