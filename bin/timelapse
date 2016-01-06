@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+# fail on error or interrupt
+set -e
+
+# defaults
+framerate=30
+resolution="hd1080"
+
+function print_usage() {
+  cat <<EOF
+  Error: $1
+
+  Usage: timelapse -r <resolution> -f <framerate> INPUT
+
+  Resolution: one of {hd720, hd1080 (default), 4k, ... }
+              See (https://ffmpeg.org/ffmpeg-utils.html#Video-size)
+  Framerate: (int) default: 30
+EOF
+}
+
+while [ "$1" != "" ]; do
+  case $1 in
+    "-r")
+      shift
+      resolution=$1
+      ;;
+    "-f")
+      shift
+      framerate=$1
+      ;;
+    *)
+      input=$1         
+      ;;
+  esac
+  shift
+done
+
+if [ -z "$input" ]; then 
+  print_usage "invalid input: $input"
+  exit 1
+fi
+
+outfile="out-${resolution}x$framerate.mp4"
+
+ffmpeg -pattern_type glob \
+        -i "$input" \
+        -r "$framerate" \
+        -s "$resolution" \
+        -vcodec libx264 \
+        -pix_fmt yuvj444p \
+       "$outfile"
+
+echo "timelapse compiled: $outfile"
