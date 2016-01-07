@@ -243,9 +243,23 @@ if [[ "$new_dotfiles_install" && -e "conf/firsttime_reminder.sh" ]]; then
   source "conf/firsttime_reminder.sh"
 fi
 
+if grep -q NAME "$HOME/.gitconfig"; then
+
+  e_header "Need to configure git user/email"
+
+  read -r -p "Git name: " git_user 
+  read -r -p "Git email: " git_email 
+
+  sed -i "s/NAME/$git_user/g" "$HOME/.gitconfig" 
+  sed -i "s/EMAIL/$git_email/g" "$HOME/.gitconfig" 
+
+  e_success "Wrote '$git_user <$git_email>' to ~/.gitconfig"
+fi
+
 # All done!
 e_header "All done!"
 
 # reload .zshrc
+e_header "Reloading zsh"
 exec zsh
 
