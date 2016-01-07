@@ -31,7 +31,7 @@
 	rb = rbranch
 	rv = review
 	st = status
-	pp = "!\"echo Pull; git pull; echo Push; git push\""
+	pp = !"echo pulling ...; git pull; echo pushing ...; git push"
   ps = push
   pl = pull
   # for use with 'alias cr=$(cd git root)'
@@ -73,15 +73,15 @@
 
 # Kaleidoscope
 [difftool "kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+	cmd = ksdiff --partial-changeset --relative-path "$MERGED" -- "$LOCAL" "$REMOTE"
 [mergetool "kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	cmd = ksdiff --merge --output "$MERGED" --base "$BASE" -- "$LOCAL" --snapshot "$REMOTE" --snapshot
 
 # Kdiff3
 [difftool "kdiff3"]
-	cmd = kdiff3 \"$LOCAL\" \"$REMOTE\"
+	cmd = kdiff3 "$LOCAL" "$REMOTE"
 [mergetool "kdiff3"]
-	cmd = kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	cmd = kdiff3 "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"
 
 # Intellij IDEA
 [difftool "idea"]
@@ -92,4 +92,4 @@
 # json-diff 
 # https://www.npmjs.com/package/json-diff
 [difftool "jsondiff"]
-	cmd = json-diff \"$LOCAL\" \"$REMOTE\"
+	cmd = json-diff "$LOCAL" "$REMOTE"
