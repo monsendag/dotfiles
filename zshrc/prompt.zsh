@@ -52,8 +52,8 @@ check_git_arrows() {
 	command git rev-parse --abbrev-ref @'{u}' &>/dev/null || return
 
 	local arrows=""
-	(( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows='⇣'
-	(( $(command git rev-list --left-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows+='⇡'
+	(( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows='↓'
+	(( $(command git rev-list --left-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && arrows+='↑'
 	# output the arrows
 	[[ "$arrows" != "" ]] && echo " ${arrows}"
 }
