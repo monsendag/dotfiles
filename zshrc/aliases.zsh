@@ -9,6 +9,9 @@ alias v='vim'
 alias o='open'
 alias a='atom'
 
+# reload zsh config
+alias reload='. ~/.zshrc'
+
 # simple hack to reset ls command 
 # unalias ls
 alias ls='ls --color'

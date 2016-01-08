@@ -250,8 +250,9 @@ if grep -q NAME "$HOME/.gitconfig"; then
   read -r -p "Git name: " git_user 
   read -r -p "Git email: " git_email 
 
-  sed -i "s/NAME/$git_user/g" "$HOME/.gitconfig" 
-  sed -i "s/EMAIL/$git_email/g" "$HOME/.gitconfig" 
+  sed -i "" "s/NAME/$git_user/g" "$HOME/.gitconfig" 
+  sed -i "" "s/EMAIL/$git_email/g" "$HOME/.gitconfig" 
+
 
   e_success "Wrote '$git_user <$git_email>' to ~/.gitconfig"
 fi
@@ -260,6 +261,5 @@ fi
 e_header "All done!"
 
 # reload .zshrc
-e_header "Reloading zsh"
-exec zsh
+e_header "Reload zsh with 'reload'"
 
