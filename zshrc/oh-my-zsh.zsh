@@ -2,6 +2,7 @@ ZSH=$HOME/.dotfiles/vendor/oh-my-zsh
 ZSH_THEME=""
 
 DISABLE_UPDATE_PROMPT=true
+DISABLE_AUTO_UPDATE=true
 
 # don't resolve z symlinks
 # https://github.com/rupa/z
