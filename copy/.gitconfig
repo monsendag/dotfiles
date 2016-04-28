@@ -38,6 +38,7 @@
   root = !pwd
 	ksdiff = difftool -y -t kaleidoscope
 	jsondiff = difftool -y -t jsondiff
+  sha = rev-parse --short HEAD
 
 #############################################################
 [color]
