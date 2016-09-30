@@ -92,3 +92,6 @@ files-send() {
   tar cv "$1" | nc "$2" 1234
 }
 
+# remove banner from ffmpeg calls
+alias ffmpeg='ffmpeg -hide_banner'
+alias ffprobe='ffprobe -hide_banner'
