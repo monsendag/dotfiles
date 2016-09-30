@@ -247,8 +247,8 @@ if grep -q NAME "$HOME/.gitconfig"; then
 
   e_header "Need to configure git user/email"
 
-  read -r -p "Git name: " git_user 
-  read -r -p "Git email: " git_email 
+  read -e -p "Git name: " git_user 
+  read -e -p "Git email: " git_email 
 
   sed -i".old" "s/NAME/$git_user/g" "$HOME/.gitconfig" 
   sed -i".old" "s/EMAIL/$git_email/g" "$HOME/.gitconfig" 
