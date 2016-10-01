@@ -70,5 +70,7 @@ alias gci='git commit'
 alias gdf='git diff'
 alias gbr='git branch'
 
+alias cp='cp -v'
+alias mv='mv -v'
 alias zmv='noglob zmv'
 alias zcp='noglob zmv -C'
