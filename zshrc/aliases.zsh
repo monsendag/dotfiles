@@ -78,9 +78,12 @@ alias zcp='noglob zmv -C'
 # for transferring large data files over local network
 # on receiving node run $ files-receive to start receiving hook
 # on transferring node, run files send $folder $hostname
-alias files-receive='nc -l -p 1234 | tar xv'
+files-receive() {
+  echo "Waiting for transfer.. Run `files-send $HOST` to send files here"
+  'nc -l -p 1234 | tar xv'
+}
 files-send() {
-  echo "sending $1 to $2"
+  echo "transferring $1 to $2"
   tar cv "$1" | nc "$2" 1234
 }
 
