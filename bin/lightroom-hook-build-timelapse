@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+# Add as Post-Processing step in Lightroom
+# Catches directory name from the first argument
+# and passes it to ./timelapse
+# call timelapse script
+
+# get directory without newline character
+dir="$(dirname "$1")"
+dir="$(echo -n $dir)"
+
+# change cwd for timelapse
+cd "$(dir)"
+
+# get scripts folder
+cwd=$(cd $(dirname $0) && pwd)
+
+# input for ffmpeg
+input='*.jpg'
+
+# call timelapse script
+"$cwd/timelapse" -f 20 -r hd1080 "$input"
