@@ -68,6 +68,7 @@ alias ff='noglob find . -type f -iname'
 alias gst='git status'
 alias gci='git commit'
 alias gdf='git diff'
+alias gbr='git branch'
 
 alias zmv='noglob zmv'
 alias zcp='noglob zmv -C'
