@@ -79,9 +79,10 @@ alias zcp='noglob zmv -C'
 # on receiving node run $ files-receive to start receiving hook
 # on transferring node, run files send $folder $hostname
 files-receive() {
-  echo "Waiting for transfer.. Run `files-send $HOST` to send files here"
+  echo "Waiting for transfer.. Run files-send $HOST to send files here"
   'nc -l -p 1234 | tar xv'
 }
+
 files-send() {
   echo "transferring $1 to $2"
   tar cv "$1" | nc "$2" 1234
