@@ -94,3 +94,9 @@
 # https://www.npmjs.com/package/json-diff
 [difftool "jsondiff"]
 	cmd = json-diff "$LOCAL" "$REMOTE"
+[difftool "sourcetree"]
+        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+        path =
+[mergetool "sourcetree"]
+        cmd = /Users/dag/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+        trustExitCode = true
