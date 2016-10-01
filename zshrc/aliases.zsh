@@ -28,7 +28,7 @@ alias cr='cd "$(git root)"'
 alias sr='cd $(svn info | grep "Working Copy Root Path:" | sed "s/.*://")'
 alias less='less -S' # enable horizontal scrolling in less
 alias s='ssh'
-alias subs='filebot -get-subtitles'
+alias subs='filebot -get-missing-subtitles'
 alias ta='tmux a'
 alias c='z'
 alias d='docker'
@@ -74,3 +74,13 @@ alias cp='cp -v'
 alias mv='mv -v'
 alias zmv='noglob zmv'
 alias zcp='noglob zmv -C'
+
+# for transferring large data files over local network
+# on receiving node run $ files-receive to start receiving hook
+# on transferring node, run files send $folder $hostname
+alias files-receive='nc -l -p 1234 | tar xv'
+files-send() {
+  echo "sending $1 to $2"
+  tar cv "$1" | nc "$2" 1234
+}
+
