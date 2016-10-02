@@ -266,9 +266,6 @@ setup() {
 	autoload -Uz add-zsh-hook
 	autoload -Uz vcs_info
 
-	add-zsh-hook precmd precmd
-	add-zsh-hook preexec preexec
-
 	zstyle ':vcs_info:*' enable git
 	zstyle ':vcs_info:*' use-simple true
 	zstyle ':vcs_info:git*' formats ' %b'
