@@ -260,6 +260,9 @@ setup() {
 	# if output doesn't end with a newline
 	export PROMPT_EOL_MARK=''
 
+  # set correct encoding 
+   export LC_ALL=en_US.UTF-8
+
 	prompt_opts=(cr subst percent)
 
 	zmodload zsh/datetime
