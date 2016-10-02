@@ -28,6 +28,7 @@ alias cr='cd "$(git root)"'
 alias sr='cd $(svn info | grep "Working Copy Root Path:" | sed "s/.*://")'
 alias less='less -S' # enable horizontal scrolling in less
 alias s='ssh'
+alias m='mosh'
 alias subs='filebot -get-missing-subtitles'
 alias ta='tmux a'
 alias c='z'
