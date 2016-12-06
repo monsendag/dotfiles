@@ -20,3 +20,5 @@ alias scp='ssh-add -l || ssh-add && scp'
 
 alias cl='clear && clear'
 
+alias windows-git='mv /bin/git.exe /bin/git-cyg.exe'
+alias cygwin-git='mv /bin/git-cyg.exe /bin/git.exe'
