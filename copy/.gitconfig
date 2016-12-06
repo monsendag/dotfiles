@@ -12,8 +12,13 @@
 [apply]
 	whitespace = fix
 
+# make sure we have an upstream when pushing
 [push]
 	default = simple
+
+# rebase by default when pulling
+[pull]
+        rebase = true
 
 # reuse recorded resolution when resolving conflicts
 [rerere]
