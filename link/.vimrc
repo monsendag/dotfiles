@@ -8,7 +8,7 @@ call plug#begin()
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-surround'
   Plug 'bling/vim-airline'
-  Plug 'joshdick/airline-onedark.vim'
+  Plug 'rakr/vim-one'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'kien/ctrlp.vim'
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -28,7 +28,7 @@ call plug#end()
 filetype plugin indent on " load indent file for specific filetypes
 
 syntax enable " enable syntax highlighting
-colorscheme onedark
+colorscheme one
 
 " The 'scrolloff' (scroll offset) option determines 
 " the number of context lines you would like to see above and below the cursor
@@ -206,7 +206,7 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " bling/vim-airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='onedark'
+let g:airline_theme='one'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_z=''
