@@ -29,6 +29,7 @@ filetype plugin indent on " load indent file for specific filetypes
 
 syntax enable " enable syntax highlighting
 colorscheme one
+set background=dark
 
 " The 'scrolloff' (scroll offset) option determines 
 " the number of context lines you would like to see above and below the cursor
