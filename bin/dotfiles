@@ -16,8 +16,7 @@ http://benalman.com/about/license/
 HELP
 exit; fi
 
-source ./utils.bash
-
+source utils.bash
 
 # Given a list of desired items and installed items, return a list
 # of uninstalled items. Arrays in bash are insane (not in a good way).
@@ -229,6 +228,8 @@ do_stuff "init"
 do_stuff "copy"
 do_stuff "link"
 
+e_header "running post hooks"
+
 # Alert if backups were made.
 if [[ "$backup" ]]; then
   echo -e "\nBackups were moved to ~/${backup_dir#$HOME/}"
@@ -236,14 +237,14 @@ fi
 
 # Lest I forget to do a few additional things...
 if [[ "$new_dotfiles_install" && -e "conf/firsttime_reminder.sh" ]]; then
-  e_header "First-Time Reminders"
+  e_arrow "First-Time Reminders"
   source "conf/firsttime_reminder.sh"
 fi
 
 if grep -q NAME "$HOME/.gitconfig"; then
 
-  e_header "Need to configure git user/email"
-  echo "run dotfiles-git-configure"
+  e_arrow "Need to configure git user/email"
+  e_arrow "run \`dotfiles-git-configure\`"
 
 fi
 
