@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+source ./utils.bash
+
+SRC="$1"
+TARGET="$2"
+ACTION="move"
+
+filebot -script fn:amc \ 
+  --log-file "$HOME/.amc.log" \
+  --output "$TARGET" \
+  --action "$ACTION" \
+  --conflict override -non-strict \
+  --def subtitles=en \
+    artwork=y \
+    clean=y \
+    "$SRC"
