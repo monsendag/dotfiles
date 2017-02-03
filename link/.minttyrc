@@ -1,8 +1,8 @@
 BoldAsFont=no
-Columns=155
-Rows=60
-ScrollbackLines=20000
-FontHeight=10
+Columns=189
+Rows=46
+ScrollbackLines=999999
+FontHeight=11
 Locale=nb_NO
 Charset=UTF-8
 Font=Consolas
@@ -14,3 +14,4 @@ AllowBlinking=yes
 ForegroundColour=185,185,185
 ConfirmExit=no
 Term=xterm-256color
+Language=en_US
