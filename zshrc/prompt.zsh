@@ -250,7 +250,6 @@ setup() {
 	ZSH_HIGHLIGHT_STYLES[path]='fg=033'
 	ZSH_HIGHLIGHT_STYLES[alias]='fg=118'
 	ZSH_HIGHLIGHT_STYLES[function]='fg=192'
-	ZSH_HIGHLIGHT_PATTERNS+=('sudo *' 'bg=1')
 
 	# ignore underscore-prefixed completions
 	# see http://unix.stackexchange.com/a/116205/66370
