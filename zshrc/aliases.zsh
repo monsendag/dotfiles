@@ -9,6 +9,7 @@ alias v='vim'
 alias o='open'
 alias a='atom'
 
+
 # reload zsh config
 alias reload='. ~/.zshrc'
 
@@ -69,13 +70,17 @@ alias fd='noglob find . -type d -iname'
 alias ff='noglob find . -type f -iname'
 
 # git aliases
+alias g='hub'
 alias gst='git status'
 alias gci='git commit'
 alias gdf='git diff'
 alias gbr='git branch -v'
 
-alias cp='cp -v'
-alias mv='mv -v'
+# make cp and mv verbose and ask before overwriting files
+# https://askubuntu.com/a/236484
+alias cp='cp -v -i'
+alias mv='mv -v -i'
+
 alias zmv='noglob zmv'
 alias zcp='noglob zmv -C'
 
