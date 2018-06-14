@@ -47,8 +47,9 @@ ffmpeg -pattern_type glob \
         -i "$input" \
         -r "$framerate" \
         -s "$resolution" \
-        -vcodec libx264 \
-        -pix_fmt yuvj444p \
+        -c:v libx265 \
+        -crf 28 \
+        -threads 4
        "$outfile"
 
 echo "timelapse compiled: $outfile"
