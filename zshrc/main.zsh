@@ -1,7 +1,5 @@
 ZSHRC="$(cd "$(dirname "$0")" ; pwd -P)"
 
-HISTSIZE=50000 # session history size
-SAVEHIST=100000 # saved history size
 
 # grep colors (see manpage)
 # http://www.gnu.org/software/grep/manual/html_node/Environment-Variables.html
@@ -45,6 +43,17 @@ export EDITOR=vim
 
 # set virtualenvwrapper working directory
 export WORKON_HOME=$HOME/.virtualenvs
+
+# how many lines of history to keep in memory
+HISTSIZE=50000
+# how many history entries to save to disk
+SAVEHIST=100000
+# append history to the history file (no overwriting)
+setopt    appendhistory
+# share history across terminals
+setopt    sharehistory
+#immediately append to the history file, not just when a term is killed
+setopt    incappendhistory
 
 # load repo independent settings (can overwrite previous settings)
 [ -f "$HOME/.environment" ] && source "$HOME/.environment"; 
