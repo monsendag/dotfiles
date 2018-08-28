@@ -20,6 +20,10 @@
 [pull]
         rebase = true
 
+# prune deleted branches automatically when fetching from origin
+[remote "origin"]
+	prune = true
+
 # reuse recorded resolution when resolving conflicts
 [rerere]
 	enabled = 1
