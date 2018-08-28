@@ -8,7 +8,7 @@ DISABLE_AUTO_UPDATE=true
 # https://github.com/rupa/z
 export _Z_NO_RESOLVE_SYMLINKS=true
 
-plugins=(z k gitfast vi-mode history-substring-search brew gnu-utils docker mvn npm)
+plugins=(z k gitfast vi-mode history-substring-search gnu-utils docker mvn npm)
 source $ZSH/oh-my-zsh.sh
 
 # fix for history substring search (see robbyrussel/oh-my-zsh#2735)
