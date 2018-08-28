@@ -1,6 +1,6 @@
 BoldAsFont=no
-Columns=189
-Rows=46
+Columns=160
+Rows=40
 ScrollbackLines=999999
 FontHeight=11
 Locale=nb_NO
@@ -15,3 +15,4 @@ ForegroundColour=185,185,185
 ConfirmExit=no
 Term=xterm-256color
 Language=en_US
+window=normal
