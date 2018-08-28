@@ -248,7 +248,7 @@ fi
 if grep -q NAME "$HOME/.gitconfig"; then
 
   e_arrow "Need to configure git user/email"
-  e_arrow "run \`dotfiles-git-configure\`"
+  e_arrow "run \`git user\`"
 
 fi
 
