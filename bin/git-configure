@@ -9,8 +9,22 @@ e_header "Configuring git credentials"
 
 echo -n "Git name: ";
 read -e git_user
+
+if [ -z "$git_user" ]; then
+  e_error "Name is empty";
+  exit 1;
+fi
+
+
 echo -n "Git email: ";
 read -e git_email
+
+
+if [[ ${git_email} != *"@"* ]];then
+  e_error "'$git_email' is not a valid email address";
+  exit 1;
+fi
+
 
 git config --global user.name "$git_user"
 git config --global user.email "$git_email"
