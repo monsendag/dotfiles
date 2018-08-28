@@ -7,18 +7,11 @@ function e_arrow()    { echo -e " \033[1;33m➜\033[0m  $@"; }
 
 e_header "Configuring git credentials"
 
-if grep -q NAME "$HOME/.gitconfig"; then
+read -e -p "Git name: " git_user
+read -e -p "Git email: " git_email
 
-  read -e -p "Git name: " git_user
-  read -e -p "Git email: " git_email
+git config --global user.name "$git_user"
+git config --global user.email "$git_email"
 
-  sed -i".old" "s/NAME/$git_user/g" "$HOME/.gitconfig"
-  sed -i".old" "s/EMAIL/$git_email/g" "$HOME/.gitconfig"
+e_success "Wrote '$git_user <$git_email>' to ~/.gitconfig"
 
-  e_success "Wrote '$git_user <$git_email>' to ~/.gitconfig"
-
-else
-
-  echo "Git credentials are already configured."
-
-fi
