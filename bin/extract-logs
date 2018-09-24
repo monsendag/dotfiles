@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+#
+# Poseidon Simulation AS
+# Will extract a Pharos log bundle # from customers, including zipped archives.
+#
+# usage: extract-logs *.zip
+#
+# after that you can search it with ripgrep
+# ex. `rg ERROR`
+
+dir="$PWD"
+
+files=("$@")
+for file in "${files[@]}"; do
+  cd "$dir"
+
+  echo "extracting $file"
+
+  file=$(basename -- "$file")
+  name="${file%.*}"
+  ext="${file##*.}"
+
+
+  7z x "$file" -o"$name" -aoa>/dev/null
+  rm "$file"
+
+  archive="$name/log/archive"
+  cd "$name/log/archive"
+
+  for f in *.zip; do
+    7z e "$f" >/dev/null;
+    rm "$f";
+  done
+done
