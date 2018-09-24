@@ -32,5 +32,8 @@
   },
   "globals": {
     "IS_SERVER": true
+  },
+  parserOptions: {
+     sourceType: "module"
   }
 }
