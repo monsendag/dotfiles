@@ -3,6 +3,7 @@ set nocompatible        " be iMproved
 set modelines=0
 
 call plug#begin()
+  Plug 'rust-lang/rust.vim'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-sleuth'
