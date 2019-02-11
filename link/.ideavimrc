@@ -54,5 +54,3 @@ nnoremap <leader>w <C-w>v<C-w>l
 
 "Type <Space>w to save file
 nnoremap <Leader>w :w<CR> 
-
-set relativenumber
