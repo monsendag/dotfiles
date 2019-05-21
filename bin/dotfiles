@@ -219,6 +219,8 @@ else
   git submodule update --init --recursive --quiet
 fi
 
+export PATH="$HOME/.dotfiles/bin:$PATH";
+
 # Tweak file globbing.
 shopt -s dotglob
 shopt -s nullglob
