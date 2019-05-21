@@ -242,9 +242,12 @@ setup() {
 
 	# include zsh-syntax-highlighting
 	source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  #
-	# include zsh-syntax-highlighting
+
+	# include zsh-autosuggestions
 	source ~/.dotfiles/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+	# include k
+	source ~/.dotfiles/vendor/k/k.sh
 
   # configure colors
   # list of indices http://i.stack.imgur.com/UQVe5.png

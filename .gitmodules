@@ -7,3 +7,6 @@
 [submodule "vendor/zsh-autosuggestions"]
 	path = vendor/zsh-autosuggestions
 	url = git://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "vendor/k"]
+	path = vendor/k
+	url = git://github.com/supercrabtree/k
