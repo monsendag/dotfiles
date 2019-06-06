@@ -71,10 +71,14 @@ alias ff='noglob find . -type f -iname'
 
 # git aliases
 alias g='git'
+alias ga='git add'
 alias gst='git status'
 alias gci='git commit'
 alias gdf='git diff'
 alias gbr='git branch -v'
+alias gco='git checkout'
+alias gps='git push'
+alias gpl='git pull'
 
 # make cp and mv verbose and ask before overwriting files
 # https://askubuntu.com/a/236484
