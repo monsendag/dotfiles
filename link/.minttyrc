@@ -16,3 +16,4 @@ ConfirmExit=no
 Term=xterm-256color
 Language=en_US
 window=normal
+AllowSetSelection=true
