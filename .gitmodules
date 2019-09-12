@@ -9,4 +9,7 @@
 	url = git://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "vendor/k"]
 	path = vendor/k
-	url = git://github.com/supercrabtree/k
+	url = git://github.com/supercrabtree/k.git
+[submodule "vendor/tpm"]
+	path = vendor/tpm
+	url = git://github.com/tmux-plugins/tpm.git
