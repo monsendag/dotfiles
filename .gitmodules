@@ -1,15 +1,15 @@
 [submodule "vendor/oh-my-zsh"]
 	path = vendor/oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh.git
+	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "vendor/zsh-syntax-highlighting"]
 	path = vendor/zsh-syntax-highlighting
-	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "vendor/zsh-autosuggestions"]
 	path = vendor/zsh-autosuggestions
-	url = git://github.com/zsh-users/zsh-autosuggestions.git
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "vendor/k"]
 	path = vendor/k
-	url = git://github.com/supercrabtree/k.git
+	url = https://github.com/supercrabtree/k.git
 [submodule "vendor/tpm"]
 	path = vendor/tpm
-	url = git://github.com/tmux-plugins/tpm.git
+	url = https://github.com/tmux-plugins/tpm.git
