@@ -31,6 +31,7 @@
 [alias]
 	br = branch
 	ci = commit
+  ciam = commit --amend --no-edit
 	co = checkout
   cl = clone
 	df = diff
