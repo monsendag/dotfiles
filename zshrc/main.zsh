@@ -42,10 +42,10 @@ fi
 # eval "$(lesspipe.sh)"
 
 # load OS specific code
-[ `uname` '==' "Linux" ] && source "$ZSHRC/linux.zsh";
 [ `uname` '==' "Darwin" ] && source "$ZSHRC/mac.zsh";
 [ $OSTYPE '==' "cygwin" ] && source "$ZSHRC/cygwin.zsh";
 [[ -e /proc/version && -n `grep Microsoft /proc/version` ]] && source "$ZSHRC/wsl.zsh";
+[[ -n `grep Ubuntu /etc/issue 2>/dev/null` ]] && source "$ZSHRC/ubuntu.zsh";
 
 export EDITOR=vim
 
