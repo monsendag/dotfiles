@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # fail on error
-set -e
+# set -e
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
 
@@ -100,6 +100,7 @@ function link_do() {
 function do_stuff() {
   local base dest skip
   local files=(~/.dotfiles/$1/*)
+
   # No files? abort.
   if (( ${#files[@]} == 0 )); then return; fi
   # Run _header function only if declared.
@@ -215,7 +216,7 @@ else
   # Make sure we have the latest files.
   e_header "Updating dotfiles"
   cd ~/.dotfiles
-  git pull
+  git pull --rebase=false
   git submodule update --init --recursive --quiet
 fi
 
@@ -228,6 +229,7 @@ shopt -s nullglob
 # If backups are needed, this is where they'll go.
 backup_dir="$HOME/.dotfiles/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
 backup=
+
 
 # Execute code for each file in these subdirectories.
 do_stuff "init"
