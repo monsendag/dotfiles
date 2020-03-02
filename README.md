@@ -4,7 +4,7 @@
 Run this command in a UNIX shell (works in OS X, Linux and Cygwin).
 
 ```
-curl -fsSL df.dag.im | bash
+curl -fsSL https://raw.githubusercontent.com/monsendag/dotfiles/master/bin/dotfiles | bash
 ```
 
 ## What does the dotfiles command do?
