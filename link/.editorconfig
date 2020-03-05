@@ -12,3 +12,8 @@ indent_size = 2
 indent_style = space
 indent_size = 4
 
+
+# git config --global uses tab identation
+# so we should stay in sync
+[.gitconfig]
+indent_style = tab
