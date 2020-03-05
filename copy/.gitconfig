@@ -3,8 +3,8 @@
 	email = EMAIL
 
 [core]
-  # always checkout as LF, but correct accidental CRLF on input
-  # ref http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#Formatting-and-Whitespace
+	# always checkout as LF, but correct accidental CRLF on input
+	# ref http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#Formatting-and-Whitespace
 	autocrlf = input
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	excludesfile = ~/.dotfiles/conf/gitignore.conf
@@ -12,13 +12,13 @@
 [apply]
 	whitespace = fix
 
-# make sure we have an upstream when pushing
 [push]
-	default = simple
+	# create an upstream automatically when pushing 
+	default = current
 
 # rebase by default when pulling
 [pull]
-        rebase = true
+	rebase = true
 
 # prune deleted branches automatically when fetching from origin
 [remote "origin"]
@@ -31,24 +31,34 @@
 [alias]
 	br = branch
 	ci = commit
-  amend = commit --amend --no-edit
+	# overwrite previous commit without editing message
+	amend = commit --amend --no-edit
 	co = checkout
-  cl = clone
+	cl = clone
 	df = diff
-  dt = difftool
+	dt = difftool
 	g = grep -I
-  lg = log --graph --date=short --pretty=format:'%C(red)%h %Cgreen(%cr) %C(cyan)<%an> %Creset%s %C(yellow)%d'
+	lg = log --graph --date=short --pretty=format:'%C(red)%h %Cgreen(%cr) %C(cyan)<%an> %Creset%s %C(yellow)%d'
 	rb = rbranch
 	rv = review
 	st = status
+	# pull, then push
 	pp = !"echo pulling ...; git pull; echo pushing ...; git push"
-  ps = push
-  pl = pull
-  # for use with 'alias cr=$(cd git root)'
-  root = !pwd
+	ps = push
+	pl = pull
+	# returns the root path of the repository
+	# for use with "alias cr=$(cd git root)'
+	root = !pwd
 	ksdiff = difftool -y -t kaleidoscope
 	jsondiff = difftool -y -t jsondiff
-  sha = rev-parse --short HEAD
+	# print current sha
+	sha = rev-parse --short HEAD
+	# stash all current work
+	s = stash --include-untracked
+	# stash only untracked files
+	su = !"git stash; git stash -u; git stash pop stash@{1}"
+	# pop stash
+	sp = stash pop
 
 #############################################################
 [color]
@@ -96,17 +106,11 @@
 
 # Intellij IDEA
 [difftool "idea"]
-  cmd = idea diff "$LOCAL" "$REMOTE"
+	cmd = idea diff "$LOCAL" "$REMOTE"
 [mergetool "idea"]
-  cmd = idea merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+	cmd = idea merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 
 # json-diff 
 # https://www.npmjs.com/package/json-diff
 [difftool "jsondiff"]
 	cmd = json-diff "$LOCAL" "$REMOTE"
-[difftool "sourcetree"]
-        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-        path =
-[mergetool "sourcetree"]
-        cmd = /Users/dag/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-        trustExitCode = true
