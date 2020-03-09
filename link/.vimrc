@@ -125,6 +125,9 @@ set esckeys timeout nottimeout
 " jj : exit insert mode 
 :imap jj <Esc>
 
+" remap visual block selection to Ctrl+Shift+V
+nnoremap <C-S-v> <c-v>
+
 " use tab to match bracket pair instead of %
 nnoremap <tab> %
 vnoremap <tab> %
