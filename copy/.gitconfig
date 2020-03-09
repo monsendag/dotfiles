@@ -36,6 +36,7 @@
 	co = checkout
 	cl = clone
 	df = diff
+	dfs = diff --staged
 	dt = difftool
 	g = grep -I
 	lg = log --graph --date=short --pretty=format:'%C(red)%h %Cgreen(%cr) %C(cyan)<%an> %Creset%s %C(yellow)%d'
