@@ -60,6 +60,8 @@
 	su = !"git stash; git stash -u; git stash pop stash@{1}"
 	# pop stash
 	sp = stash pop
+	# reset to last head
+	rh = reset HEAD^
 
 #############################################################
 [color]
