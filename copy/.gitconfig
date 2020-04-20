@@ -10,7 +10,7 @@
 	excludesfile = ~/.dotfiles/conf/gitignore.conf
 
 [apply]
-	whitespace = fix
+	whitespace = warn
 
 [push]
 	# create an upstream automatically when pushing 
@@ -29,7 +29,7 @@
 	enabled = 1
 
 [alias]
-	br = branch
+	br = branch -vv --sort=-committerdate
 	ci = commit
 	# overwrite previous commit without editing message
 	amend = commit --amend --no-edit
@@ -40,13 +40,13 @@
 	dt = difftool
 	g = grep -I
 	lg = log --graph --date=short --pretty=format:'%C(red)%h %Cgreen(%cr) %C(cyan)<%an> %Creset%s %C(yellow)%d'
-	rb = rbranch
 	rv = review
-	st = status
+	st = status -b 
 	# pull, then push
 	pp = !"echo pulling ...; git pull; echo pushing ...; git push"
 	ps = push
 	pl = pull
+	cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|dev' | xargs -n 1 git branch -d"
 	# returns the root path of the repository
 	# for use with "alias cr=$(cd git root)'
 	root = !pwd
@@ -60,8 +60,11 @@
 	su = !"git stash; git stash -u; git stash pop stash@{1}"
 	# pop stash
 	sp = stash pop
-	# reset to last head
+	# reset HEAD^
 	rh = reset HEAD^
+
+	r = rebase
+	praise = blame
 
 #############################################################
 [color]
