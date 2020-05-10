@@ -8,8 +8,12 @@ DISABLE_AUTO_UPDATE=true
 # https://github.com/rupa/z
 export _Z_NO_RESOLVE_SYMLINKS=true
 
-plugins=(z gitfast vi-mode history-substring-search gnu-utils docker mvn npm adb)
+plugins=(z gitfast vi-mode history-substring-search gnu-utils docker mvn npm adb kubectl)
 source $ZSH/oh-my-zsh.sh
+
+
+# the kubernetes plugin alias k craashes with zsh k plugin
+unalias k
 
 # fix for history substring search (see robbyrussel/oh-my-zsh#2735)
 bindkey "^[OA" up-line-or-history
