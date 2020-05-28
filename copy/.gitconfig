@@ -8,6 +8,7 @@
 	autocrlf = input
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	excludesfile = ~/.dotfiles/conf/gitignore.conf
+	fileMode = false
 
 [apply]
 	whitespace = warn
@@ -46,6 +47,7 @@
 	pp = !"echo pulling ...; git pull; echo pushing ...; git push"
 	ps = push
 	pl = pull
+	pls = !"echo stashing..; git s; echo pulling..; git pull; echo popping..; git sp"
 	cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|dev' | xargs -n 1 git branch -d"
 	# returns the root path of the repository
 	# for use with "alias cr=$(cd git root)'
@@ -60,8 +62,14 @@
 	su = !"git stash; git stash -u; git stash pop stash@{1}"
 	# pop stash
 	sp = stash pop
-	# reset HEAD^
+	# pop head
 	rh = reset HEAD^
+
+	# commit all changes as a "wip commit"
+	# this is often cleaner to put in a wip branch
+	# than to stash it. Stashes are often hard to keep track of
+	# when you have many parallell works in progress
+	wip = !"cd $(git root); git add .; git commit -m 'wip'"
 
 	r = rebase
 	praise = blame
