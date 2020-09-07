@@ -108,6 +108,7 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=120
 
+hi Search ctermbg=Red
 
 " save on losing focus
 au FocusLost * :wa
