@@ -40,6 +40,8 @@
 	dfs = diff --staged
 	# overwrite previous commit without editing message
 	amend = commit --amend --no-edit
+	# stage patch
+	p = add -p
 	dt = difftool
 	g = grep -I
 	lg = log --graph --date=short --pretty=format:'%C(red)%h %Cgreen(%cr) %C(cyan)<%an> %Creset%s %C(yellow)%d'
