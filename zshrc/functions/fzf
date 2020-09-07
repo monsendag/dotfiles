@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 # fzf examples from https://github.com/junegunn/fzf/wiki/Examples#general
 
-
 # Use fd and fzf to get the args to a command.
 # Works only with zsh
 # Examples:
@@ -13,7 +12,6 @@ f() {
     sels=( "${(@f)$(fd "${fd_default[@]}" "${@:2}"| fzf)}" )
     test -n "$sels" && print -z -- "$1 ${sels[@]:q:q}"
 }
-
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
@@ -36,4 +34,20 @@ vf() {
      vim -- $files
      print -l $files[1]
   fi
+}
+
+# fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
+fbr() {
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+  branch=$(echo "$branches" |
+  fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# c: like normal z when used with arguments but displays an fzf prompt when used without
+unalias z 2> /dev/null
+c() {
+  [ $# -gt 0 ] && z "$*" && return
+  cd "$(z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
 }

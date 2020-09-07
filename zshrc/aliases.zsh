@@ -33,7 +33,6 @@ alias s='ssh'
 alias m='mosh'
 alias subs='filebot -get-missing-subtitles'
 alias ta='tmux a'
-alias c='z'
 alias d='docker'
 alias dc='docker-compose'
 alias dm='docker-machine --native-ssh'
@@ -67,16 +66,18 @@ alias p='ps -f'
 
 alias dud='du -d 1 -h'
 alias duf='du -sh * | sort -h'
-alias fd='noglob find . -type d -iname'
-alias ff='noglob find . -type f -iname'
+
+# fd/ff replaced with sharkdp/fd 
+# alias fd='noglob find . -type d -iname'
+# alias ff='noglob find . -type f -iname'
 
 # git aliases
 alias g='git'
 alias ga='git add'
-alias gst='git status'
+alias gst='git st'
 alias gci='git commit'
 alias gdf='git diff'
-alias gbr='git branch -v'
+alias gbr='git br -v'
 alias gco='git checkout'
 alias gps='git push'
 alias gpl='git pull'
@@ -105,3 +106,4 @@ files-send() {
 # remove banner from ffmpeg calls
 alias ffmpeg='ffmpeg -hide_banner'
 alias ffprobe='ffprobe -hide_banner'
+

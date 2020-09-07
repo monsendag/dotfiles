@@ -1,5 +1,7 @@
 ZSHRC="$(cd "$(dirname "$0")" ; pwd -P)"
 
+# set default fzf command
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
 # grep colors (see manpage)
 # http://www.gnu.org/software/grep/manual/html_node/Environment-Variables.html
@@ -14,7 +16,7 @@ compinit
 bashcompinit
 
 # load functions 
-autoload zmv ckd de
+autoload zmv ckd de fzf
 
 # source $ZSHRC/async.zsh
 
