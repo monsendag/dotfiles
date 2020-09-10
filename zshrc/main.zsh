@@ -15,8 +15,7 @@ autoload -Uz compinit bashcompinit compdef
 compinit
 bashcompinit
 
-# load functions 
-autoload zmv ckd de fzf
+autoload zmv ckd de 
 
 # source $ZSHRC/async.zsh
 
@@ -29,8 +28,9 @@ source $ZSHRC/prompt.zsh
 # custom aliases
 source $ZSHRC/aliases.zsh
 
-# load custom zsh functions
-fpath=( $ZSHRC/functions "${fpath[@]}" )
+# load functions
+source $ZSHRC/functions.zsh
+
 
 function e_arrow()    { echo -e " \033[1;33m➜\033[0m  $@"; }
 

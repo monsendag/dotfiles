@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
-# fzf examples from https://github.com/junegunn/fzf/wiki/Examples#general
+#
+# collection of functions
+#
+# Most of the fzf functions are from https://github.com/junegunn/fzf/wiki/Examples#general
 
 # Use fd and fzf to get the args to a command.
 # Works only with zsh
@@ -36,7 +39,7 @@ vf() {
   fi
 }
 
-# fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
+# fbr: checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
 fbr() {
   local branches branch
   branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
@@ -50,4 +53,9 @@ unalias z 2> /dev/null
 c() {
   [ $# -gt 0 ] && z "$*" && return
   cd "$(z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+}
+
+# ckd: create a folder and enter it
+ckd() {
+  mkdir -p "$1" && cd "$1"
 }

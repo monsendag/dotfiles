@@ -1,2 +1,0 @@
-# create a folder and enter it 
-mkdir -p "$1" && cd "$1" 

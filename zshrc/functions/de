@@ -1,4 +1,0 @@
-# set docker environment
-eval $(docker-machine env --shell=cmd $* \
-      | sed -s 's/^set/export/g' \
-      | sed -s 's/\\/\//g')
