@@ -4,7 +4,7 @@
 # Install Homebrew.
 if [[ ! "$(type -P brew)" ]]; then
   e_header "Installing Homebrew"
-  /usr/bin/env ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)";
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # Install Homebrew recipes.
@@ -14,6 +14,7 @@ if [[ "$(type -P brew)" ]]; then
   git-extras
   zsh
   tree
+  fzf
   )
 
   list="$(to_install "${recipes[*]}" "$(brew list)")"

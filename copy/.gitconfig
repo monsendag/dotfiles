@@ -8,9 +8,10 @@
 	autocrlf = input
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	excludesfile = ~/.dotfiles/conf/gitignore.conf
+	fileMode = false
 
 [apply]
-	whitespace = fix
+	whitespace = warn
 
 [push]
 	# create an upstream automatically when pushing 
@@ -29,23 +30,31 @@
 	enabled = 1
 
 [alias]
-	br = branch
+	praise = blame
+	br = branch -vv --sort=-committerdate
 	ci = commit
-	# overwrite previous commit without editing message
-	amend = commit --amend --no-edit
 	co = checkout
 	cl = clone
 	df = diff
+	# diff staged files
+	dfs = diff --staged
+	# overwrite previous commit without editing message
+	amend = commit --amend --no-edit
+	# stage patch
+	p = add -p
 	dt = difftool
 	g = grep -I
 	lg = log --graph --date=short --pretty=format:'%C(red)%h %Cgreen(%cr) %C(cyan)<%an> %Creset%s %C(yellow)%d'
-	rb = rbranch
 	rv = review
-	st = status
+	st = status -b 
 	# pull, then push
 	pp = !"echo pulling ...; git pull; echo pushing ...; git push"
 	ps = push
 	pl = pull
+	# stash current changes, pull, then pop the stash on top 
+	pls = !"echo stashing..; git s; echo pulling..; git pull; echo popping..; git sp"
+	# clean branches merged with master 
+	cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|dev' | xargs -n 1 git branch -d"
 	# returns the root path of the repository
 	# for use with "alias cr=$(cd git root)'
 	root = !pwd
@@ -59,6 +68,17 @@
 	su = !"git stash; git stash -u; git stash pop stash@{1}"
 	# pop stash
 	sp = stash pop
+	# pop head commit
+	rh = reset HEAD^
+	# commit all changes as a "wip commit"
+	# Commiting as "WIP", then reopening the commit is often more tidy than
+	# using stash, as stash is hard to track across branches when you have
+	# many parallell works in progress
+	wip = !"cd $(git root); git add .; git commit --no-verify -m 'WIP'"
+
+	r = rebase
+	# continue a rebase
+	cont = rebase --continue
 
 #############################################################
 [color]

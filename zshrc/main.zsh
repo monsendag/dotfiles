@@ -1,5 +1,7 @@
 ZSHRC="$(cd "$(dirname "$0")" ; pwd -P)"
 
+# set default fzf command
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
 # grep colors (see manpage)
 # http://www.gnu.org/software/grep/manual/html_node/Environment-Variables.html
@@ -13,8 +15,7 @@ autoload -Uz compinit bashcompinit compdef
 compinit
 bashcompinit
 
-# load functions 
-autoload zmv ckd de
+autoload zmv ckd de 
 
 # source $ZSHRC/async.zsh
 
@@ -27,8 +28,9 @@ source $ZSHRC/prompt.zsh
 # custom aliases
 source $ZSHRC/aliases.zsh
 
-# load custom zsh functions
-fpath=( $ZSHRC/functions "${fpath[@]}" )
+# load functions
+source $ZSHRC/functions.zsh
+
 
 function e_arrow()    { echo -e " \033[1;33m➜\033[0m  $@"; }
 

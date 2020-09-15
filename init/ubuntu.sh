@@ -6,6 +6,7 @@ packages=(
   git-core
   zsh
   tree
+  fzf
 )
 
 

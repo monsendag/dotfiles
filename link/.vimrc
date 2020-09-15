@@ -108,6 +108,7 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=120
 
+hi Search ctermbg=Red
 
 " save on losing focus
 au FocusLost * :wa
@@ -124,6 +125,9 @@ set esckeys timeout nottimeout
 
 " jj : exit insert mode 
 :imap jj <Esc>
+
+" remap visual block selection to Ctrl+Shift+V
+nnoremap <C-S-v> <c-v>
 
 " use tab to match bracket pair instead of %
 nnoremap <tab> %
