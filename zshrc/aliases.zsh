@@ -65,7 +65,7 @@ alias -g P='pbpaste'
 alias p='ps -f'
 
 alias dud='du -d 1 -h'
-alias duf='du -sh * | sort -h'
+alias duf='du -sh $(ls -A) | sort -h'
 
 # fd/ff replaced with sharkdp/fd 
 # alias fd='noglob find . -type d -iname'
