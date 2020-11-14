@@ -10,6 +10,7 @@ packages=(
 )
 
 
+
 # add uninstalled packages to list
 list=()
 for package in "${packages[@]}"; do
@@ -25,3 +26,6 @@ if (( ${#list[@]} > 0 )); then
     sudo apt-get -qq install "$package"
   done
 fi
+
+# install starship (not in apt repos)
+curl -fsSL https://starship.rs/install.sh | bash
