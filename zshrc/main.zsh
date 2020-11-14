@@ -34,7 +34,7 @@ source $ZSHRC/functions.zsh
 
 function e_arrow()    { echo -e " \033[1;33m➜\033[0m  $@"; }
 
-if grep -q NAME "$HOME/.gitconfig"; then
+if rg NAME "$HOME/.gitconfig"; then
   e_arrow "Need to configure git user/email"
   e_arrow "run \`git user\`"
 fi
