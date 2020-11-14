@@ -66,7 +66,6 @@ setopt    sharehistory
 setopt    incappendhistory
 
 # load repo independent settings (can overwrite previous settings)
-[ -f "$HOME/.environment" ] && source "$HOME/.environment"; 
 [ -f "$HOME/.environment.sh" ] && source "$HOME/.environment.sh"; 
 
 # ctrl+Z to load buffer
