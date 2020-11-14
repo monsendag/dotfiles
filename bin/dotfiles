@@ -163,6 +163,7 @@ elif [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]; then
     e_header "Installing Git"
     sudo apt-get -qq install git-core
   fi
+fi
 
 # If Git isn't installed by now, something exploded. We gots to quit!
 if [[ ! "$(type -P git)" ]]; then
