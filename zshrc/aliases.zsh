@@ -9,6 +9,8 @@ alias v='vim'
 alias o='open'
 alias a='atom'
 
+alias kc='kubectl'
+
 
 # reload zsh config
 alias reload='. ~/.zshrc'
