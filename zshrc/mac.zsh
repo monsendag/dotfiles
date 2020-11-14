@@ -1,12 +1,11 @@
 
 # JAVA_HOME
-export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-12.jdk/Contents/Home"
 
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"
 
 # only update homebrew once a week
 export HOMEBREW_AUTO_UPDATE_SECS=604800 
-
 
 # mac specific aliases
 alias g='hub'
