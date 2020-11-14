@@ -10,6 +10,7 @@ fi
 # Install Homebrew recipes.
 if [[ "$(type -P brew)" ]]; then
   recipes=(
+  starship
   git
   git-extras
   zsh
