@@ -22,8 +22,8 @@ autoload zmv ckd de
 # oh-my-zsh configuration
 source $ZSHRC/oh-my-zsh.zsh
 
-# custom prompt 
-source $ZSHRC/prompt.zsh
+# set starship prompt 
+eval "$(starship init zsh)"
 
 # custom aliases
 source $ZSHRC/aliases.zsh
