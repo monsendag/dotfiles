@@ -20,7 +20,7 @@ if [[ "$(type -P brew)" ]]; then
   exa
   )
 
-  list="$(to_install "${recipes[*]}" "$(brew list)")"
+  list="$(to_install "${recipes[*]}" "$(brew list --formula)")"
   if [[ "$list" ]]; then
     e_header "Installing Homebrew recipes: $list"
     brew install $list
