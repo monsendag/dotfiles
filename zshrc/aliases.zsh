@@ -21,7 +21,8 @@ alias ls='ls --color'
 
 alias vrc='vim ~/.vimrc'
 
-alias l='exa -l --classify --group --time-style=long-iso --git --color-scale'
+alias l='exa --long --git --group-directories-first --time-style=long-iso'
+alias l='ls -lFh --time-style=long-iso'     #size,show type,human readable
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
 alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
 alias lt='l -t'   #long list,sorted by date,show type,human readable
@@ -66,7 +67,7 @@ alias -g P='pbpaste'
 alias p='ps -f'
 
 alias dud='du -d 1 -h'
-alias duf='du -sh $(ls -A) | sort -h'
+alias duf='du -sh $(ls -A --color=never) | sort -h'
 
 # fd/ff replaced with sharkdp/fd 
 # alias fd='noglob find . -type d -iname'
