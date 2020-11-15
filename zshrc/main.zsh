@@ -17,13 +17,11 @@ bashcompinit
 
 autoload zmv ckd de 
 
-# source $ZSHRC/async.zsh
-
 # oh-my-zsh configuration
 source $ZSHRC/oh-my-zsh.zsh
 
-# custom prompt 
-source $ZSHRC/prompt.zsh
+# set starship prompt 
+eval "$(starship init zsh)"
 
 # custom aliases
 source $ZSHRC/aliases.zsh
@@ -34,7 +32,7 @@ source $ZSHRC/functions.zsh
 
 function e_arrow()    { echo -e " \033[1;33m➜\033[0m  $@"; }
 
-if grep -q NAME "$HOME/.gitconfig"; then
+if rg NAME "$HOME/.gitconfig"; then
   e_arrow "Need to configure git user/email"
   e_arrow "run \`git user\`"
 fi
@@ -45,7 +43,6 @@ fi
 
 # load OS specific code
 [ `uname` '==' "Darwin" ] && source "$ZSHRC/mac.zsh";
-[ $OSTYPE '==' "cygwin" ] && source "$ZSHRC/cygwin.zsh";
 [[ -e /proc/version && -n `grep Microsoft /proc/version` ]] && source "$ZSHRC/wsl.zsh";
 [[ -n `grep Ubuntu /etc/issue 2>/dev/null` ]] && source "$ZSHRC/ubuntu.zsh";
 
@@ -66,7 +63,6 @@ setopt    sharehistory
 setopt    incappendhistory
 
 # load repo independent settings (can overwrite previous settings)
-[ -f "$HOME/.environment" ] && source "$HOME/.environment"; 
 [ -f "$HOME/.environment.sh" ] && source "$HOME/.environment.sh"; 
 
 # ctrl+Z to load buffer

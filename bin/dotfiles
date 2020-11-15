@@ -163,40 +163,6 @@ elif [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]]; then
     e_header "Installing Git"
     sudo apt-get -qq install git-core
   fi
-
-# babun
-elif [[ -n "$BABUN_HOME" ]]; then
-
-  if [[ ! "$(type -P git)" ]]; then
-    e_header "Installing Git"
-    pact install git
-  fi
-
-# cygwin
-elif [[ "$OSTYPE" =~ ^cygwin ]]; then
-
-  # install cygwin.exe
-  if [[ ! "$(type -P cygwin.exe)" ]]; then
-    e_header "Installing cygwin setup binary"
-    lynx -source "https://www.cygwin.com/setup-x86_64.exe" > /bin/cygwin.exe
-    chmod +x /bin/cygwin.exe
-
-    e_header "Installing apt-cyg dependencies: wget, tar, gawk, xz"
-    cygwin.exe --no-admin -q -P wget,tar,gawk,xz
-  fi
-
-  # install apt-cyg
-  if [[ ! "$(type -P apt-cyg)" ]]; then
-    e_header "Installing apt-cyg"
-    lynx -source https://raw.githubusercontent.com/jfritz/apt-cyg/master/apt-cyg > /tmp/apt-cyg
-    install /tmp/apt-cyg /bin
-  fi
-
-  if [[ ! "$(type -P git)" ]]; then
-    e_header "Installing Git"
-    apt-cyg install git
-  fi
-
 fi
 
 # If Git isn't installed by now, something exploded. We gots to quit!

@@ -10,11 +10,14 @@ fi
 # Install Homebrew recipes.
 if [[ "$(type -P brew)" ]]; then
   recipes=(
+  starship
   git
   git-extras
   zsh
   tree
   fzf
+  ripgrep
+  exa
   )
 
   list="$(to_install "${recipes[*]}" "$(brew list)")"

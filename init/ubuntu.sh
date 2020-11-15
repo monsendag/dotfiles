@@ -7,7 +7,10 @@ packages=(
   zsh
   tree
   fzf
+  exa
+  ripgrep
 )
+
 
 
 # add uninstalled packages to list
@@ -25,3 +28,6 @@ if (( ${#list[@]} > 0 )); then
     sudo apt-get -qq install "$package"
   done
 fi
+
+# install starship (not in apt repos)
+curl -fsSL https://starship.rs/install.sh | bash
