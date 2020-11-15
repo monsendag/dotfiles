@@ -17,8 +17,6 @@ bashcompinit
 
 autoload zmv ckd de 
 
-# source $ZSHRC/async.zsh
-
 # oh-my-zsh configuration
 source $ZSHRC/oh-my-zsh.zsh
 
