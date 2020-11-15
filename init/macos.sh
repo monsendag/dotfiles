@@ -16,6 +16,8 @@ if [[ "$(type -P brew)" ]]; then
   zsh
   tree
   fzf
+  ripgrep
+  exa
   )
 
   list="$(to_install "${recipes[*]}" "$(brew list)")"

@@ -7,6 +7,8 @@ packages=(
   zsh
   tree
   fzf
+  exa
+  ripgrep
 )
 
 
