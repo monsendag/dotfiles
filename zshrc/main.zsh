@@ -29,6 +29,35 @@ source $ZSHRC/aliases.zsh
 # load functions
 source $ZSHRC/functions.zsh
 
+# include zsh-syntax-highlighting
+source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# include zsh-autosuggestions
+source ~/.dotfiles/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# show vim mode on RPS1
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
+
+# configure colors
+# list of indices http://i.stack.imgur.com/UQVe5.png
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(pattern main brackets)
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[path]='fg=033'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=118'
+ZSH_HIGHLIGHT_STYLES[function]='fg=192'
+
+# ignore underscore-prefixed completions
+# see http://unix.stackexchange.com/a/116205/66370
+zstyle ':completion:*:*:-command-:*:*' ignored-patterns '_*'
+
 
 function e_arrow()    { echo -e " \033[1;33m➜\033[0m  $@"; }
 
