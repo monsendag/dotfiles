@@ -39,7 +39,7 @@
 	# diff staged files
 	dfs = diff --staged
 	# overwrite previous commit without editing message
-	amend = commit --amend --no-edit
+	amend = commit -a --amend --no-edit
 	# stage patch
 	p = add -p
 	dt = difftool
@@ -79,6 +79,13 @@
 	r = rebase
 	# continue a rebase
 	cont = rebase --continue
+
+	# get the name of the main branch as defined at the origin remote
+	# can be master/development/main
+	main-branch = !"git remote show origin | grep 'HEAD' | cut -d':' -f2 | sed -e 's/^ *//g' -e 's/ *$//g'"
+
+	# checkout "main" branch 
+	d = !"git checkout $(git main-branch)"
 
 #############################################################
 [color]
