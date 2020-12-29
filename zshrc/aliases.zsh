@@ -11,6 +11,8 @@ alias a='atom'
 
 alias kc='kubectl'
 
+# requires `npm install -g serve`
+alias serv='open http://localhost:5000 && serve'
 
 # reload zsh config
 alias reload='. ~/.zshrc'
