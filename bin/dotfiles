@@ -98,7 +98,6 @@ function link_do() {
 
 # Copy, link, init, etc.
 function do_stuff() {
-  local base dest skip
   local files=(~/.dotfiles/$1/*)
 
   # No files? abort.
@@ -107,12 +106,12 @@ function do_stuff() {
   [[ $(declare -f "$1_header") ]] && "$1_header"
   # Iterate over files.
   for file in "${files[@]}"; do
-    base="$(basename $file)"
-    dest="$HOME/$base"
+    local base="$(basename $file)"
+    local dest="$HOME/$base"
     # Run _test function only if declared.
     if [[ $(declare -f "$1_test") ]]; then
       # If _test function returns a string, skip file and print that message.
-      skip="$("$1_test" "$file" "$dest")"
+      local skip="$("$1_test" "$file" "$dest")"
       if [[ "$skip" ]]; then
         e_error "Skipping ~/$base, $skip."
         continue
