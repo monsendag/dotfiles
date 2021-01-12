@@ -1,5 +1,5 @@
 # OSX-only stuff. Abort if not OSX.
-[[ "$OSTYPE" =~ ^darwin ]] || return 1
+[[ "$OSTYPE" =~ ^darwin ]] || return 0
 
 # Install Homebrew.
 if [[ ! "$(type -P brew)" ]]; then
