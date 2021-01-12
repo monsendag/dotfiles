@@ -1,0 +1,26 @@
+# Starship config
+# see https://starship.rs/config/
+
+[package]
+format = "via [🎁 $version](208 bold) "
+
+nodejs.disabled = true
+
+aws.disabled = true
+cmake.disabled = true
+conda.disabled = true
+elixir.disabled = true
+elm.disabled = true
+erlang.disabled = true
+julia.disabled = true
+lua.disabled = true 
+nim.disabled = true
+ocaml.disabled = true 
+perl.disabled = true
+purescript.disabled = true
+ruby.disabled = true
+shlvl.disabled = true
+singularity.disabled = true
+zig.disabled = true
+
+

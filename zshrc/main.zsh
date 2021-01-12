@@ -3,6 +3,8 @@ ZSHRC="$(cd "$(dirname "$0")" ; pwd -P)"
 # set default fzf command
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
+export STARSHIP_CONFIG=~/.dotfiles/conf/starship.toml
+
 # grep colors (see manpage)
 # http://www.gnu.org/software/grep/manual/html_node/Environment-Variables.html
 GREP_COLORS='ms=01;31:mc=01;31:sl=01;01:cx=:fn=35:ln=32:bn=32:se=36'
