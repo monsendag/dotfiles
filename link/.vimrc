@@ -23,6 +23,7 @@ call plug#begin()
   Plug 'bkad/CamelCaseMotion'
   Plug 'matze/vim-move'
   Plug 'terryma/vim-smooth-scroll'
+  Plug 'cespare/vim-toml'
 call plug#end()
 
 
