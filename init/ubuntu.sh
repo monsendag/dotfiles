@@ -1,9 +1,9 @@
 # Ubuntu-only stuff. Abort if not Ubuntu.
-[[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] || return 1
+[[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] || return 0
 
 # Install APT packages.
 packages=(
-  git-core
+  git
   zsh
   tree
   fzf
@@ -11,15 +11,16 @@ packages=(
   ripgrep
 )
 
-
-
 # add uninstalled packages to list
 list=()
 for package in "${packages[@]}"; do
   if [[ ! "$(dpkg -l "$package" 2>/dev/null | grep "^ii  $package")" ]]; then
     list=("${list[@]}" "$package")
+  else 
+    e_error "init / apt: skipping installed package: $package"
   fi
 done
+
 
 # install uninstalled packages
 if (( ${#list[@]} > 0 )); then
@@ -29,5 +30,7 @@ if (( ${#list[@]} > 0 )); then
   done
 fi
 
-# install starship (not in apt repos)
-curl -fsSL https://starship.rs/install.sh | bash
+if ! command -v starship &> /dev/null; then
+  e_header "Installing starship from https://starship.rs/install.sh";
+  curl -fsSL https://starship.rs/install.sh | bash;
+fi
