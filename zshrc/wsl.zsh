@@ -1,7 +1,7 @@
 alias pbcopy='clip.exe'
 alias pbpaste='powershell.exe Get-Clipboard'
-alias 'o.'='explorer.exe .'
 alias killall='taskkill.exe /F /IM'
+alias open='wsl-open'
 
 # nice doesn't work on WSL
 # https://github.com/microsoft/WSL/issues/1887
