@@ -1,6 +1,9 @@
 [user]
-	name = NAME
-	email = EMAIL
+	name = EMAIL
+	email = NAME
+
+[init]
+	defaultBranch = main
 
 [core]
 	# always checkout as LF, but correct accidental CRLF on input
@@ -14,19 +17,19 @@
 	whitespace = warn
 
 [push]
-	# create an upstream automatically when pushing 
+	# create an upstream automatically when pushing
 	default = current
 
-# rebase by default when pulling
 [pull]
+	# rebase by default when pulling
 	rebase = true
 
-# prune deleted branches automatically when fetching from origin
 [remote "origin"]
+	# prune deleted branches automatically when fetching from origin
 	prune = true
 
-# reuse recorded resolution when resolving conflicts
 [rerere]
+	# reuse recorded resolution when resolving conflicts
 	enabled = 1
 
 [alias]
@@ -59,9 +62,9 @@
 	pp = "!echo pulling ...; git pull; echo pushing ...; git push"
 	ps = push
 	pl = pull
-	# stash current changes, pull, then pop the stash on top 
+	# stash current changes, pull, then pop the stash on top
 	pls = "!echo stashing..; git s; echo pulling..; git pull; echo popping..; git sp"
-	# clean branches merged with master 
+	# clean branches merged with master
 	cleanup = !git branch --merged | grep  -v '\\*\\|master\\|dev' | xargs -n 1 git branch -d
 	# returns the root path of the repository
 	# for use with "alias cr=$(cd git root)'
@@ -92,7 +95,7 @@
 	# can be main/master/development/develop etc.
 	main-branch = !git remote show origin | grep 'HEAD' | cut -d':' -f2 | sed -e 's/^ *//g' -e 's/ *$//g'
 
-	# checkout "main" branch 
+	# checkout "main" branch
 	d = !git checkout $(git main-branch)
 
 #############################################################
@@ -127,25 +130,13 @@
 [mergetool]
 	prompt = false
 
-# Kaleidoscope
-[difftool "kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path $MERGED -- $LOCAL $REMOTE
-[mergetool "kaleidoscope"]
-	cmd = ksdiff --merge --output $MERGED --base $BASE -- $LOCAL --snapshot $REMOTE --snapshot
-
-# Kdiff3
-[difftool "kdiff3"]
-	cmd = kdiff3 $LOCAL $REMOTE
-[mergetool "kdiff3"]
-	cmd = kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
-
 # Intellij IDEA
 [difftool "idea"]
 	cmd = idea diff $LOCAL $REMOTE
 [mergetool "idea"]
 	cmd = idea merge $LOCAL $REMOTE $BASE $MERGED
 
-# json-diff 
+# json-diff
 # https://www.npmjs.com/package/json-diff
 [difftool "jsondiff"]
 	cmd = json-diff $LOCAL $REMOTE
