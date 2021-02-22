@@ -32,6 +32,8 @@
 [alias]
 	praise = blame
 	br = branch -vv --sort=-committerdate
+	brw = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)%09%09%09%09%(subject)' refs/heads
+	brww = log --pretty=format:'%(authordate:relative)  %<(20)%an %s' -10
 	ci = commit
 	co = checkout
 	cl = clone
@@ -39,12 +41,15 @@
 	# diff staged files
 	dfs = diff --staged
 	# overwrite previous commit without editing message
-	amend = commit -a --amend --no-edit
+	amend = !"git add . && git commit --amend --no-edit"
 	# stage patch
 	p = add -p
 	dt = difftool
 	g = grep -I
 	lg = log --graph --date=short --pretty=format:'%C(red)%h %Cgreen(%cr) %C(cyan)<%an> %Creset%s %C(yellow)%d'
+	lgd = !"git lg $(git main-branch)..HEAD"
+	lgm = !"git lg master..HEAD"
+
 	rv = review
 	st = status -b 
 	# pull, then push
@@ -76,12 +81,12 @@
 	# many parallell works in progress
 	wip = !"cd $(git root); git add .; git commit --no-verify -m 'WIP'"
 
-	r = rebase
-	# continue a rebase
-	cont = rebase --continue
+	# rebase onto latest "main" branch
+	rd = !"git rebase $(git main-branch)"
+	rc = rebase --continue
 
 	# get the name of the main branch as defined at the origin remote
-	# can be master/development/main
+	# can be main/master/development/develop etc.
 	main-branch = !"git remote show origin | grep 'HEAD' | cut -d':' -f2 | sed -e 's/^ *//g' -e 's/ *$//g'"
 
 	# checkout "main" branch 
@@ -141,3 +146,8 @@
 # https://www.npmjs.com/package/json-diff
 [difftool "jsondiff"]
 	cmd = json-diff "$LOCAL" "$REMOTE"
+[log]
+	decorate = true
+	abbrevCommit = true
+[init]
+	defaultBranch = main
