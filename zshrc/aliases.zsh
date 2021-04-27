@@ -23,7 +23,7 @@ alias ls='ls --color'
 
 alias vrc='vim ~/.vimrc'
 
-alias l='exa --long --classify --group --time-style=long-iso --git --color-scale --group-directories-first'
+alias l='exa --long --classify --group --time-style=long-iso --git --color-scale --group-directories-first --sort=modified'
 alias la='l --all'
 
 alias cr='cd "$(git root)"'
