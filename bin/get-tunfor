@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+rg <&0 '^.*?(TUNFOR\-\d+).*?$' -r '$1' | sort | uniq
