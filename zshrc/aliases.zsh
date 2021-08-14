@@ -17,13 +17,13 @@ alias serv='open http://localhost:5000 && serve'
 # reload zsh config
 alias reload='. ~/.zshrc'
 
-# simple hack to reset ls command 
+# simple hack to reset ls command
 # unalias ls
 alias ls='ls --color'
 
 alias vrc='v ~/.vimrc'
 
-alias l='exa --long --classify --group --time-style=long-iso --git --color-scale --group-directories-first --sort=modified'
+alias l='exa --long --classify --group --time-style=long-iso --git --color-scale --group-directories-first --sort=accessed'
 alias la='l --all'
 
 alias cr='cd "$(git root)"'
@@ -67,7 +67,7 @@ alias p='ps -f'
 alias dud='du -d 1 -h'
 alias duf='du -sh $(ls -A --color=never) | sort -h'
 
-# fd/ff replaced with sharkdp/fd 
+# fd/ff replaced with sharkdp/fd
 # alias fd='noglob find . -type d -iname'
 # alias ff='noglob find . -type f -iname'
 
