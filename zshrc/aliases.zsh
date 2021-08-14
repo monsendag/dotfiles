@@ -5,7 +5,7 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
-alias v='vim'
+alias v='nvim'
 alias o='open'
 alias a='atom'
 
@@ -21,7 +21,7 @@ alias reload='. ~/.zshrc'
 # unalias ls
 alias ls='ls --color'
 
-alias vrc='vim ~/.vimrc'
+alias vrc='v ~/.vimrc'
 
 alias l='exa --long --classify --group --time-style=long-iso --git --color-scale --group-directories-first --sort=modified'
 alias la='l --all'
