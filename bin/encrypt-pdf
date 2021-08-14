@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# throw on error
+set -e
+
+# usage:
+# encrypt-pdf *.pdf
+#
+# you will be prompted for password
+
+function e_header()   { echo -e "\n\033[1m$@\033[0m"; }
+function e_success()  { echo -e " \033[1;32m✔\033[0m  $@"; }
+function e_error()    { echo -e " \033[1;31m✖\033[0m  $@"; }
+function e_arrow()    { echo -e " \033[1;33m➜\033[0m  $@"; }
+
+e_header "Encrypting PDF using qpdf"
+
+echo -n "Password: ";
+read -s password
+
+if [ -z "$password" ]; then
+  e_error "Password is empty";
+  exit 1;
+fi
+
+
+echo ""
+
+for f in "${@:1}"
+do
+
+  filename="${f%.*}"                       
+  ext="${f##*.}"                     
+  # convert ext to lowercase
+  ext=$(echo $ext|tr '[:upper:]' '[:lower:]')
+
+  # the decrypted filename
+  out="$filename-encrypted.$ext"
+
+  qpdf --encrypt "$password" "$password" 256 -- "$1" "$out"
+  e_success "$out";
+done
+
