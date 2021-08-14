@@ -9,6 +9,7 @@ packages=(
   fzf
   exa
   ripgrep
+  neovim
 )
 
 # add uninstalled packages to list

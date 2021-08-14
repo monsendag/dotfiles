@@ -10,6 +10,7 @@ fi
 # Install Homebrew recipes.
 if [[ "$(type -P brew)" ]]; then
   recipes=(
+  neovim
   starship
   git
   git-extras
