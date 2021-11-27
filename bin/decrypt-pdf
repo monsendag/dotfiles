@@ -37,7 +37,7 @@ do
   # the decrypted filename
   out="$filename-decrypt.$ext"
 
-  qpdf --decrypt "$1" "$out" --password="$password"
+  qpdf --decrypt "$f" "$out" --password="$password"
   e_success "$out";
 done
 
