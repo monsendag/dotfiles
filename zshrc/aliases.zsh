@@ -25,6 +25,7 @@ alias vrc='v ~/.vimrc'
 
 alias l='exa --long --classify --group --time-style=long-iso --color-scale --group-directories-first --sort=modified'
 alias la='l --all'
+alias tree='l --tree'
 
 alias cr='cd "$(git root)"'
 alias sr='cd $(svn info | grep "Working Copy Root Path:" | sed "s/.*://")'
