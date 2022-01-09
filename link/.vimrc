@@ -115,7 +115,6 @@ hi Search ctermbg=Red
 au FocusLost * :wa
 
 set timeoutlen=1000 ttimeoutlen=-1 " ensure we don't need to double click esc
-set esckeys timeout nottimeout
 
 :autocmd InsertEnter * set timeoutlen=200
 :autocmd InsertLeave * set timeoutlen=1000
