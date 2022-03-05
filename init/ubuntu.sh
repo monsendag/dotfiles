@@ -29,7 +29,7 @@ export TZ=Etc/UTC
 if (( ${#list[@]} > 0 )); then
   e_header "Installing APT packages: ${list[*]}"
   for package in "${list[@]}"; do
-    sudo apt-get -qq -y install "$package"
+    sudo apt-get -qq -y install --no-install-recommends "$package"
   done
 fi
 
