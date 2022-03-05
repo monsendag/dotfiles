@@ -22,12 +22,14 @@ for package in "${packages[@]}"; do
   fi
 done
 
+export DEBIAN_FRONTEND="noninteractive"
+export TZ=Etc/UTC
 
 # install uninstalled packages
 if (( ${#list[@]} > 0 )); then
   e_header "Installing APT packages: ${list[*]}"
   for package in "${list[@]}"; do
-    sudo apt-get -qq install "$package"
+    sudo apt-get -qq -y install "$package"
   done
 fi
 
