@@ -35,5 +35,5 @@ fi
 
 if ! command -v starship &> /dev/null; then
   e_header "Installing starship from https://starship.rs/install.sh";
-  curl -fsSL https://starship.rs/install.sh | bash;
+  curl -fsSL https://starship.rs/install.sh | sh;
 fi
