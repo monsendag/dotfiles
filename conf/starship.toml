@@ -1,7 +1,7 @@
 # Starship config
 # see https://starship.rs/config/
 
-command_timeout = 1000
+command_timeout = 100
 
 #git_branch = { disabled = true }
 git_commit = { disabled = true }
