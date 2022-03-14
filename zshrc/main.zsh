@@ -74,7 +74,7 @@ fi
 
 # load OS specific code
 [ `uname` '==' "Darwin" ] && source "$ZSHRC/mac.zsh";
-[[ -e /proc/version && -n `grep Microsoft /proc/version` ]] && source "$ZSHRC/wsl.zsh";
+[[ -e /proc/version && -n `grep --ignore-case microsoft /proc/version` ]] && source "$ZSHRC/wsl.zsh";
 [[ -n `grep Ubuntu /etc/issue 2>/dev/null` ]] && source "$ZSHRC/ubuntu.zsh";
 
 export EDITOR=vim
