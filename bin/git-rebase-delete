@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+#
+# git-rebase-delete
+# 
+# Script for cleaning up branches when working in a rebase workflow. When branches are rebased onto
+# the main branch using BitBucket/GitHub PR GUI, the local branches may remain out of sync, and we
+# get a big mess of branches that are not easily removed.
+#
+# This script will attempt to rebase all branches in the current git repository on the main branch
+# (main/master/dev) etc.
+# 
+# The branches that are successfully rebased without conflicts will then be safely deleted, because
+# they are already merged.
+#
+# source: https://stackoverflow.com/a/53050927
+
+# determine current main branch (main/master/development/...)
+# depends on main-branch alias (see ../copy/.gitconfig)
+MAIN_BRANCH="$(git main-branch)"
+
+echo "main branch is: $MAIN_BRANCH. Attempting to rebase all branches"
+
+# rebase all local branches that can be rebased cleanly:
+for branch in $(git for-each-ref --format="%(refname:lstrip=2)" refs/heads/); do
+	# attempt a silent rebase
+	git rebase "origin/$MAIN_BRANCH" "$branch" > /dev/null 2>/dev/null
+	# keep return code 
+	retVal=$?
+	if [ $retVal -ne 0 ]; then
+		echo "keeping $branch"
+		# rebase failed (conflicts), this branch will not be deleted
+		git rebase --abort > /dev/null 2>/dev/null
+	fi
+done
+
+git checkout "$MAIN_BRANCH"
+
+# remove local branches that have been successfully rebased, and have been merged on remote (i.e GitHub):
+echo "----------------------------------"
+echo "removing merged branches"
+git branch --format="%(refname:lstrip=2)" --merged | grep -vE "$MAIN_BRANCH" | xargs git branch -d;
+
