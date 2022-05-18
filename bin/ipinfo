@@ -1,0 +1,6 @@
+#!/usr/bin/env -S deno run --allow-net
+
+const res = await fetch('https://ipinfo.io/json');
+const json  = await res.json();
+
+console.log(json);
