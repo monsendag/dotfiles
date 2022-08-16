@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+refbranch="$1"
+count="$2"
+
+# if refbranch is not passed, default to "main branch"
+[ -z "$refbranch" ] && {
+  refbranch=$(git remote show origin | grep 'HEAD' | cut -d':' -f2 | sed -e 's/^ *//g' -e 's/ *$//g')
+}
+
+git for-each-ref --sort=-committerdate refs/heads \
+  --format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:%m-%d)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' \
+  --color=always --count="${count:-10}" | \
+  while read -r line; do
+    branch=$(echo "$line" | awk 'BEGIN { FS = "|" }; { print $1 }' | tr -d '*')
+    ahead=$(git rev-list --count "${refbranch}..${branch}")
+    behind=$(git rev-list --count "${branch}..${refbranch:-${git}}")
+    colorline=$(echo "$line" | sed 's/^[^|]*|//')
+    echo "$ahead | $behind | $colorline" | awk -F'|' -vOFS='|' '{$5=substr($5,1,70)}1'
+done | \
+cat | \
+column -ts'|'
+
+# prepend header
+# shellcheck disable=SC2216
+#echo "ahead | behind || branch | lastcommit | message | author\n" && cat | \
