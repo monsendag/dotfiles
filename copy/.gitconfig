@@ -33,6 +33,8 @@
 	enabled = 1
 
 [alias]
+	# list aliases
+	aliases = "config --get-regexp alias"
 	praise = blame
 	br = branch -vv --sort=-committerdate
 	brw = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)%09%09%09%09%(subject)' refs/heads
