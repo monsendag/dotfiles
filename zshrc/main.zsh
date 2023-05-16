@@ -37,16 +37,29 @@ source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # include zsh-autosuggestions
 source ~/.dotfiles/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# show vim mode on RPS1
-function zle-line-init zle-keymap-select {
-    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
-    zle reset-prompt
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
 }
 
-zle -N zle-line-init
-zle -N zle-keymap-select
-export KEYTIMEOUT=1
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+
+# show vim mode on RPS1
+# function zle-line-init zle-keymap-select {
+#   VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+#    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+#    zle reset-prompt
+# }
+
+# zle -N zle-line-init
+# zle -N zle-keymap-select
+# export KEYTIMEOUT=1
 
 # configure colors
 # list of indices http://i.stack.imgur.com/UQVe5.png
@@ -77,7 +90,7 @@ fi
 [[ -e /proc/version && -n `grep --ignore-case microsoft /proc/version` ]] && source "$ZSHRC/wsl.zsh";
 [[ -n `grep Ubuntu /etc/issue 2>/dev/null` ]] && source "$ZSHRC/ubuntu.zsh";
 
-export EDITOR=vim
+export EDITOR=v
 
 # set virtualenvwrapper working directory
 export WORKON_HOME=$HOME/.virtualenvs
