@@ -13,6 +13,9 @@
 	excludesfile = ~/.dotfiles/conf/gitignore.conf
 	fileMode = false
 
+[tag]
+	sort = taggerdate
+
 [apply]
 	whitespace = warn
 
@@ -66,6 +69,8 @@
 	pl = pull
 	# stash current changes, pull, then pop the stash on top
 	pls = "!echo stashing..; git s; echo pulling..; git pull; echo popping..; git sp"
+	# pull then cleanup
+	plc = "!git pull; git c"
 	# clean branches merged with master
 	cleanup = !git branch --merged | grep  -v '\\*\\|master\\|dev' | xargs -n 1 git branch -d
 	# returns the root path of the repository
