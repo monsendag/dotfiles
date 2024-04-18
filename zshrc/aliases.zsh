@@ -37,7 +37,7 @@ alias m='mosh'
 alias subs='filebot -get-missing-subtitles'
 alias ta='tmux a'
 alias d='docker'
-alias dc='docker-compose'
+alias dc='docker compose'
 alias dm='docker-machine --native-ssh'
 
 # https://medium.com/@pixelstack/what-i-learnt-when-i-switched-to-docker-machine-71c4a9d11f4e
