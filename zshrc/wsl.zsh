@@ -23,5 +23,5 @@ wslrealpath() {
 
 unalias cr 2>/dev/null
 cr() {
-  echo $(wslrealpath $(git root))
+  cd $(wslrealpath $(git root))
 }
