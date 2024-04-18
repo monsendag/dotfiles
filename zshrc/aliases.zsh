@@ -6,7 +6,7 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
 alias vim='nvim'
-alias v='nvim'
+alias v="$EDITOR"
 alias o='open'
 alias a='atom'
 

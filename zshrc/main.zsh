@@ -5,6 +5,8 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
 export STARSHIP_CONFIG=~/.dotfiles/conf/starship.toml
 
+export EDITOR=nvim
+
 # grep colors (see manpage)
 # http://www.gnu.org/software/grep/manual/html_node/Environment-Variables.html
 GREP_COLORS='ms=01;31:mc=01;31:sl=01;01:cx=:fn=35:ln=32:bn=32:se=36'
@@ -90,7 +92,6 @@ fi
 [[ -e /proc/version && -n `grep --ignore-case microsoft /proc/version` ]] && source "$ZSHRC/wsl.zsh";
 [[ -n `grep Ubuntu /etc/issue 2>/dev/null` ]] && source "$ZSHRC/ubuntu.zsh";
 
-export EDITOR=v
 
 # set virtualenvwrapper working directory
 export WORKON_HOME=$HOME/.virtualenvs
