@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# recurse through parents and load environment variables from .env, then run the given command 
+# example usage:
+# with-dotenv /projects/my-project/scripts/main.sh --verify
+# ^ this will run main.sh --verify with any .env-files existing in the directory hierarchy
+
+initial_dir="$PWD"
+
+while
+    [ "$PWD" != / ] 
+  do
+    if [ -f .env ]; then
+      # https://stackoverflow.com/a/44364170
+      # export all variables in .env
+      set -o allexport
+      . .env
+      set +o allexport
+    fi
+    cd -P ..
+done
+
+cd "$initial_dir"
+
+"$@"
+
