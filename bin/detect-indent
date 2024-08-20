@@ -1,0 +1,26 @@
+#!/usr/bin/env -S deno run --allow-read
+import detectIndent from 'npm:detect-indent';
+
+const args = Deno.args;
+
+const decoder = new TextDecoder("ascii");
+
+for(const file of args) {
+  try {
+    const data = Deno.readFileSync(file);
+    const str = decoder.decode(data);
+    const indent = detectIndent(str);
+
+    if(!indent) {
+      console.log(`${file}: unknown`)
+    }
+    else {
+      console.log(`${file}: ${indent?.amount} ${indent.type ?? ''}`)
+    }
+  }
+  catch(e) {
+    console.log(`${file}: unknown (failed)`)
+  }
+}
+
+// const indent = detectIndent(file).indent || '    ';
