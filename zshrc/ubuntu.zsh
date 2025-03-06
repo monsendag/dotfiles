@@ -1,1 +1,3 @@
 # ubuntu
+
+alias fd='fdfind'

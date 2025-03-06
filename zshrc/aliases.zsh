@@ -9,9 +9,9 @@ alias vim='nvim'
 alias v="$EDITOR"
 alias o='open'
 alias a='atom'
+alias g='git'
 
 alias kc='kubectl'
-alias fd='fdfind'
 
 # requires `npm install -g serve`
 alias serv='open http://localhost:5000 && serve'
@@ -25,7 +25,7 @@ alias ls='ls --color'
 
 alias vrc='v ~/.vimrc'
 
-alias l='exa --long --classify --group --time-style=long-iso --color-scale --group-directories-first --sort=modified'
+alias l='eza --long --classify --group --time-style=long-iso --color-scale --group-directories-first --sort=modified'
 alias la='l --all'
 alias tree='l --tree'
 
