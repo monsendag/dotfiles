@@ -8,6 +8,6 @@ DISABLE_AUTO_UPDATE=true
 # https://github.com/rupa/z
 export _Z_NO_RESOLVE_SYMLINKS=true
 
-plugins=(z gitfast vi-mode history-substring-search gnu-utils docker mvn npm adb kubectl)
+plugins=(z gitfast vi-mode history-substring-search gnu-utils docker mvn npm kubectl)
 source $ZSH/oh-my-zsh.sh
 
