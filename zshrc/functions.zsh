@@ -48,18 +48,20 @@ fbr() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-# c: like normal z when used with arguments but displays an fzf prompt when used without
-unalias z 2> /dev/null
 c() {
-    [ $# -gt 0 ] && zshz "$*" && return
-    cd "$(zshz -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+  if [ $# -eq 0 ]; then
+    zi
+  else
+    z "$@"
+  fi
 }
-
 
 # ckd: create a folder and enter it
 ckd() {
   mkdir -p "$1" && cd "$1"
 }
+
+
 
 # print the header (the first line of input)
 # and then run the specified command on the body (the rest of the input)
