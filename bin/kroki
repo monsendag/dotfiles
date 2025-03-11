@@ -1,0 +1,24 @@
+#!/usr/bin/env -S deno run --allow-env
+
+import { encodeBase64, decodeBase64 } from "jsr:@std/encoding";
+
+import { Buffer } from "jsr:@std/io/buffer";
+import { toArrayBuffer } from "jsr:@std/streams";
+import pako from 'npm:pako'
+
+const input = new TextDecoder().decode(
+  await toArrayBuffer(Deno.stdin.readable),
+);
+
+const data = new Buffer(input, 'utf8')
+const compressed = pako.deflate(data, { level: 9 })
+
+const result = encodeBase64(compressed)
+  .replace(/\+/g, '-').replace(/\//g, '_')
+
+// const result = new Buffer(compressed)
+//   .toString('base64')
+//   .replace(/\+/g, '-').replace(/\//g, '_')
+
+console.log(result);
+
