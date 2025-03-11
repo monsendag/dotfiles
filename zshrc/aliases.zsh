@@ -25,13 +25,16 @@ alias ls='ls --color'
 
 alias vrc='v ~/.vimrc'
 
-alias l='eza --long --classify --group --time-style=long-iso --color-scale --group-directories-first --sort=modified'
+alias l='eza --long --icons --classify --group --time-style=long-iso --color-scale --group-directories-first --sort=modified'
 alias la='l --all'
 alias tree='l --tree'
 
 alias cr='cd "$(git root)"'
 alias sr='cd $(svn info | grep "Working Copy Root Path:" | sed "s/.*://")'
-alias less='less -S' # enable horizontal scrolling in less
+
+alias cat='bat -pp'
+alias less='bat --paging=always'
+
 alias s='ssh'
 alias m='mosh'
 alias subs='filebot -get-missing-subtitles'
