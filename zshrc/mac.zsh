@@ -8,7 +8,7 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"
 export HOMEBREW_AUTO_UPDATE_SECS=604800 
 
 # mac specific aliases
-alias g='gh'
+alias g='git'
 alias gu='open -a GitUp'
 alias mou='open -a Mou'
 alias subl='Open -a "Sublime Text 2"'
