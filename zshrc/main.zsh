@@ -107,6 +107,10 @@ setopt    sharehistory
 #immediately append to the history file, not just when a term is killed
 setopt    incappendhistory
 
+# https://zsh.sourceforge.io/Doc/Release/Options.html 
+# require -e for applying escape sequences 
+setopt BSD_echo
+
 # load repo independent settings (can overwrite previous settings)
 [ -f "$HOME/.environment.sh" ] && source "$HOME/.environment.sh"; 
 
