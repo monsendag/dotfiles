@@ -7,20 +7,58 @@
 
 initial_dir="$PWD"
 
+# parse -f argument which bypasses the loop and just takes the given file directly
+
+env_file=""
+
+while getopts ":f:" opt; do
+  case $opt in
+    f)
+      if [ -f "$OPTARG" ]; then
+        env_file="$OPTARG"
+      else
+        echo "File not found: $OPTARG"
+        exit 1
+      fi
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+shift $((OPTIND -1))
+
+
+if [ -f "$env_file" ]; then
+  set -o allexport
+  . "$env_file"
+  set +o allexport
+fi
+
 while
-    [ "$PWD" != / ] 
+    [[ "$PWD" != / && ! -f "$env_file" ]]
   do
     if [ -f .env ]; then
-      # https://stackoverflow.com/a/44364170
-      # export all variables in .env
-      set -o allexport
-      . .env
-      set +o allexport
+        echo "Loading .env from $PWD"
+        env_file="$PWD/.env"
+        break
     fi
     cd -P ..
 done
 
-cd "$initial_dir"
+#  # https://stackoverflow.com/a/44364170
+#  # export all variables in .env
+  set -o allexport
+  . "$env_file"
+  set +o allexport
+#
+#cd "$initial_dir"
 
 "$@"
 
