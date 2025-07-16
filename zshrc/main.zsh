@@ -11,6 +11,9 @@ export EDITOR=nvim
 # http://www.gnu.org/software/grep/manual/html_node/Environment-Variables.html
 GREP_COLORS='ms=01;31:mc=01;31:sl=01;01:cx=:fn=35:ln=32:bn=32:se=36'
 
+# must run before compinit
+typeset -gaU fpath=($fpath ~/.local/share/zsh/completions)
+
 # must come before oh-my-zsh
 fpath=('/usr/local/share/zsh/site-functions' $fpath)
 
@@ -112,7 +115,7 @@ setopt    incappendhistory
 setopt BSD_echo
 
 # load repo independent settings (can overwrite previous settings)
-[ -f "$HOME/.environment.sh" ] && source "$HOME/.environment.sh"; 
+[ -f "$HOME/.environment.sh" ] && source "$HOME/.environment.sh";
 
 # ctrl+Z to load buffer
 # http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
