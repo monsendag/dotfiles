@@ -1,9 +1,23 @@
+.gsd-keyboard.settings-ported
+GNOME-xdg-terminals.list
+JetBrains
+Qtrac Ltd./**
+atuin-receipt.json
 cni
 configstore
 containers
-nextjs-nodejs
+dconf/user
+enchant/**
+evolution/*
+fish/*
+goa-1.0/*
+gtk-3.0/*
 httpie
-JetBrains
-atuin-receipt.json
+ibus/*
+nextjs-nodejs
+pulse/*
+ubuntu-xdg-terminals.list
+user-dirs.dirs
+user-dirs.locale
 uv/uv-receipt.json
-Qtrac Ltd./**
+xdg-terminals.list
