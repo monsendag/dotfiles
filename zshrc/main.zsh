@@ -30,6 +30,11 @@ source $ZSHRC/oh-my-zsh.zsh
 # set starship prompt 
 eval "$(starship init zsh)"
 
+eval "$(zoxide init zsh)"
+
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+
 # custom aliases
 source $ZSHRC/aliases.zsh
 

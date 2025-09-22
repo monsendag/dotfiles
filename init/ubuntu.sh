@@ -8,6 +8,9 @@ packages=(
   tree
   fzf
   ripgrep
+  eza
+  zoxide
+  bat
   neovim
 )
 
@@ -34,5 +37,10 @@ fi
 
 if ! command -v starship &> /dev/null; then
   e_header "Installing starship from https://starship.rs/install.sh";
-  curl -fsSL https://starship.rs/install.sh | sh;
+  curl --proto '=https' --tlsv1.2 -LsSf https://starship.rs/install.sh | sh;
+fi
+
+if ! command -v atuin &> /dev/null; then
+  e_header "Installing atuin from https://setup.atuin.sh";
+  curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 fi
