@@ -7,6 +7,10 @@ alias o=open
 alias npmw='cmd.exe /C npm'
 alias cmd='cmd.exe /C'
 
+# workaround for issues with tail -f on WSL 2
+# https://superuser.com/a/1837062
+alias tailf='tail -f ---disable-inotify'
+
 # nice doesn't work on WSL
 # https://github.com/microsoft/WSL/issues/1887
 unsetopt BG_NICE
