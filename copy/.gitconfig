@@ -12,16 +12,8 @@
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	excludesfile = ~/.dotfiles/conf/gitignore.conf
 	fileMode = false
-
-[log]
-	decorate = true
-	abbrevCommit = true
-
 [tag]
 	sort = taggerdate
-
-[notes]
-	rewriteRef = refs/notes/*
 
 [apply]
 	whitespace = warn
@@ -37,69 +29,19 @@
 [remote "origin"]
 	# prune deleted branches automatically when fetching from origin
 	prune = true
+#	fetch = +refs/notes/*:refs/notes/*
+#	push = +refs/notes/*:refs/notes/*
 
 [rerere]
 	# reuse recorded resolution when resolving conflicts
 	enabled = 1
 
-[color]
-	ui = auto
-
-[color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
-
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
-
-# pull/push notes by default
-[remote "origin"]
-    fetch = +refs/notes/*:refs/notes/*
-    push = +refs/notes/*:refs/notes/*
-
-[diff]
-	tool = idea
-
-[merge]
-	tool = idea
-	log = true
-
-[difftool]
-	prompt = false
-
-[mergetool]
-	prompt = false
-
-# Intellij IDEA
-[difftool "idea"]
-	cmd = idea diff $LOCAL $REMOTE
-
-[mergetool "idea"]
-	cmd = idea merge $LOCAL $REMOTE $BASE $MERGED
-
-# json-diff
-# https://www.npmjs.com/package/json-diff
-[difftool "jsondiff"]
-	cmd = json-diff $LOCAL $REMOTE
-
-#####################################
-
 [alias]
 	# list aliases
-	aliases = "config --get-regexp alias"
+	aliases = config --get-regexp alias
 	praise = blame
-	br = branch -vv --sort=-committerdate
-	brw = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)%09%09%09%09%(subject)' refs/heads
-	brww = log --pretty=format:'%(authordate:relative)  %<(20)%an %s' -10
+	br = branch --sort=committerdate --format='%(color:white)%(committerdate:format:%Y-%m-%d %H:%M) %(color:cyan)(%(color:green)%(committername) %(color:yellow)%(align:50)%(refname:short)%(end)%(color:blue) %(subject)  %(color:cyan))'
+
 	ci = commit
 	co = checkout
 	cl = clone
@@ -115,10 +57,13 @@
 	lg = log --graph --date=short --pretty=format:'%C(red)%h %Cgreen(%cr) %C(cyan)<%an> %Creset%s %C(yellow)%d'
 	lgd = !git lg $(git main-branch)..HEAD
 	lgm = !git lg master..HEAD
+	lgw = log --pretty=format:'%(authordate:relative)  %<(20)%an %s' -10
+	tags = "!git for-each-ref --sort=-taggerdate --format '%(tag)_,,,_%(taggerdate:raw)_,,,_%(taggername)_,,,_%(subject)' refs/tags \t| head -n 5 | awk 'BEGIN { FS = \"_,,,_\"  } ; { t=strftime(\"%Y-%m-%d  %H:%M\",$2); printf \"%-20s %-18s %-25s %s\\n\", t, $1, $4, $3  }'"
 	# list lightweight and annotated tags
 	# https://stackoverflow.com/a/21032332
 	tags-lightweight = "!git for-each-ref --sort=creatordate refs/tags/ --format '%(objecttype) %(refname:short)' | while read ty name; do [ $ty = commit ] && echo $name; done"
 	tags-annotated = "!git for-each-ref --sort=creatordate refs/tags/ --format '%(objecttype) %(refname:short)' | while read ty name; do [ $ty = tag ] && echo $name; done"
+	showtag = !sh -c 'git rev-parse $1 | xargs git cat-file -p' -
 	rv = review
 	st = status -b
 	# pull, then push
@@ -129,9 +74,10 @@
 	pls = "!echo stashing..; git s; echo pulling..; git pull; echo popping..; git sp"
 	# pull then cleanup
 	plc = "!git pull; git c"
-	# clean branches merged with master
-	cleanup = !git branch --merged | grep  -v '\\*\\|master\\|dev' | xargs -n 1 git branch -d
-	# returns the root path of the repository
+	# clean branches merged with main/master/dev
+	c = !git branch --merged | grep  -v '\\*\\|main\\|master\\|dev' | xargs -n 1 git branch -d
+	# returns the root path of the repository (in git bash or wsl): git
+	# bash returns /c/Users/...
 	# for use with "alias cr=$(cd git root)'
 	root = !pwd
 	ksdiff = difftool -y -t kaleidoscope
@@ -155,7 +101,7 @@
 	# rebase onto latest "main" branch
 	rd = !git rebase $(git main-branch)
 	rc = rebase --continue
-	# on a branch: pull in latest changes from main branch and rebase branch on top of it 
+	# on a branch: pull in latest changes from main branch and rebase branch on top of it
 	rb = !git wip && && git checkout $(git main-branch) && git pull && git checkout - && git rd && git rh
 
 	# get the name of the main branch as defined at the origin remote
@@ -168,3 +114,65 @@
 	# remove branches where the upstream is gone (typically merged but diverged
  	# https://stackoverflow.com/a/33548037
 	remove-gone = !git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == [gone] {sub(refs/heads/, , $1) ; print $1}'); do git branch -D $branch; done
+
+	# list aliases
+	la = !git config -l | grep alias | cut -c 7-
+
+#############################################################
+[color]
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+############################################################
+[diff]
+	tool = idea
+[merge]
+	tool = idea
+	log = true
+
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+
+# Intellij IDEA
+[difftool "idea"]
+	cmd = idea diff $LOCAL $REMOTE
+[mergetool "idea"]
+	cmd = idea merge $LOCAL $REMOTE $BASE $MERGED
+
+# json-diff
+# https://www.npmjs.com/package/json-diff
+[difftool "jsondiff"]
+	cmd = json-diff $LOCAL $REMOTE
+[log]
+	decorate = true
+	abbrevCommit = true
+[filesystem "Eclipse Adoptium|21.0.2|1349329794"]
+	timestampResolution = 1013 microseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Eclipse Adoptium|11.0.19|1349329794"]
+	timestampResolution = 1011 microseconds
+	minRacyThreshold = 0 nanoseconds
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[notes]
+	rewriteRef = refs/notes/*
