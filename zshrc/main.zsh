@@ -119,8 +119,8 @@ setopt    incappendhistory
 # require -e for applying escape sequences 
 setopt BSD_echo
 
-# load repo independent settings (can overwrite previous settings)
-[ -f "$HOME/.environment.sh" ] && source "$HOME/.environment.sh";
+# load repo independent zsh configuration (can overwrite previous settings)
+[ -f "$HOME/.environment.zsh" ] && source "$HOME/.environment.zsh";
 
 # ctrl+Z to load buffer
 # http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
