@@ -1,4 +1,4 @@
-# ubuntu
+# ubuntu (excluding WSL)
 
 alias fd='fdfind'
 alias bat='batcat'

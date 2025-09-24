@@ -95,11 +95,12 @@ fi
 # lesspipe
 # eval "$(lesspipe.sh)"
 
+is_wsl=$(grep --ignore-case microsoft /proc/version 2>/dev/null)
+
 # load OS specific code
 [ `uname` '==' "Darwin" ] && source "$ZSHRC/mac.zsh";
-[[ -e /proc/version && -n `grep --ignore-case microsoft /proc/version` ]] && source "$ZSHRC/wsl.zsh";
-[[ -n `grep Ubuntu /etc/issue 2>/dev/null` ]] && source "$ZSHRC/ubuntu.zsh";
-
+[[ -n $is_wsl ]] && source "$ZSHRC/wsl.zsh"
+[[ -z $is_wsl && -n $(grep Ubuntu /etc/issue 2>/dev/null) ]] && source "$ZSHRC/ubuntu.zsh"
 
 # set virtualenvwrapper working directory
 export WORKON_HOME=$HOME/.virtualenvs

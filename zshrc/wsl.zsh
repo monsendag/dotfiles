@@ -4,6 +4,9 @@ alias killall='taskkill.exe /F /IM'
 alias open='wsl-open'
 alias o=open
 
+alias fd='fdfind'
+alias bat='batcat'
+
 alias npmw='cmd.exe /C npm'
 alias cmd='cmd.exe /C'
 
