@@ -15,6 +15,8 @@ if [[ "$(type -P brew)" ]]; then
   git
   git-extras
   zsh
+  atuin
+  zoxide
   tree
   fzf
   ripgrep

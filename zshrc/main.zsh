@@ -7,6 +7,8 @@ export STARSHIP_CONFIG=~/.dotfiles/conf/starship.toml
 
 export EDITOR=nvim
 
+export EZA_CONFIG_DIR=~/.config/eza
+
 # grep colors (see manpage)
 # http://www.gnu.org/software/grep/manual/html_node/Environment-Variables.html
 GREP_COLORS='ms=01;31:mc=01;31:sl=01;01:cx=:fn=35:ln=32:bn=32:se=36'
@@ -46,6 +48,12 @@ source ~/.dotfiles/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # include zsh-autosuggestions
 source ~/.dotfiles/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# install the atuin shell plugin
+eval "$(atuin init zsh)"
+
+# install zoxide shell plugin
+eval "$(zoxide init zsh)"
 
 # This speeds up pasting w/ autosuggest
 # https://github.com/zsh-users/zsh-autosuggestions/issues/238
@@ -110,11 +118,11 @@ HISTSIZE=50000
 # how many history entries to save to disk
 SAVEHIST=100000
 # append history to the history file (no overwriting)
-setopt    appendhistory
+setopt appendhistory
 # share history across terminals
-setopt    sharehistory
+setopt sharehistory
 #immediately append to the history file, not just when a term is killed
-setopt    incappendhistory
+setopt incappendhistory
 
 # https://zsh.sourceforge.io/Doc/Release/Options.html 
 # require -e for applying escape sequences 
