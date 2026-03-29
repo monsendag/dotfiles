@@ -1,0 +1,5 @@
+**/*.json.sample
+formats/default
+log_metadata.db
+textinput-history.db
+view-info-*.json
