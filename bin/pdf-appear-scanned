@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+ROTATION=$(shuf -n 1 -e '-' '')$(shuf -n 1 -e $(seq 0.05 .5))
+
+  for pdf in "$@";
+    do magick  -density 150 $pdf \
+              -linear-stretch '1.5%x2%' \
+              -rotate 0.4 \
+              -attenuate '0.01' \
+              +noise  Multiplicative \
+              -colorspace 'gray' \
+              "${pdf%.*}-fakescan.${pdf##*.}"
+  done

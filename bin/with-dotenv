@@ -4,6 +4,8 @@
 # example usage:
 # with-dotenv /projects/my-project/scripts/main.sh --verify
 # ^ this will run main.sh --verify with any .env-files existing in the directory hierarchy
+# Example with -f argument:
+# with-dotenv -f /custom/path/to/.env /projects/my-project/scripts/main.sh
 
 initial_dir="$PWD"
 
@@ -41,11 +43,13 @@ if [ -f "$env_file" ]; then
   set +o allexport
 fi
 
+echo "[with-dotenv] " ${env_file:+"loaded .env from $env_file"}
+
 while
     [[ "$PWD" != / && ! -f "$env_file" ]]
   do
     if [ -f .env ]; then
-        echo "Loading .env from $PWD"
+        echo "[with-dotenv] loading .env from $PWD"
         env_file="$PWD/.env"
         break
     fi
@@ -58,7 +62,6 @@ done
   . "$env_file"
   set +o allexport
 #
-#cd "$initial_dir"
 
 "$@"
 

@@ -1,12 +1,13 @@
 # Starship config
 # see https://starship.rs/config/
 
-command_timeout = 200
+scan_timeout = 300
+command_timeout = 400
 
 #git_branch = { disabled = true }
-git_commit = { disabled = true }
-git_state = { disabled = true }
-git_metrics = { disabled = true }
+#git_commit = { disabled = true }
+#git_state = { disabled = true }
+#git_metrics = { disabled = true }
 # git_status = { disabled = true }
 # character = { disabled = true }
 #directory = { disabled = true }
