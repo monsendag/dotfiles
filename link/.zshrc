@@ -1,5 +1,7 @@
+export DOTFILES="$HOME/.dotfiles"
+
 # Add binaries into the path
-export PATH="$HOME/.dotfiles/bin:$PATH";
+export PATH="$DOTFILES/bin:$PATH";
 
 # source zshrc
-source "$HOME/.dotfiles/zshrc/main.zsh";
+source "$DOTFILES/zshrc/main.zsh";
