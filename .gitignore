@@ -8,3 +8,4 @@ link/.ssh/known_hosts
 link/.vim/.netrwhist
 link/.config/ac
 link/.config/jgit
+zshrc/init-untracked*
