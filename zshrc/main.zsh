@@ -10,9 +10,11 @@ export EDITOR=nvim
 export EZA_CONFIG_DIR=~/.config/eza
 
 # Minimal init for non-interactive shells or when fast init is requested
-for file in $ZSHRC/init-untracked-fast/*.zsh; do
-    source "$file"
-done
+if [[ -d "$ZSHRC/init-untracked-fast" ]]; then
+  for file in $ZSHRC/init-untracked-fast/*.zsh; do
+      [[ -f "$file" ]] && source "$file"
+  done
+fi
 
 # ============================================
 # PERFORMANCE OPTIMIZATION: Instant prompt support
@@ -202,9 +204,11 @@ setopt incappendhistory
 setopt BSD_echo
 
 # load repo independent zsh configuration (can overwrite previous settings)
-for file in $ZSHRC/init-untracked/*.zsh; do
-    source "$file"
-done
+if [[ -d "$ZSHRC/init-untracked" ]]; then
+  for file in $ZSHRC/init-untracked/*.zsh; do
+      [[ -f "$file" ]] && source "$file"
+  done
+fi
 
 [ -f "$HOME/.environment.zsh" ] && source "$HOME/.environment.zsh";
 
