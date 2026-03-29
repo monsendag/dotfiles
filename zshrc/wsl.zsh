@@ -22,10 +22,10 @@ wslrealpath() {
   if ( echo "$1" | grep -E -q '^(/c|/mnt/c)')
   # git bash returns paths prefixed with c
   then
-    wslpath -wa "$1"
+    realpath "$1"
   # otherwise we are working on a repo within the WSL VM: use Linux git
   else
-    realpath "$1"
+    wslpath -ua "$1"
   fi
 }
 
