@@ -4,7 +4,7 @@ ZSH_THEME=""
 DISABLE_UPDATE_PROMPT=true
 DISABLE_AUTO_UPDATE=true
 
-
+VI_MODE_DISABLE_CLIPBOARD=true
 plugins=(gitfast vi-mode history-substring-search gnu-utils docker docker-compose kubectl mvn npm)
 
 # Skip compfix check for faster startup
