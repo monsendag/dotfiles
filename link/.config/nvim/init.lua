@@ -38,15 +38,18 @@ require("lazy").setup({
   -- Syntax highlighting via Treesitter (Neovim 0.11+)
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
+    -- build = ":TSUpdate" intentionally omitted to prevent recompiling on every update
     config = function()
-      -- Install parsers
-      require("nvim-treesitter").install({ "lua", "vim", "vimdoc", "rust", "toml", "json", "yaml", "markdown", "bash" })
-      -- Enable treesitter highlighting for all filetypes
-      vim.api.nvim_create_autocmd("FileType", {
-        callback = function()
-          pcall(vim.treesitter.start)
-        end,
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { "lua", "vim", "vimdoc", "rust", "toml", "json", "yaml", "markdown", "bash" },
+        -- Do NOT auto-install parsers on file open (prevents recompilation)
+        auto_install = false,
+        highlight = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+        },
       })
     end,
   },
