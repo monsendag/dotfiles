@@ -1,5 +1,7 @@
-# Add binaries into the path
-export PATH="$HOME/.dotfiles/bin:$PATH";
+export DOTFILES="$HOME/.dotfiles"
 
-# load repo independent settings (can overwrite previous settings)
-[ -f "$HOME/.environment.bash" ] && source "$HOME/.environment.bash";
+# Add binaries into the path
+export PATH="$DOTFILES/bin:$PATH";
+
+# source bashrc
+source "$DOTFILES/bashrc/main.bash";

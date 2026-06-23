@@ -10,11 +10,9 @@ export EDITOR=nvim
 export EZA_CONFIG_DIR=~/.config/eza
 
 # Minimal init for non-interactive shells or when fast init is requested
-if [[ -d "$ZSHRC/init-untracked-fast" ]]; then
-  for file in $ZSHRC/init-untracked-fast/*.zsh; do
-      [[ -f "$file" ]] && source "$file"
-  done
-fi
+for file in $ZSHRC/init-untracked-fast/*.zsh; do
+    source "$file"
+done
 
 # ============================================
 # PERFORMANCE OPTIMIZATION: Instant prompt support
@@ -165,8 +163,6 @@ function e_arrow()    { echo -e " \033[1;33m➜\033[0m  $@"; }
 if [[ -z "$_ZSH_OS_DETECTED" ]]; then
   if [[ "$(uname)" == "Darwin" ]]; then
     export _ZSH_OS_TYPE="macos"
-  elif [[ -n "$TERMUX_VERSION" ]] || [[ "$PREFIX" == *termux* ]]; then
-    export _ZSH_OS_TYPE="termux"
   elif [[ -f /proc/version ]] && grep -qi microsoft /proc/version 2>/dev/null; then
     export _ZSH_OS_TYPE="wsl"
   elif [[ -f /etc/issue ]] && grep -qi ubuntu /etc/issue 2>/dev/null; then

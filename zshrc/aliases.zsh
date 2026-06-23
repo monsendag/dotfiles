@@ -47,9 +47,13 @@ alias dm='docker-machine --native-ssh'
 alias dcc='rm -v $(docker ps -a -q -f status=exited)'
 alias dci='docker rmi $(docker images -f "dangling=true" -q)'
 
-alias rm='rm -v'
 alias gr='git remote -v'
 alias t='tail -f'
+
+alias wts='wt switch'
+alias wtd='wt switch ^'
+alias wtl='wt list'
+alias wtc='wt switch --create'
 
 alias grep='grep --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '

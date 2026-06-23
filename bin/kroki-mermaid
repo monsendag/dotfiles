@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Generates a Kroki URL for a Mermaid diagram read from stdin.
+#
+# Usage:
+#   echo "graph TD; A-->B" | ./scripts/mermaid-url.sh
+#   cat diagram.mmd | ./scripts/mermaid-url.sh
+#
+# Requires: python3 (for deflate + base64url encoding)
+
+set -euo pipefail
+
+
+encoded=$(python3 -c "
+import sys, zlib, base64
+
+diagram = sys.stdin.read()
+compressed = zlib.compress(diagram.encode('utf-8'), level=9)
+encoded = base64.urlsafe_b64encode(compressed).decode('ascii')
+print(encoded, end='')
+")
+
+echo "${KROKI_BASE_URL}/mermaid/svg/${encoded}"
+
+

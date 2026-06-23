@@ -2,7 +2,7 @@
 # Decodes a Kroki URL back to the original diagram source.
 #
 # Usage:
-#   ./scripts/mermaid-decode.sh "https://kroki.no/mermaid/svg/eJy..."
+#   ./scripts/mermaid-decode.sh "https://kroki.vegvesen.no/mermaid/svg/eJy..."
 
 set -euo pipefail
 
