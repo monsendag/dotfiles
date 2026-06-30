@@ -9,10 +9,6 @@ export EDITOR=nvim
 
 export EZA_CONFIG_DIR=~/.config/eza
 
-# Minimal init for non-interactive shells or when fast init is requested
-for file in $ZSHRC/init-untracked-fast/*.zsh; do
-    source "$file"
-done
 
 # ============================================
 # PERFORMANCE OPTIMIZATION: Instant prompt support
