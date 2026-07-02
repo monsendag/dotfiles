@@ -32,7 +32,7 @@ alias tree='l --tree'
 alias cr='cd "$(git root)"'
 alias sr='cd $(svn info | grep "Working Copy Root Path:" | sed "s/.*://")'
 
-alias cat='bat -pp'
+alias cat='bat --style=plain --paging=never'
 alias less='bat --paging=always'
 
 alias s='ssh'
