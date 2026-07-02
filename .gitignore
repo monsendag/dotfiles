@@ -1,13 +1,11 @@
 .idea
 caches/
 backups/
-link/.ssh/authorized_keys
-link/.ssh/id_*
-link/.ssh/known_hosts
 *LOCAL*
-link/.vim/.netrwhist
-link/.config/ac
-link/.config/jgit
-zshrc/init-untracked/**
-zshrc/init-untracked-fast/**
+zshrc/init-untracked
+zshrc/init-untracked/**/*
 
+link/.ssh/**/*
+link/.vim/.netrwhist
+
+link/.docker/**
