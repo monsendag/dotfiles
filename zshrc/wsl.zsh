@@ -19,17 +19,18 @@ alias tailf='tail -f ---disable-inotify'
 unsetopt BG_NICE
 
 wslrealpath() {
-  if ( echo "$1" | grep -E -q '^(/c|/mnt/c)')
+  if ( echo "$1" | grep -E -q '^(/c|/mnt/c|C:/)')
   # git bash returns paths prefixed with c
   then
-    realpath "$1"
+    wslpath -ua "$1"
   # otherwise we are working on a repo within the WSL VM: use Linux git
   else
-    wslpath -ua "$1"
+    realpath "$1"
   fi
 }
 
 unalias cr 2>/dev/null
+
 cr() {
-   cd "$(wslrealpath "$(git root)")" || return
+   cd "$(wslrealpath "$(git root)")"
 }
