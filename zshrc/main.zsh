@@ -1,5 +1,7 @@
 ZSHRC="$(cd "$(dirname "$0")" ; pwd -P)"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # set default fzf command
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
@@ -8,7 +10,6 @@ export STARSHIP_CONFIG=~/.dotfiles/conf/starship.toml
 export EDITOR=nvim
 
 export EZA_CONFIG_DIR=~/.config/eza
-
 
 # ============================================
 # PERFORMANCE OPTIMIZATION: Instant prompt support
@@ -28,30 +29,7 @@ typeset -gaU fpath=($fpath ~/.local/share/zsh/completions)
 # must come before oh-my-zsh
 fpath=('/usr/local/share/zsh/site-functions' $fpath)
 
-autoload -Uz compinit bashcompinit compdef
-
-# ============================================
-# PERFORMANCE OPTIMIZATION: Cache compinit
-# Only regenerate completion dump once per day
-# ============================================
-_zsh_compinit_cache() {
-  local zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
-  # Check if zcompdump exists and is less than 24 hours old
-  if [[ -n "$zcompdump"(N.mh+24) ]]; then
-    # Outdated or missing - full compinit
-    compinit -d "$zcompdump"
-    # Compile in background for faster subsequent loads
-    { zcompile "$zcompdump" } &!
-  else
-    # Use cached completions, skip security check for speed
-    compinit -C -d "$zcompdump"
-  fi
-}
-_zsh_compinit_cache
-
-bashcompinit
-
-autoload zmv ckd de 
+autoload zmv ckd de
 
 # oh-my-zsh configuration
 source $ZSHRC/oh-my-zsh.zsh
@@ -77,6 +55,7 @@ _cache_init() {
   fi
   source "$cache_file"
 }
+
 
 _cache_init starship 'starship init zsh'
 _cache_init zoxide 'zoxide init zsh'
@@ -203,6 +182,30 @@ if [[ -d "$ZSHRC/init-untracked" ]]; then
 fi
 
 [ -f "$HOME/.environment.zsh" ] && source "$HOME/.environment.zsh";
+
+autoload -Uz compinit bashcompinit compdef
+
+# ============================================
+# PERFORMANCE OPTIMIZATION: Cache compinit
+# Only regenerate completion dump once per day
+# ============================================
+_zsh_compinit_cache() {
+  local zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+  # Check if zcompdump exists and is less than 24 hours old
+  if [[ -n "$zcompdump"(N.mh+24) ]]; then
+    # Outdated or missing - full compinit
+    compinit -d "$zcompdump"
+    # Compile in background for faster subsequent loads
+    { zcompile "$zcompdump" } &!
+  else
+    # Use cached completions, skip security check for speed
+    compinit -C -d "$zcompdump"
+  fi
+}
+_zsh_compinit_cache
+
+bashcompinit
+
 
 # ctrl+Z to load buffer
 # http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
