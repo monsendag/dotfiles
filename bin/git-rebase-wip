@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# commits a WIP commit on HEAD only when there are local changes
+created_wip_commit=false
+
+if [[ -n "$(git status --porcelain)" ]]; then
+  git wip
+  created_wip_commit=true
+fi
+
+git rebase "$(git main-branch)"
+
+if $created_wip_commit; then
+  git reset HEAD^
+fi

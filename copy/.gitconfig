@@ -100,6 +100,7 @@
 
 	# rebase onto latest "main" branch
 	rd = !git rebase $(git main-branch)
+	rw = !git-rebase-wip
 	rc = rebase --continue
 	# on a branch: pull in latest changes from main branch and rebase branch on top of it
 	rb = !git wip && && git checkout $(git main-branch) && git pull && git checkout - && git rd && git rh
