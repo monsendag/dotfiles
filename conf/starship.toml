@@ -13,6 +13,7 @@ command_timeout = 400
 #directory = { disabled = true }
 
 java = { disabled = true }
+maven = { disabled = true }
 nodejs = { disabled = true }
 aws = { disabled = true }
 battery = { disabled = true }
