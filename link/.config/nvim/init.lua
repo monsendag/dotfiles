@@ -40,16 +40,10 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     -- build = ":TSUpdate" intentionally omitted to prevent recompiling on every update
     config = function()
-      require("nvim-treesitter.configs").setup({
+      require("nvim-treesitter").setup({
         ensure_installed = { "lua", "vim", "vimdoc", "rust", "toml", "json", "yaml", "markdown", "bash" },
         -- Do NOT auto-install parsers on file open (prevents recompilation)
         auto_install = false,
-        highlight = {
-          enable = true,
-        },
-        indent = {
-          enable = true,
-        },
       })
     end,
   },
